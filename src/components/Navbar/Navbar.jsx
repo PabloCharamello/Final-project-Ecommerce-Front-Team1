@@ -1,24 +1,25 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import style from "./navbar.module.css";
 
 export default function Navbar() {
   return (
-    <Row>
-      <Col lg={4} className="">
+    <Row className="m-1 p-1">
+      <Col lg={4} className={style.logo}>
         <h1>Hack Design</h1>
       </Col>
       <Col lg={4}>
         <div className="d-flex">
           <span className={style.home}>HOME</span>
-          <span>CATEGORIES</span>
+          <span className={style.categories}>CATEGORIES</span>
           <span className={style.aboutOurProject}>ABOUT OUR PROJECT</span>
         </div>
       </Col>
       <Col lg={4} className="">
         <div className={style.rightColNavbar}>
-          <AiOutlineShoppingCart />
+          <FaShoppingCart />
+          <FaUserAlt />
         </div>
       </Col>
     </Row>
