@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.registerFormDiv {
+  margin-top: 3rem;
+  margin: 30px;
+  border: 0.5px solid rgba(87, 85, 85, 0.616);
+  border-radius: 2px;
+  width: 100%;
+  width: 100vh;
+}
+
+.registerFormDiv input {
+  border-radius: 2px;
+}
+
+.registerForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 10px;
+  justify-items: end;
+}
