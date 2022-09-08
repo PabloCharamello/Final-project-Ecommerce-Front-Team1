@@ -1,0 +1,218 @@
+/* @font-face {
+  font-family: MoonDance;
+  src: url(MoonDance.ttf);
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rubik+Marker+Hatch&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.rowHero {
+  background-color: black;
+}
+
+.heroImg {
+  min-width: 100%;
+  object-fit: cover;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  animation-name: fadeHeroImg;
+  opacity: 0;
+  animation-duration: 3s;
+  animation-play-state: running, paused, paused;
+  animation-fill-mode: forwards;
+  transition: all 2s;
+}
+
+@keyframes fadeHeroImg {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.elegantDesign {
+  position: absolute;
+  font-family: Nothing You Could Do;
+  color: rgb(255, 255, 255);
+  text-shadow: 0.5px 0 rgb(59, 59, 59), -0.5px 0 rgb(77, 77, 77),
+    0 1px rgb(70, 70, 70), 0 -0.5px rgb(65, 65, 65), 0.5px 0.5px rgb(70, 70, 70),
+    -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+  top: 250px;
+  line-height: 40px;
+  margin-top: 17px;
+  font-weight: 800;
+  font-size: 7.5rem;
+  transform: translate(-900px, 200px);
+  -webkit-transform: translate(-900px, 200px);
+  -o-transform: translate(-900px, 200px);
+  -moz-transform: translate(-900px, 200px);
+  animation-name: textTraslate;
+  animation-duration: 3s;
+  animation-play-state: running, paused, paused;
+  animation-fill-mode: forwards;
+  transition: all 2s ease-in-out;
+  /* animation-delay: 0.3s; */
+}
+
+@keyframes textTraslate {
+  from {
+    transform: translate(-800px, 200px);
+  }
+
+  to {
+    transform: translate(-200px, 200px);
+  }
+}
+
+.mekeItHappend {
+  position: absolute;
+  font-family: Nothing You Could Do;
+  color: rgb(255, 255, 255);
+  text-shadow: 0.5px 0 rgb(59, 59, 59), -0.5px 0 rgb(77, 77, 77),
+    0 1px rgb(70, 70, 70), 0 -0.5px rgb(65, 65, 65), 0.5px 0.5px rgb(70, 70, 70),
+    -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+  top: 480px;
+  line-height: 40px;
+  margin-top: 17px;
+  font-weight: 800;
+  font-size: 4.5rem;
+  transform: translate(700px, 0);
+  -webkit-transform: translate(-700px, 0);
+  -o-transform: translate(-700px, 0);
+  -moz-transform: translate(-700px, 0);
+  animation-name: textTraslate;
+  animation-duration: 3s;
+  animation-play-state: running, paused, paused;
+  animation-fill-mode: forwards;
+  transition: all 2s ease-in-out;
+  animation-delay: 1.5s;
+}
+
+@keyframes textTraslate {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+
+  from {
+    transform: translate(-600px, -250);
+  }
+
+  to {
+    transform: translate(50px, 0);
+  }
+}
+
+.yourDreams {
+  position: absolute;
+  font-family: Nothing You Could Do;
+  color: rgb(255, 255, 255);
+  text-shadow: 0.5px 0 rgb(59, 59, 59), -0.5px 0 rgb(77, 77, 77),
+    0 1px rgb(70, 70, 70), 0 -0.5px rgb(65, 65, 65), 0.5px 0.5px rgb(70, 70, 70),
+    -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+  top: 480px;
+  line-height: 40px;
+  margin-top: 17px;
+  font-weight: 800;
+  font-size: 4.5rem;
+  opacity: 0%;
+  transform: translate(600px, 150px);
+  -webkit-transform: translate(-600px, 1500);
+  -o-transform: translate(-600px, 150px);
+  -moz-transform: translate(-600px, 150px);
+  animation-name: yourDreams;
+  animation-duration: 3s;
+  animation-play-state: running, paused, paused;
+  animation-fill-mode: forwards;
+  transition: all 2s ease-in-out;
+  animation-delay: 1.5s;
+}
+
+@keyframes yourDreams {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+
+  from {
+    transform: translate(-800px, -550);
+  }
+
+  to {
+    transform: translate(250px, 60px);
+  }
+}
+
+/*CATEGORIES*/
+
+.ourCategories {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3rem;
+  margin: 50px;
+  color: rgb(109, 109, 109);
+}
+
+.grandContainer {
+  width: 1700px;
+}
+
+.cardsContainer {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.categoryCards {
+  width: 450px;
+  height: 320px;
+}
+
+.categoryCardsImg {
+  width: 400px;
+  height: 300px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(128, 128, 128, 0.206);
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0 0 8px 1px rgba(46, 46, 46, 0.106);
+  transition: 0.15s ease-in-out;
+}
+
+.categoryCardsImg:hover {
+  scale: 102.5%;
+  box-shadow: 0 0 12px 2px rgba(46, 46, 46, 0.414);
+}
+
+.beds {
+  opacity: 0;
+  position: relative;
+  bottom: 300px;
+  font-size: 2rem;
+  font-family: Nothing You Could Do;
+  color: rgb(194, 194, 194);
+  z-index: 1;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+.beds p:hover {
+  opacity: 100%;
+}
