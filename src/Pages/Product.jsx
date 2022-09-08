@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Product.module.css";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button } from "react-bootstrap";
 
 export default function Home() {
@@ -50,10 +51,12 @@ export default function Home() {
 							<p className="text-start fw-light">
 								Typically the design process surrounding a new sofa is heavily
 								focused on aesthetic research. Prado represents a departure from
-								this school of thought completely. Prado has first and foremost
-								been designed based on the study of lifestyles and human nature.
-								We find the same inspirations in Prado that brought us Smala in
-								the earlier part of this century.
+								this school of thought completely.
+							</p>
+							<p className="text-start fw-light">
+								Prado has first and foremost been designed based on the study of
+								lifestyles and human nature. We find the same inspirations in
+								Prado that brought us Smala in the earlier part of this century.
 							</p>
 						</div>
 					</div>
@@ -81,13 +84,17 @@ export default function Home() {
 							100*200 cm; 39 3/8'' x 78 3/4'' and 120*240 cm; 47 1/4'' x 94
 							1/2'') that can be combined and adjusted as desired and onto which
 							back cushions may be placed at will, so that one can sit or lie
-							down as they wish. It offers complete freedom as these cushions,
-							weighted and equipped with a non-slip system, do not need to be
-							rested against or attached to any object for support.
+							down as they wish.
+						</p>
+						<p className="text-start fw-light">
+							It offers complete freedom as these cushions, weighted and
+							equipped with a non-slip system, do not need to be rested against
+							or attached to any object for support.
 						</p>
 					</div>
 				</Col>
 			</Row>
+			<Footer />
 		</>
 	);
 }
