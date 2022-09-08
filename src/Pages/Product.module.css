@@ -1,0 +1,22 @@
+.landing {
+  background-color: #F5F5F5;
+}
+
+.rowSec {
+  height: 630px;
+}
+
+.imageSec {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+@media only screen and (max-width: 992px) {
+  .imageLanding {
+    max-height: 630px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}
