@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Product.module.css";
+import style from "../styles/Product.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
