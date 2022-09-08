@@ -1,0 +1,11 @@
+.product {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageProduct {
+    width: 400px;
+    height: 300px;
+}
