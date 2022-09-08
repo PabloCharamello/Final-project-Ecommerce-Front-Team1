@@ -3,9 +3,13 @@
     margin-left: auto;
     display: flex;
     justify-content: space-around;
+    max-width: 200px;
+    height: 200px;
 }
 
 .imageProduct {
-    width: 400px;
-    height: 300px;
+    object-fit: cover;
+    width: 200px;
+    height: 100px;
+
 }
