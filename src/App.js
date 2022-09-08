@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Category from "./Pages/Category";
 import ShoppingCart from "./Pages/ShoppingCart";
-
+import ChekOut from "./Pages/ChekOut";
 function App() {
   return (
     <div className="App">
@@ -17,7 +17,7 @@ function App() {
         <Route path="/about-our-project" element={<Home />} />
         <Route path="/admin" element={<Home />} />
         <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/chekout" element={<Home />} />
+        <Route path="/chekout" element={<ChekOut />} />
       </Routes>
     </div>
   );
