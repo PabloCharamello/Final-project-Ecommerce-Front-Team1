@@ -1,0 +1,26 @@
+.productImage {
+  width: 150px;
+  height: 150px;
+}
+
+.quantityInput {
+  width: 2.5rem;
+  text-align: center;
+}
+
+.gray {
+  color: rgb(107, 107, 107);
+}
+
+
+
+.cartTotals {
+  background-color: rgb(244, 244, 244);
+  margin-top: 5rem;
+  padding: 3rem 1rem;
+}
+
+.checkoutButton {
+  border-radius: 0;
+  margin-top: 1rem;
+}

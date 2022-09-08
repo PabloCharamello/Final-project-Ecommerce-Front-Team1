@@ -2,11 +2,13 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "../styles/home.module.css";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
           <Image
@@ -20,9 +22,10 @@ export default function Home() {
           <p className={style.yourDreams}>tus sueños</p>
         </Col>
       </Row>
+
       <div className="container grandContainer my-5">
         <Row className={style.cardsContainer}>
-          <Col lg={4} className="p-2 position-relative">
+          <Col lg={4} className="p-2">
             <Image
               className={style.categoryCardsImg}
               src="https://images.ligne-roset.com/cache/models/2676/iambiance1/1/0/1005ki_1848x1848.jpg"
@@ -55,7 +58,7 @@ export default function Home() {
           <Col lg={4} className="p-2">
             <Image
               className={style.categoryCardsImg}
-              src="https://images.ligne-roset.com/cache/models/2537/iambiance1/1/0/1001mv_c01_600x600.jpg"
+              src="https://images.ligne-roset.com/cache/models/2385/iambiance1/0/1/011v0_600x600.jpg"
             />{" "}
             <p className={style.beds}>Iluminación</p>
           </Col>
@@ -68,6 +71,34 @@ export default function Home() {
           </Col>
         </Row>
       </div>
+      <Row className={style.underHeroCol}>
+        <Col className="m-0 p-d g-0">
+          <h2 className={style.titleFirsSeparator}>Un mundo en decoración</h2>
+          <Image
+            className={style.underHeroImg}
+            src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
+          />
+        </Col>
+      </Row>
+      <section>
+        <Row>
+          <Col className={style.tableSection}>
+            {" "}
+            <Image
+              className={style.TableSectionImg}
+              src="https://porustudio.com/wp-content/uploads/dickson-center-table-4.jpg.webp"
+            />
+            {/* <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse quibusdam, aperiam
+              temporibus reprehenderit voluptatem assumenda. Eligendi nemo architecto ipsum illum
+              obcaecati, similique accusantium sint, rerum soluta facilis a. Assumenda.
+            </p> */}
+          </Col>
+        </Row>
+        <Row></Row>
+      </section>
+
+      <Footer />
     </>
   );
 }

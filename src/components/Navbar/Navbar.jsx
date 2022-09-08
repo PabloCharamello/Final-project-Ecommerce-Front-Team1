@@ -3,6 +3,8 @@ import { Row, Col } from "react-bootstrap";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
+import Login from "../Login/Login";
+import CartPopup from "../CartPopup/CartPopup";
 
 export default function Navbar() {
   return (
@@ -20,16 +22,8 @@ export default function Navbar() {
         </div>
       </Col>
       <Col lg={3} className="d-flex justify-content-end align-items-center">
-        <div className={style.divCartLink}>
-          <Link className={style.cartLink} to="#">
-            <FaShoppingCart className={style.rightColIcon} />
-            CART
-          </Link>
-        </div>
-        <div>
-          <FaUserAlt className={style.rightColIcon} />
-          <span className={style.iconSpan}>LOGIN</span>
-        </div>
+        <CartPopup />
+        <Login />
       </Col>
     </Row>
   );
