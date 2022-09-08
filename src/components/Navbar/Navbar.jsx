@@ -1,25 +1,34 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
 
 export default function Navbar() {
   return (
     <Row className="m-1 p-1">
-      <Col lg={4} className={style.logo}>
-        <h1>Hack Design</h1>
+      <Col lg={3} className={style.logo}>
+        <h1 className={style.logo}>Hack Design</h1>
       </Col>
-      <Col lg={4}>
-        <div className="d-flex">
-          <span className={style.home}>HOME</span>
-          <span className={style.categories}>CATEGORIES</span>
-          <span className={style.aboutOurProject}>ABOUT OUR PROJECT</span>
+      <Col lg={6}>
+        <div>
+          <ul className="d-flex justify-content-center align-items-center m-0">
+            <li className={style.navLinks}>HOME</li>
+            <li className={style.navLinks}>CATEGORIES</li>
+            <li className={style.navLinks}>ABOUT OUR PROJECT</li>
+          </ul>
         </div>
       </Col>
-      <Col lg={4} className="">
-        <div className={style.rightColNavbar}>
-          <FaShoppingCart />
-          <FaUserAlt />
+      <Col lg={3} className="d-flex justify-content-end align-items-center">
+        <div className={style.divCartLink}>
+          <Link className={style.cartLink} to="#">
+            <FaShoppingCart className={style.rightColIcon} />
+            CART
+          </Link>
+        </div>
+        <div>
+          <FaUserAlt className={style.rightColIcon} />
+          <span className={style.iconSpan}>LOGIN</span>
         </div>
       </Col>
     </Row>

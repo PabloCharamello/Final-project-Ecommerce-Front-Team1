@@ -1,7 +1,46 @@
 .logo {
-    padding: auto;
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   font-size: 2rem;
+   font-weight: bold;
 }
 
-.rightColNavbar {
-    
+.navLinks {
+    list-style: none;
+    margin: 30px;
+    font-weight: 500;
+}
+
+.rightColIcon {
+    margin: 5px;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.divCartLink{
+    padding: 6px;
+}
+
+.divCartLink:hover{
+    font-size: 1.1rem;
+}
+
+.iconSpan{
+    font-weight: 600;
+    margin-right: 0.6rem;
+}
+
+.cartLink{
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 0.6rem;
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+}
+
+.cartLink:hover{
+    color: black;
+    font-size: 1rem;
 }
