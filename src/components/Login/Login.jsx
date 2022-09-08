@@ -1,5 +1,5 @@
-import { OverlayTrigger, Popover, Form, CloseButton, Button } from "react-bootstrap";
-import { FaUserAlt } from "react-icons/fa";
+import { OverlayTrigger, Popover, Form, Button } from "react-bootstrap";
+import { BiUser } from "react-icons/bi";
 import style from "./Login.module.css";
 
 export default function Login() {
@@ -27,7 +27,7 @@ export default function Login() {
       }
     >
       <button className={`${style.button} d-flex align-items-center border-0 bg-transparent`}>
-        <FaUserAlt className="me-2 fs-5" /> LOGIN
+        <BiUser className="me-2 fs-5" /> <span className="fw-bold">LOGIN</span>
       </button>
     </OverlayTrigger>
   );
