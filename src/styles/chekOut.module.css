@@ -5,12 +5,13 @@
 }
 
 .registerFormDiv {
+  width: 600px;
   margin-top: 3rem;
   margin: 30px;
+  padding: 30px;
   border: 0.5px solid rgba(87, 85, 85, 0.616);
   border-radius: 2px;
-  width: 100%;
-  width: 100vh;
+  justify-content: center;
 }
 
 .registerFormDiv input {
