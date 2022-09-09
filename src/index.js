@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 // import { Provider } from "react-redux";
+import axios from "axios";
+
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,5 +13,5 @@ root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

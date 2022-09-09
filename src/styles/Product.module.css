@@ -1,7 +1,6 @@
 .landing {
   background-color: #F5F5F5;
   height: 800px;
-  z-index: -1;
 }
 
 .rowSec {
@@ -12,7 +11,7 @@
   height: 630px;
   width: 100%;
   object-fit: cover;
-  object-position: center -100px;
+  object-position: center -200px;
   background-color: #F5F5F5;
 }
 
@@ -25,6 +24,7 @@
 @media only screen and (max-width: 992px) {
   .imageLanding {
     max-height: 630px;
+    object-position: bottom;
   }
   .landing {
     max-height: 400px;

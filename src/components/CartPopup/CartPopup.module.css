@@ -3,6 +3,10 @@
   height: 75px;
 }
 
+.buttonPopup {
+  border-radius: 2px;
+}
+
 .button:hover {
   transform: scale(1.05);
   transition: ease-out .1s;

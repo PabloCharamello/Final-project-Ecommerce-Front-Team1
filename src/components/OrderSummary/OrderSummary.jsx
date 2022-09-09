@@ -1,11 +1,11 @@
-import { Row, Col, Button } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import style from "./orderSummary.module.css";
 import { Link } from "react-router-dom";
 
 export default function OrderSummary() {
   return (
-    <Col className="p-5 cartTotals">
-      <div className={`${style.cartTotals} d-flex flex-column cartTotals`}>
+    <Col className="px-5 mt-4 cartTotals">
+      <div className={`${style.cartTotals} d-flex flex-column`}>
         <h2 className="mb-3">CART TOTALS</h2>
         <div>
           <span className="me-3">SUBTOTAL</span>

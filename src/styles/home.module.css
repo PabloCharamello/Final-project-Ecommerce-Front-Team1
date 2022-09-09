@@ -191,11 +191,11 @@
   position: relative;
   /* bottom: 30px; */
   margin-top: 5px;
-  font-size: 2rem;
-  font-family: Nothing You Could Do;
+  font-size: 1.5rem;
+  /* font-family: Nothing You Could Do; */
   color: rgb(135, 135, 135);
   z-index: 1;
-  font-weight: 700;
+  /* font-weight: 700; */
   font-style: italic;
   display: flex;
   justify-content: center;

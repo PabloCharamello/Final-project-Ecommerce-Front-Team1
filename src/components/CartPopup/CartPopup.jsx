@@ -1,6 +1,7 @@
 import { OverlayTrigger, Popover, Image, Button } from "react-bootstrap";
 import { BiShoppingBag } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import style from "./CartPopup.module.css";
 
 export default function CartPopup() {
@@ -49,7 +50,13 @@ export default function CartPopup() {
                   <IoClose className={`fs-4`} />
                 </div>
               </div>
-              <Button variant="dark" className="mt-3 px-3">
+              <span className="fs-5 mt-2">$31,755</span>
+              <Button
+                to="/cart"
+                as={Link}
+                variant="dark"
+                className={`${style.buttonPopup} mt-1 px-3`}
+              >
                 VIEW CART
               </Button>
             </div>
@@ -57,9 +64,8 @@ export default function CartPopup() {
         </Popover>
       }
     >
-      <button className={`${style.button} d-flex align-items-center border-0 bg-transparent me-5`}>
+      <button className={`${style.button} d-flex align-items-center border-0 bg-transparent me-3`}>
         <BiShoppingBag className="me-2 fs-5" /> <span className="fw-bold me-2">CART</span>
-        <span>($31,755)</span>
       </button>
     </OverlayTrigger>
   );

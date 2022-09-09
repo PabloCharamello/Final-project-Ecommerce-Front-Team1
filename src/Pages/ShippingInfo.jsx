@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Footer from "../components/Footer/Footer";
-import style from "../styles/chekOut.module.css";
+import style from "../styles/ShippingInfo.module.css";
 import Form from "react-bootstrap/Form";
 import OrderSummary from "../components/OrderSummary/OrderSummary";
 
-export default function ChekOut() {
+export default function ShippingInfo() {
   return (
     <>
       <Navbar />
@@ -14,7 +14,7 @@ export default function ChekOut() {
         <Row className="m-0 g-0 p-0">
           <Col lg={8} className={style.registerFormDiv}>
             <div className="">
-              <h4 className="mt-5">Shipping information</h4>
+              <h4 className="">Shipping information</h4>
             </div>
 
             <Form.Group className="mb-3">
