@@ -166,6 +166,11 @@
   height: 320px;
 }
 
+.cardsContainer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .categoryCardsImg {
   width: 400px;
   height: 300px;
@@ -209,10 +214,14 @@
 
 .underHeroImg {
   height: 300px;
-  width: 100vw;
+  width: 100%;
   opacity: 80%;
   object-fit: cover;
   filter: brightness(50%);
+}
+
+.divSeparatorCategories {
+  width: 100%;
 }
 
 .titleFirsSeparator {

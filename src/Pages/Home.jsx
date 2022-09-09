@@ -17,13 +17,13 @@ export default function Home() {
             src="https://images.ligne-roset.com/cache/products/3400/panorama/p/r/prado_pano_1864x900.jpg"
             alt="presentation image"
           />
-          <p className={style.elegantDesign}>Diseños elegantes</p>
+          {/* <p className={style.elegantDesign}>Diseños elegantes</p>
           <p className={style.mekeItHappend}>Hacemos realidad</p>
-          <p className={style.yourDreams}>tus sueños</p>
+          <p className={style.yourDreams}>tus sueños</p> */}
         </Col>
       </Row>
 
-      <div className="container grandContainer my-5">
+      <div className="container-lg grandContainer my-5">
         <Row className={style.cardsContainer}>
           <Col lg={4} className="p-2">
             <Image
@@ -71,7 +71,7 @@ export default function Home() {
           </Col>
         </Row>
       </div>
-      <div>
+      <div className={style.divSeparatorCategories}>
         <h2 className={style.titleFirsSeparator}>Un mundo en decoración</h2>
         <Image
           className={style.underHeroImg}
