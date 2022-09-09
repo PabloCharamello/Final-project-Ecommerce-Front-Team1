@@ -1,12 +1,28 @@
-import { Col, Image } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import style from "./orderSummary.module.css";
+import { Link } from "react-router-dom";
 
 export default function OrderSummary() {
   return (
-    <Col className="p-5">
-      <h4>Order Summary</h4>
-      <p>Article:</p>
-      <p>Quantity:</p>
+    <Col className="p-5 cartTotals">
+      <div className={`${style.cartTotals} d-flex flex-column cartTotals`}>
+        <h2 className="mb-3">CART TOTALS</h2>
+        <div>
+          <span className="me-3">SUBTOTAL</span>
+          <span className="fw-light">$31,755</span>
+        </div>
+        <div className="border-bottom pb-4 bg-gray">
+          <span className="me-3">SHIPPING</span>
+          <span className="fw-light">Free</span>
+        </div>
+        <div className="pt-4 checkoutButton">
+          <span className="me-5 fs-3">TOTAL</span>
+          <span className="fw-bold fs-3">$31,755</span>
+        </div>
+        <Link to="#" className={style.checkoutButton}>
+          PROCEED TO PAYMENT
+        </Link>
+      </div>
     </Col>
   );
 }
