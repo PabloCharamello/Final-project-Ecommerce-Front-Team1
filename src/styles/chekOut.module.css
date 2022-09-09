@@ -5,16 +5,23 @@
 }
 
 .registerFormDiv {
-  margin-top: 3rem;
-  margin: 30px;
+  width: 600px;
+  margin-top: 1.5rem;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  padding: 30px;
   border: 0.5px solid rgba(87, 85, 85, 0.616);
   border-radius: 2px;
-  width: 100%;
-  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px 1px rgba(114, 114, 114, 0.349);
 }
 
 .registerFormDiv input {
   border-radius: 2px;
+  height: 30px;
 }
 
 .registerForm {
@@ -25,4 +32,19 @@
   padding: 10px;
   margin: 10px 10px;
   justify-items: end;
+  border-color: #000000 !important;
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus {
+  border-color: #000000 !important;
+
+  outline: 0 none !important;
+}
+
+select,
+option {
+  color: rgb(0, 0, 0);
+  background-color: rgb(253, 253, 253);
 }

@@ -71,31 +71,18 @@ export default function Home() {
           </Col>
         </Row>
       </div>
-      <Row className={style.underHeroCol}>
-        <Col className="m-0 p-d g-0">
-          <h2 className={style.titleFirsSeparator}>Un mundo en decoración</h2>
-          <Image
-            className={style.underHeroImg}
-            src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
-          />
-        </Col>
-      </Row>
+      <div>
+        <h2 className={style.titleFirsSeparator}>Un mundo en decoración</h2>
+        <Image
+          className={style.underHeroImg}
+          src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
+        />
+      </div>
       <section>
-        <Row>
-          <Col className={style.tableSection}>
-            {" "}
-            <Image
-              className={style.TableSectionImg}
-              src="https://porustudio.com/wp-content/uploads/dickson-center-table-4.jpg.webp"
-            />
-            {/* <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse quibusdam, aperiam
-              temporibus reprehenderit voluptatem assumenda. Eligendi nemo architecto ipsum illum
-              obcaecati, similique accusantium sint, rerum soluta facilis a. Assumenda.
-            </p> */}
-          </Col>
-        </Row>
-        <Row></Row>
+        <Image
+          className={style.TableSectionImg}
+          src="https://porustudio.com/wp-content/uploads/dickson-center-table-4.jpg.webp"
+        />
       </section>
 
       <Footer />

@@ -8,24 +8,26 @@ import CartPopup from "../CartPopup/CartPopup";
 
 export default function Navbar() {
   return (
-    <Row className="m-1 p-1">
-      <Col lg={3} className={style.logo}>
-        <h1 className={style.logo}>Hack Design</h1>
-      </Col>
-      <Col lg={6}>
-        <div>
-          <ul className="d-flex justify-content-center align-items-center m-0">
-            <li className={style.navLinks}>HOME</li>
-            <li className={style.navLinks}>CATEGORIES</li>
-            <li className={style.navLinks}>ABOUT OUR PROJECT</li>
-          </ul>
-        </div>
-      </Col>
-      <Col lg={3} className="d-flex justify-content-end align-items-center">
-        <CartPopup />
-        <Login />
-      </Col>
-    </Row>
+    <div className="container">
+      <Row className="m-1 p-1">
+        <Col lg={3} className={style.logo}>
+          <h1 className={style.logo}>Hack Design</h1>
+        </Col>
+        <Col lg={6}>
+          <div>
+            <ul className="d-flex justify-content-center align-items-center m-0">
+              <li className={style.navLinks}>HOME</li>
+              <li className={style.navLinks}>CATEGORIES</li>
+              <li className={style.navLinks}>OUR PROJECT</li>
+            </ul>
+          </div>
+        </Col>
+        <Col lg={3} className="d-flex justify-content-end align-items-center">
+          <CartPopup />
+          <Login />
+        </Col>
+      </Row>
+    </div>
   );
 }
 
