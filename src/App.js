@@ -17,7 +17,7 @@ function App() {
         <Route path="/about-our-project" element={<Home />} />
         <Route path="/admin" element={<Home />} />
         <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/chekout" element={<CheckOut />} />
+        <Route path="/checkout" element={<CheckOut />} />
       </Routes>
     </div>
   );
