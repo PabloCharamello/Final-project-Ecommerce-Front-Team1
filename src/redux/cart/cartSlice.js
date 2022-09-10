@@ -10,8 +10,16 @@ export const cartSlice = createSlice({
   initialState: initialState,
   reducers: {
     addProductToCart: (state, action) => {
-      state.productsList = [...state.productsList, action.payload];
-      state.totalCount += 1;
+      const index = state.productsList.findIndex((product) => product.id === action.payload);
+      if (index !== -1) {
+        state.productsList[index].count++;
+      } else {
+        state.productsList.push({
+          id: action.payload,
+          count: 1,
+        });
+      }
+      state.totalCount++;
     },
   },
 });
