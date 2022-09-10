@@ -1,16 +1,31 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
 import Login from "../Login/Login";
 import CartPopup from "../CartPopup/CartPopup";
+import { useSelector, useDispatch } from "react-redux";
+import { unsetUser } from "../../redux/user/userSlice";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const { username } = useSelector((state) => state.user);
+
+  const handleLogout = () => {
+    dispatch(unsetUser());
+  };
+
   return (
     <div className={style.navbar}>
       <div className="px-3">
         <Row className="m-1 p-1">
           <Col lg={3} className={style.logo}>
+            <div className={style.divUsername}>
+              <Button as={Link} to="#" className={style.logoutNav} onClick={handleLogout}>
+                LOGOUT
+              </Button>
+              <p className={style.usernameNav}>{username}</p>
+            </div>
             <Link to="/" className="text-decoration-none text-black">
               <h1 className={style.logo}>Hack Design</h1>
             </Link>

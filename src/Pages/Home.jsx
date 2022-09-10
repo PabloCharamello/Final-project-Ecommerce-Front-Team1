@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
           <Image

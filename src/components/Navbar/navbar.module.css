@@ -1,53 +1,99 @@
 .navbar {
-    background-color: white;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .logo {
-   display: flex;
-   align-self: center;
-   font-size: 2rem;
-   font-weight: bold;
+  display: flex;
+  align-self: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .navLinks {
-    list-style: none;
-    margin: 30px;
-    font-weight: 500;
+  list-style: none;
+  margin: 30px;
+  font-weight: 500;
 }
 
 .rightColIcon {
-    margin: 5px;
-    width: 1.3rem;
-    height: 1.3rem;
+  margin: 5px;
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
-.divCartLink{
-    padding: 6px;
+.divCartLink {
+  padding: 6px;
 }
 
-.divCartLink:hover{
-    font-size: 1.1rem;
+.divCartLink:hover {
+  font-size: 1.1rem;
 }
 
-.iconSpan{
-    font-weight: 600;
-    margin-right: 0.6rem;
+.iconSpan {
+  font-weight: 600;
+  margin-right: 0.6rem;
 }
 
-.cartLink{
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-right: 0.6rem;
-    text-decoration: none;
-    color: black;
-    transition: .2s;
+.cartLink {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
+  text-decoration: none;
+  color: black;
+  transition: 0.4s;
 }
 
-.cartLink:hover{
-    color: black;
-    font-size: 1rem;
+.cartLink:hover {
+  color: black;
+  font-size: 1rem;
+}
+
+.divUsername {
+  padding: 0px 10px 0px 10px;
+  position: absolute;
+  top: -92px;
+  left: 28px;
+  transition: 0.4s ease;
+}
+
+.divUsername:hover {
+  padding: 30px 10px 0px 10px;
+  background-color: transparent;
+  border: none;
+  top: -82px;
+}
+
+.logoutNav {
+  cursor: pointer;
+  /* stroke-linecap: round; */
+  position: relative;
+  top: 44px;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-style: italic;
+  background-color: transparent;
+  border: none;
+}
+
+.logoutNav:hover {
+  color: grey !important;
+  background-color: transparent !important;
+  background-color: rgb(19, 19, 19);
+}
+
+.usernameNav {
+  color: rgb(121, 121, 121);
+  font-weight: 900;
+  color: white;
+  font-size: 1.1rem;
+  cursor: default;
+  background-color: rgb(19, 19, 19);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 38px 17px 2px 17px;
 }

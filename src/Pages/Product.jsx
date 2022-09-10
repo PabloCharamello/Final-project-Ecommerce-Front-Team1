@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+// import { useSelector, useDispatch } from "react-redux";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -14,6 +15,7 @@ const priceFormatter = new Intl.NumberFormat("en", {
 });
 
 export default function Home() {
+  // const useDispatch = useDispatch();
   const params = useParams();
   const productId = params.id;
   const [product, setProduct] = useState(null);
@@ -33,6 +35,12 @@ export default function Home() {
     return <>Loading...</>;
   }
   console.log(product);
+
+  //aca hay que seguir haciendo la logica para agregar el producto al carrito
+  // const handleAddProduct = (productId) => {
+  //   const product = product.find((product) => product.id === product.id);
+  //   dispatch(addProductToCart(product));
+  // };
 
   return (
     <>

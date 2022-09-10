@@ -4,6 +4,7 @@ import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import style from "../styles/ShoppingCart.module.css";
 import { IoCaretForward, IoCaretBack, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+// import { addProductToCart } from "../redux/cart/cartSlice";
 
 export default function ShoppingCart() {
   return (
