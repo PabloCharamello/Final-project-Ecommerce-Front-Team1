@@ -56,13 +56,13 @@
   min-width: 210px;
   padding: 0px 10px 0px 10px;
   position: absolute;
-  top: -92px;
+  top: -100px;
   left: 28px;
   transition: 0.4s ease;
 }
 
 .divUsername:hover {
-  padding: 30px 10px 0px 10px;
+  padding: 30px 10px 8px 10px;
   background-color: transparent;
   border: none;
   top: -82px;
@@ -70,7 +70,6 @@
 
 .logoutNav {
   cursor: pointer;
-  /* stroke-linecap: round; */
   position: relative;
   top: 44px;
   text-decoration: none;
@@ -79,6 +78,7 @@
   font-style: italic;
   background-color: transparent;
   border: none;
+  margin-top: 2px;
 }
 
 .logoutNav:hover {
@@ -96,5 +96,5 @@
   background-color: rgb(19, 19, 19);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 38px 17px 2px 17px;
+  padding: 46px 17px 2px 17px;
 }
