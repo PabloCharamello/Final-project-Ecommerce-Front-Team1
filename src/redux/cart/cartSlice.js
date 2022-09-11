@@ -21,14 +21,23 @@ export const cartSlice = createSlice({
       }
       state.totalCount++;
     },
+    minusProductFromCart: (state, action) => {
+      const index = state.productsList.findIndex((product) => product.id === action.payload);
+      if (state.productsList[index].count > 1) {
+        state.productsList[index].count--;
+      } else {
+        state.productsList.splice(index, 1);
+      }
+      state.totalCount--;
+    },
     removeProductFromCart: (state, action) => {
-      const productId = action.payload;
-      state.totalCount -= 1;
-      state.productsList = state.productsList.filter((product) => product.id !== productId);
+      const index = state.productsList.findIndex((product) => product.id === action.payload);
+      state.totalCount -= state.productsList[index].count;
+      state.productsList.splice(index, 1);
     },
   },
 });
 
-export const { addProductToCart, removeProductFromCart } = cartSlice.actions;
+export const { addProductToCart, minusProductFromCart, removeProductFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
