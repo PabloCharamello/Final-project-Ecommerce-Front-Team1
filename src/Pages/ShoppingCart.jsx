@@ -82,7 +82,7 @@ export default function ShoppingCart() {
               name: data.name,
               price: data.price,
               image: data.images[0],
-              count: 1,
+              count: productInCart.count,
             },
           ]);
         });
