@@ -153,6 +153,19 @@
     transform: translate(250px, 60px);
   }
 }
+
+/*ICONS*/
+
+.weOfferDiv {
+  place-items: center;
+  width: 150px;
+}
+
+.weOffer {
+  width: 50px;
+  margin: 0px 60px 10px 50px;
+}
+
 /*CATEGORIES*/
 
 .ourCategories {
@@ -225,7 +238,7 @@
 }
 
 .titleFirsSeparator {
-  right: 39.5%;
+  right: 4%;
   margin-top: 120px;
   position: absolute;
   z-index: 3;
