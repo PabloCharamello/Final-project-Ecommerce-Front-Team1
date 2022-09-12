@@ -4,8 +4,44 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProductToCart } from "../redux/cart/cartSlice";
+
+const priceFormatter = new Intl.NumberFormat("en", {
+  style: "currency",
+  currency: "USD",
+  currencyDisplay: "code",
+  maximumFractionDigits: 0,
+});
 
 export default function Category() {
+  const dispatch = useDispatch();
+  const params = useParams();
+  const productId = params.id;
+  const [product, setProduct] = useState(null);
+
+  const getProductFromApi = async () => {
+    const response = await axios({
+      url: "/products/" + productId,
+      method: "GET",
+    });
+    setProduct(response.data);
+  };
+
+  // eslint-disable-next-line
+  useEffect(() => getProductFromApi, [productId]);
+
+  if (!product) {
+    return <>Loading...</>;
+  }
+
+  const handleAddToCart = () => {
+    dispatch(addProductToCart(productId));
+  };
+
   return (
     <>
       <Navbar />
@@ -25,7 +61,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -42,7 +85,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -59,7 +109,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -76,7 +133,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -93,7 +157,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -110,7 +181,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -127,7 +205,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -144,7 +229,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -161,7 +253,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>
@@ -178,7 +277,14 @@ export default function Category() {
             </Link>
             <h2 className="text-start fs-4">PRADO</h2>
             <span className="fst-italic fs-6 mb-2">USD 10,585</span>
-            <Button variant="outline-dark" size="sm" className="float-lg-end rounded-pill mb-5">
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="float-lg-end rounded-pill mb-5"
+              onClick={() => {
+                handleAddToCart();
+              }}
+            >
               ADD TO CART
             </Button>
           </Col>

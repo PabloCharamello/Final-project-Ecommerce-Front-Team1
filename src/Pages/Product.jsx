@@ -5,6 +5,8 @@ import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProductToCart } from "../redux/cart/cartSlice";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -14,6 +16,7 @@ const priceFormatter = new Intl.NumberFormat("en", {
 });
 
 export default function Home() {
+  const dispatch = useDispatch();
   const params = useParams();
   const productId = params.id;
   const [product, setProduct] = useState(null);
@@ -32,7 +35,10 @@ export default function Home() {
   if (!product) {
     return <>Loading...</>;
   }
-  console.log(product);
+
+  const handleAddToCart = () => {
+    dispatch(addProductToCart(productId));
+  };
 
   return (
     <>
@@ -50,7 +56,12 @@ export default function Home() {
               </h1>
               <p className="text-center text-lg-end">{product["short-description"]}</p>
             </div>
-            <Button variant="outline-dark" size="lg" className="rounded-pill px-5">
+            <Button
+              variant="outline-dark"
+              size="lg"
+              className="rounded-pill px-5"
+              onClick={handleAddToCart}
+            >
               Add to cart
             </Button>
           </Col>
