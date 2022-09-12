@@ -139,7 +139,6 @@ export default function Home() {
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc681ee04/images/productsets/1583359.jpg?sw=2000&sh=1125"
-                // "https://images.ligne-roset.com/cache/models/2447/iambiance1/1/0/10004b_2000x2000.jpg"
               />
             </Link>
             <p className={style.beds}>Sofas</p>
@@ -169,7 +168,6 @@ export default function Home() {
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/2570/iambiance1/1/0/100200_c01_1848x1848.jpg"
-                // "https://images.ligne-roset.com/cache/models/2748/iambiance1/1/0/1007dz_c01_600x600.jpg"
               />
             </Link>
             <p className={style.beds}>Office</p>
