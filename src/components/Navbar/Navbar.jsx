@@ -6,9 +6,24 @@ import UserNavbar from "../UserNavbar/UserNavbar";
 import CartPopup from "../CartPopup/CartPopup";
 import { useSelector } from "react-redux";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 function BasicExample() {
   const user = useSelector((state) => state.user);
+  const [categories, setCategories] = useState(null);
+
+  const getCategoriesFromApi = async () => {
+    const response = await axios({
+      url: "/categories/",
+      method: "GET",
+    });
+    setCategories(response.data);
+  };
+
+  // eslint-disable-next-line
+  useEffect(() => getCategoriesFromApi, []);
 
   return (
     <Navbar bg="light" sticky="top" expand="lg" className="px-lg-5">
@@ -24,24 +39,14 @@ function BasicExample() {
               HOME
             </Nav.Link>
             <NavDropdown title="CATEGORIES">
-              <NavDropdown.Item as={Link} to="/category/1">
-                Sofa chairs
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/1">
-                Tables
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/1">
-                Sofas
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/1">
-                Beds
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/1">
-                Lighting
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/category/1">
-                Office
-              </NavDropdown.Item>
+              {categories &&
+                categories.map((category) => {
+                  return (
+                    <NavDropdown.Item key={category.id} as={Link} to={"/category/" + category.id}>
+                      {category.name}
+                    </NavDropdown.Item>
+                  );
+                })}
             </NavDropdown>
             <Nav.Link as={Link} to="#" disabled>
               OUR PROJECT

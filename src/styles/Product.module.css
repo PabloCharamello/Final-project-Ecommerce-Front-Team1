@@ -12,14 +12,14 @@
   height: 630px;
   width: 100%;
   object-fit: cover;
-  object-position: center -200px;
+  /* object-position: center -200px; */
   background-color: #F5F5F5;
 }
 
 .imageLanding {
   width: 100%;
   object-fit: cover;
-  object-position: center -100px;
+  /* object-position: center -100px; */
 }
 
 @media only screen and (max-width: 992px) {
