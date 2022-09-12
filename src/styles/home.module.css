@@ -238,14 +238,6 @@
 
 .divSeparatorCategories {
   width: 100%;
-  position: relative;
-}
-
-.divTitleSeparatorCategory {
-  justify-content: center;
-
-  margin-top: 30%;
-  width: 50px;
 }
 
 .titleFirsSeparator {
