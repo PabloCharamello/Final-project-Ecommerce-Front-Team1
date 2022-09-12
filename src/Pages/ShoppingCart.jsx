@@ -88,6 +88,7 @@ export default function ShoppingCart() {
         });
       }
     });
+    // eslint-disable-next-line
   }, [cart]);
   return (
     <>
