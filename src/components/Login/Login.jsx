@@ -3,6 +3,7 @@ import { useState } from "react";
 import { OverlayTrigger, Popover, Form, Button } from "react-bootstrap";
 import { BiUser } from "react-icons/bi";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { setUser } from "../../redux/user/userSlice";
 import style from "./Login.module.css";
 
@@ -53,6 +54,9 @@ export default function Login() {
                 />
                 <label htmlFor="floatingPassword">Password</label>
               </Form.Floating>
+              <Link to="/register" className="text-decoration-none">
+                Don't have an account yet? Sign up!
+              </Link>
               <Button type="submit" variant="dark" className="mt-3 px-5">
                 Log in
               </Button>
