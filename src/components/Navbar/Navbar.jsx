@@ -2,18 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
 import Login from "../Login/Login";
+import UserNavbar from "../UserNavbar/UserNavbar";
 import CartPopup from "../CartPopup/CartPopup";
-import { useSelector, useDispatch } from "react-redux";
-import { unsetUser } from "../../redux/user/userSlice";
+import { useSelector } from "react-redux";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 function BasicExample() {
-  const dispatch = useDispatch();
-  const { username } = useSelector((state) => state.user);
-
-  const handleLogout = () => {
-    dispatch(unsetUser());
-  };
+  const user = useSelector((state) => state.user);
 
   return (
     <Navbar bg="light" sticky="top" expand="lg" className="px-lg-5">
@@ -54,7 +49,7 @@ function BasicExample() {
           </Nav>
           <div className="d-flex justify-content-center">
             <CartPopup />
-            <Login />
+            {user.token ? <UserNavbar /> : <Login />}
           </div>
         </Navbar.Collapse>
       </Container>
