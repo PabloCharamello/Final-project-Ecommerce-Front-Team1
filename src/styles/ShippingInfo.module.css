@@ -10,7 +10,7 @@
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 6.35rem;
   padding: 30px;
   border: 0.5px solid rgba(87, 85, 85, 0.616);
   border-radius: 2px;
@@ -41,10 +41,4 @@ input[type]:focus {
   border-color: #000000 !important;
 
   outline: 0 none !important;
-}
-
-select,
-option {
-  color: rgb(0, 0, 0);
-  background-color: rgb(253, 253, 253);
 }

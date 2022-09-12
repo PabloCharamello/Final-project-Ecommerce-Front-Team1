@@ -1,3 +1,14 @@
+<<<<<<< HEAD:src/styles/home.module.css
+=======
+/* @font-face {
+  font-family: MoonDance;
+  src: url(MoonDance.ttf);
+} */
+@import url("http://fonts.cdnfonts.com/css/episode-i");
+@import url("http://fonts.cdnfonts.com/css/amoitar");
+@import url("http://fonts.cdnfonts.com/css/switzer");
+
+>>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rubik+Marker+Hatch&display=swap");
 
@@ -20,8 +31,8 @@
   animation-duration: 3s;
   animation-play-state: running, paused, paused;
   animation-fill-mode: forwards;
-  transition: all 2s;
   margin-bottom: 3rem;
+  transition: all 2s;
 }
 
 @keyframes fadeHeroImg {
@@ -174,16 +185,6 @@
   color: rgb(109, 109, 109);
 }
 
-/* .categoryCards {
-  width: 450px;
-  height: 320px;
-} */
-/* 
-.cardsContainer {
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 .categoryCardsImg {
   width: 100%;
   height: 300px;
@@ -193,6 +194,7 @@
   object-fit: cover;
   box-shadow: 0 0 8px 1px rgba(46, 46, 46, 0.106);
   transition: 0.25s ease-in-out;
+  filter: saturate(1.2);
 }
 
 .categoryCardsImg:hover {
@@ -202,11 +204,20 @@
 
 .beds {
   position: relative;
+<<<<<<< HEAD:src/styles/home.module.css
+=======
+  /* bottom: 30px; */
+  font-family: "Switzer", sans-serif;
+>>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
   margin-top: 5px;
   font-size: 1.5rem;
   color: rgb(135, 135, 135);
   z-index: 1;
+<<<<<<< HEAD:src/styles/home.module.css
   font-style: italic;
+=======
+  font-weight: 500;
+>>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,8 +229,6 @@
   box-sizing: border-box;
   height: 300px;
   width: 100%;
-  margin-bottom: 00px;
-  margin-top: 80px;
 }
 
 .underHeroImg {
@@ -227,48 +236,76 @@
   width: 100%;
   opacity: 80%;
   object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(70%);
+  /* filter: sepia(); */
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.452);
 }
 
 .divSeparatorCategories {
   width: 100%;
 }
 
-.titleFirsSeparator {
+.titleFirstSeparator {
   position: relative;
   top: 190px;
-  /* margin-right: 55.5%;
-  margin-left: 44.5%;
-  margin-top: 25px; */
   line-height: 80px;
   font-size: 3rem;
-  z-index: 3;
+  z-index: 4;
   font-weight: 600;
   color: #ffffff;
   transform-origin: center;
 }
 
 .tableSection {
-  height: 600px;
+  margin: 150px 40px;
+  height: 500px;
+  min-width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
   padding: 0;
-  width: 100vw;
+  width: 15vw;
+  box-shadow: 0 0 10px 4px rgba(71, 71, 71, 0.288);
 }
 
 .TableSectionImg {
-  height: 600px;
-  width: 50%;
+  position: relative;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  border-radius: 3px;
+  top: -88px;
+  /* filter: blur(1.5px); */
+  /* filter: grayscale(1); */
+  filter: saturate(1);
+  filter: brightness(90%);
+}
+
+.divCardsStylesTitles {
+  position: relative;
+  top: 190px;
+  line-height: 80px;
+  font-size: 3rem;
+  z-index: 4;
+  font-weight: 600;
+  color: #ffffff;
+  transform-origin: center;
+  text-shadow: 2px 5px 7px rgba(0, 0, 0, 0.342);
+}
+
+.CardsStylesTitles {
+  line-height: 80px;
+  font-family: "Amoitar", sans-serif;
+  font-size: 2.3rem;
+  font-weight: -100;
+  z-index: 4;
+  color: #ffffff;
+  transform-origin: center;
+  text-shadow: 1px 1px 5px rgba(31, 31, 31, 0.719);
 }
 
 .ShowSmallTableImg {
   width: 40%;
-}
-
-.ShowBigTableImg {
-  margin-top: 60px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .colLeftTable {

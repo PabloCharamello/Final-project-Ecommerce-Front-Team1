@@ -66,7 +66,7 @@ export default function Home() {
                 <img src={garanty} className={style.weOffer} alt="" />
               </div>
               <div className={style.weOfferDiv}>
-                <p>All our products have a 5-year guarantee.</p>
+                <p>All our products have a 5-year guarantee</p>
               </div>
             </div>
           </Col>
@@ -176,7 +176,7 @@ export default function Home() {
       </div>
       <div className={style.divSeparatorCategories}>
         <div className={style.divTitleSeparatorCategory}>
-          <h2 className={style.titleFirsSeparator}>Design-forward lifestyle</h2>
+          <h2 className={style.titleFirstSeparator}>Design-forward lifestyle</h2>
         </div>
         <Image
           className={style.underHeroImg}
@@ -184,10 +184,47 @@ export default function Home() {
         />
       </div>
       <section>
-        <Image
-          className={style.TableSectionImg}
-          src="https://porustudio.com/wp-content/uploads/dickson-center-table-4.jpg.webp"
-        />
+        <div className="container">
+          <div className="row">
+            <Col lg={3} className={style.tableSection}>
+              <div className={style.divCardsStylesTitles}>
+                <h2 className={style.CardsStylesTitles}>Rustic</h2>
+              </div>
+              <Image
+                className={style.TableSectionImg}
+                src="https://c1.wallpaperflare.com/preview/793/775/760/vintage-interior-home-old.jpg"
+              />
+            </Col>
+
+            <Col lg={3} className={style.tableSection}>
+              <div className={style.divCardsStylesTitles}>
+                <h2 className={style.CardsStylesTitles}>Colorful</h2>
+              </div>
+              <Image
+                className={style.TableSectionImg}
+                src="https://c4.wallpaperflare.com/wallpaper/917/933/286/design-style-room-interior-wallpaper-preview.jpg"
+              />
+            </Col>
+            <Col lg={3} className={style.tableSection}>
+              <div className={style.divCardsStylesTitles}>
+                <h2 className={style.CardsStylesTitles}>Modern</h2>
+              </div>
+              <Image
+                className={style.TableSectionImg}
+                src="https://c1.wallpaperflare.com/preview/1002/272/31/architecture-building.jpg"
+              />
+            </Col>
+            <Col lg={3} className={style.tableSection}>
+              <div className={style.divCardsStylesTitles}>
+                <h2 className={style.CardsStylesTitles}>Minimalist</h2>
+              </div>
+              <Image
+                className={style.TableSectionImg}
+                src="https://c0.wallpaperflare.com/preview/243/242/451/bed-bedroom-clean-clouds.jpg"
+              />
+            </Col>
+          </div>
+        </div>
       </section>
 
       <Footer />
