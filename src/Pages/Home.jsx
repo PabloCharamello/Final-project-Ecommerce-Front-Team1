@@ -29,60 +29,95 @@ export default function Home() {
           <p className={style.yourDreams}>tus sueños</p> */}
         </Col>
       </Row>
-      <Row>
-        <Col className="d-flex flex-direction-row justify-content-center align-items-center">
-          <div className="d-flex flex-column justify-content-center">
-            <div>
-              <img src={sendingAllWorld} className={style.weOffer} alt="" />
+      <div className="container">
+        <Row className="">
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center rowServicesIcons"
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <div>
+                <img src={sendingAllWorld} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>We do shipping to all the world</p>
+              </div>
             </div>
-            <div className={style.weOfferDiv}>
-              <p>We do shipping to all the world</p>
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center rowServicesIcons"
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <div>
+                <img src={customerService} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>We have Customer Service</p>
+              </div>
             </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center">
-            <div>
-              <img src={customerService} className={style.weOffer} alt="" />
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center"
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <div className="mt-4">
+                <img src={garanty} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>All our products have a 5-year guarantee.</p>
+              </div>
             </div>
-            <div className={style.weOfferDiv}>
-              <p>We have Customer Service</p>
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center rowServicesIcons"
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <div>
+                <img src={contactUs} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>Contact us 24 hours every day</p>
+              </div>
             </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center">
-            <div className="mt-4">
-              <img src={garanty} className={style.weOffer} alt="" />
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center"
+          >
+            <div className="d-flex flex-column justify-content-center mt-5">
+              <div>
+                <img src={weColaborate} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>With each purchase you collaborate with associated foundations</p>
+              </div>
             </div>
-            <div className={style.weOfferDiv}>
-              <p>All our products have a 5-year guarantee.</p>
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-center rowServicesIcons"
+          >
+            <div className="d-flex flex-column justify-content-center">
+              <div>
+                <img src={securePayment} className={style.weOffer} alt="" />
+              </div>
+              <div className={style.weOfferDiv}>
+                <p>Your purchases are always protected</p>
+              </div>
             </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center">
-            <div>
-              <img src={contactUs} className={style.weOffer} alt="" />
-            </div>
-            <div className={style.weOfferDiv}>
-              <p>Contact us 24 hours every day</p>
-            </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center mt-5">
-            <div>
-              <img src={weColaborate} className={style.weOffer} alt="" />
-            </div>
-            <div className={style.weOfferDiv}>
-              <p>With each purchase you collaborate with associated foundations</p>
-            </div>
-          </div>
-          <div className="d-flex flex-column justify-content-center">
-            <div>
-              <img src={securePayment} className={style.weOffer} alt="" />
-            </div>
-            <div className={style.weOfferDiv}>
-              <p>Your purchases are always protected</p>
-            </div>
-          </div>
-        </Col>
-      </Row>
-
-      <div className="container-lg grandContainer my-5">
+          </Col>
+        </Row>
+      </div>
+      <div className="container-lg grandContainer m-auto my-5">
         <Row className={style.cardsContainer}>
           <Col lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/1">
@@ -143,7 +178,9 @@ export default function Home() {
         </Row>
       </div>
       <div className={style.divSeparatorCategories}>
-        <h2 className={style.titleFirsSeparator}>Design-forward lifestyle</h2>
+        <div className={style.divTitleSeparatorCategory}>
+          <h2 className={style.titleFirsSeparator}>Design-forward lifestyle</h2>
+        </div>
         <Image
           className={style.underHeroImg}
           src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
