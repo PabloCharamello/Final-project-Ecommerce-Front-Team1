@@ -28,7 +28,7 @@ export default function CartPopup() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    cart.productsList.map((productInCart) => {
+    cart.productsList.forEach((productInCart) => {
       const index = productList.findIndex((product) => product.id === productInCart.id);
       if (index !== -1) {
         setProductList(
@@ -37,7 +37,7 @@ export default function CartPopup() {
               ? item
               : {
                   ...item,
-                  count: item.count + 1,
+                  count: productInCart.count,
                 };
           }),
         );
@@ -58,6 +58,7 @@ export default function CartPopup() {
         });
       }
     });
+    // eslint-disable-next-line
   }, [cart]);
 
   return (

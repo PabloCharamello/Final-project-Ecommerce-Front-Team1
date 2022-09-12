@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {};
 
@@ -7,8 +7,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      delete state.userId;
-      delete state.token;
       state.userId = action.payload.id;
       state.token = action.payload.token;
     },

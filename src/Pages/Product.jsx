@@ -47,12 +47,12 @@ export default function Home() {
         <Row className={`g-0`}>
           <Col
             lg={6}
-            className={`${style.landing} d-flex flex-column justify-content-center align-items-center align-items-lg-end p-0 order-1`}
+            className={`${style.landing} d-flex flex-column justify-content-center align-items-center align-items-lg-end p-0 order-1 pe-lg-5`}
           >
             <div className="w-75">
               <h1 className="text-center text-lg-end">
                 <span className="text-uppercase">{product.name}</span>{" "}
-                <span className="fw-light fst-italic">by Christian Werner</span>
+                <span className="fw-light fst-italic">by {product.designer}</span>
               </h1>
               <p className="text-center text-lg-end">{product["short-description"]}</p>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
             className={`${style.rowSec} d-flex flex-column justify-content-center align-items-start p-0 order-5 order-lg-last`}
           >
             <div className="d-flex flex-column w-50 mx-5">
-              <h2 className="text-start fs-4">Comfort and aesthetic</h2>
+              <h2 className="text-start fs-4">Technical specifications:</h2>
               <p className="text-start fw-light">{product.details}</p>
             </div>
           </Col>

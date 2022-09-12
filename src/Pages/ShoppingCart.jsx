@@ -57,14 +57,14 @@ export default function ShoppingCart() {
     for (let i = 0; i < cartLength; i++) {
       if (!isInCart(productList[i].id)) {
         setProductList((p) => p.filter((product) => product.id !== productList[i].id));
-        cartLength--;
+        cartLength -= 1;
       }
     }
     cart.productsList.forEach((productInCart) => {
       const index = productList.findIndex((product) => product.id === productInCart.id);
       if (index !== -1) {
-        setProductList(
-          productList.map((item) => {
+        setProductList((prevProductList) =>
+          prevProductList.map((item) => {
             return item.id !== productInCart.id
               ? item
               : {
@@ -75,8 +75,8 @@ export default function ShoppingCart() {
         );
       } else {
         getProductFromApi(productInCart.id).then((data) => {
-          setProductList([
-            ...productList,
+          setProductList((prevProductList) => [
+            ...prevProductList,
             {
               id: productInCart.id,
               name: data.name,
@@ -88,7 +88,6 @@ export default function ShoppingCart() {
         });
       }
     });
-    // eslint-disable-next-line
   }, [cart]);
   return (
     <>
@@ -108,13 +107,9 @@ export default function ShoppingCart() {
                       className={`fs-4 cursor-pointer`}
                       onClick={() => handleRemoveFromCart(product.id)}
                     />
-                    <Image
-                      fluid
-                      className={style.productImage}
-                      src="https://images.ligne-roset.com/cache/products/3401/3d-views/1/1/11370600_6577_vue1_1500x1500.jpg"
-                    />
+                    <Image fluid className={style.productImage} src={product.image} />
 
-                    <span className="fw-bold text-black">PRADO </span>
+                    <span className="fw-bold text-black">{product.name}</span>
                     <span className="fw-light fst-italic">
                       {priceFormatter.format(parseInt(product.price))}
                     </span>

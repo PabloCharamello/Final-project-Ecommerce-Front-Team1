@@ -27,7 +27,7 @@ export default function Register() {
       return setError("There is an empty field!");
     }
     try {
-      const apiCall = await axios({
+      await axios({
         url: "users/",
         method: "POST",
         data: {
@@ -47,7 +47,7 @@ export default function Register() {
           password,
         },
       });
-      dispatch(setUser(apiCall.data));
+      dispatch(setUser(login.data));
     } catch (error) {
       setError(error.response.data.error);
     }
