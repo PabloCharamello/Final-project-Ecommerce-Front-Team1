@@ -1,10 +1,6 @@
-/* @font-face {
-  font-family: MoonDance;
-  src: url(MoonDance.ttf);
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rubik+Marker+Hatch&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -58,7 +54,6 @@
   animation-play-state: running, paused, paused;
   animation-fill-mode: forwards;
   transition: all 2s ease-in-out;
-  /* animation-delay: 0.3s; */
 }
 
 @keyframes textTraslate {
@@ -153,6 +148,7 @@
     transform: translate(250px, 60px);
   }
 }
+
 /*CATEGORIES*/
 
 .ourCategories {
@@ -189,13 +185,10 @@
 
 .beds {
   position: relative;
-  /* bottom: 30px; */
   margin-top: 5px;
   font-size: 1.5rem;
-  /* font-family: Nothing You Could Do; */
   color: rgb(135, 135, 135);
   z-index: 1;
-  /* font-weight: 700; */
   font-style: italic;
   display: flex;
   justify-content: center;

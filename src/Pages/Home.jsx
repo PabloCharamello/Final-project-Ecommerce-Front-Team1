@@ -18,9 +18,6 @@ export default function Home() {
             src="https://images.ligne-roset.com/cache/products/3400/panorama/p/r/prado_pano_1864x900.jpg"
             alt="presentation image"
           />
-          {/* <p className={style.elegantDesign}>Diseños elegantes</p>
-          <p className={style.mekeItHappend}>Hacemos realidad</p>
-          <p className={style.yourDreams}>tus sueños</p> */}
         </Col>
       </Row>
 
