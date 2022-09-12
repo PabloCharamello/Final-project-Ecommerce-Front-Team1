@@ -44,13 +44,6 @@ export default function ShippingInfo() {
                   placeholder="Enter your lastname"
                 />
               </div>
-              <Form.Label className=" mb-0">Select document type</Form.Label>
-              <Form.Select className="mb-0 mt-1 placeholder-wave registerForm fomrOption">
-                <option>Select document type</option>
-                <option>Passport </option>
-                <option>CI</option>
-                <option>DNI</option>
-              </Form.Select>
               <Form.Label className="mt-1 mb-0" htmlFor="adress1">
                 Adress 1:
               </Form.Label>

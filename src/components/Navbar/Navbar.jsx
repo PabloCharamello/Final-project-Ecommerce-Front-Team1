@@ -18,9 +18,10 @@ function BasicExample() {
   return (
     <Navbar bg="light" sticky="top" expand="lg" className="px-lg-5">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="fw-bold ">
+        <Navbar.Brand as={Link} to="/" className={style.logoNavbar}>
           Hack Design
         </Navbar.Brand>
+        <img src="../../assets/img/logo.png" alt="" />
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mx-auto my-2 my-lg-0 justify-content-center">
