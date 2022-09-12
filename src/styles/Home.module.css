@@ -1,14 +1,6 @@
-<<<<<<< HEAD:src/styles/home.module.css
-=======
-/* @font-face {
-  font-family: MoonDance;
-  src: url(MoonDance.ttf);
-} */
 @import url("http://fonts.cdnfonts.com/css/episode-i");
 @import url("http://fonts.cdnfonts.com/css/amoitar");
 @import url("http://fonts.cdnfonts.com/css/switzer");
-
->>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
 @import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rubik+Marker+Hatch&display=swap");
 
@@ -204,20 +196,12 @@
 
 .beds {
   position: relative;
-<<<<<<< HEAD:src/styles/home.module.css
-=======
-  /* bottom: 30px; */
   font-family: "Switzer", sans-serif;
->>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
   margin-top: 5px;
   font-size: 1.5rem;
   color: rgb(135, 135, 135);
   z-index: 1;
-<<<<<<< HEAD:src/styles/home.module.css
-  font-style: italic;
-=======
   font-weight: 500;
->>>>>>> 9ec756df5a1e2a90f359ac1b85199c26aef4ea77:src/styles/Home.module.css
   display: flex;
   justify-content: center;
   align-items: center;
