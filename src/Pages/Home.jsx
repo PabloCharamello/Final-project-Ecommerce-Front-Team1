@@ -21,7 +21,7 @@ export default function Home() {
           <Image
             fluid
             className={style.heroImg}
-            src="https://images.ligne-roset.com/cache/products/3400/panorama/p/r/prado_pano_1864x900.jpg"
+            src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw46f7c3f9/images/productsets/1544033.jpg?sw=2000"
             alt="presentation image"
           />
         </Col>
@@ -123,7 +123,7 @@ export default function Home() {
                 src="https://images.ligne-roset.com/cache/models/2676/iambiance1/1/0/1005ki_1848x1848.jpg"
               />
             </Link>
-            <p className={style.beds}>Sofa chairs</p>
+            <p className={style.beds}>Chairs</p>
           </Col>
           <Col lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/1">
@@ -138,7 +138,8 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/1">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2447/iambiance1/1/0/10004b_2000x2000.jpg"
+                src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc681ee04/images/productsets/1583359.jpg?sw=2000&sh=1125"
+                // "https://images.ligne-roset.com/cache/models/2447/iambiance1/1/0/10004b_2000x2000.jpg"
               />
             </Link>
             <p className={style.beds}>Sofas</p>
@@ -167,7 +168,8 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/1">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2748/iambiance1/1/0/1007dz_c01_600x600.jpg"
+                src="https://images.ligne-roset.com/cache/models/2570/iambiance1/1/0/100200_c01_1848x1848.jpg"
+                // "https://images.ligne-roset.com/cache/models/2748/iambiance1/1/0/1007dz_c01_600x600.jpg"
               />
             </Link>
             <p className={style.beds}>Office</p>
