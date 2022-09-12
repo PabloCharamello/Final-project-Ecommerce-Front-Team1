@@ -38,8 +38,8 @@ export default function Category() {
     return <p>Loading...</p>;
   }
 
-  const handleAddToCart = (id) => {
-    dispatch(addProductToCart(id));
+  const handleAddToCart = (product) => {
+    dispatch(addProductToCart({ ...product, count: 1 }));
   };
 
   return (
@@ -65,7 +65,7 @@ export default function Category() {
                   size="sm"
                   className="float-lg-end rounded-pill mb-5"
                   onClick={() => {
-                    handleAddToCart(product.id);
+                    handleAddToCart(product);
                   }}
                 >
                   ADD TO CART

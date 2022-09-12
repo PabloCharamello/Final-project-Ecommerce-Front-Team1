@@ -1,20 +1,10 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { OverlayTrigger, Popover, Image, Button } from "react-bootstrap";
 import { BiShoppingBag } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeProductFromCart } from "../../redux/cart/cartSlice";
 import style from "./CartPopup.module.css";
-
-const getProductFromApi = async (id) => {
-  const response = await axios({
-    url: "/products/" + id,
-    method: "GET",
-  });
-  const data = await response.data;
-  return data;
-};
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -24,42 +14,11 @@ const priceFormatter = new Intl.NumberFormat("en", {
 
 export default function CartPopup() {
   const cart = useSelector((state) => state.cart);
-  const [productList, setProductList] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    cart.productsList.forEach((productInCart) => {
-      const index = productList.findIndex((product) => product.id === productInCart.id);
-      if (index !== -1) {
-        setProductList(
-          productList.map((item) => {
-            return item.id !== productInCart.id
-              ? item
-              : {
-                  ...item,
-                  count: productInCart.count,
-                };
-          }),
-        );
-        setTotalPrice((total) => total + parseInt(productList[index].price));
-      } else {
-        getProductFromApi(productInCart.id).then((data) => {
-          setProductList([
-            ...productList,
-            {
-              id: productInCart.id,
-              name: data.name,
-              price: data.price,
-              image: data.images[0],
-              count: 1,
-            },
-          ]);
-          setTotalPrice((total) => total + parseInt(data.price));
-        });
-      }
-    });
-    // eslint-disable-next-line
-  }, [cart]);
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeProductFromCart(id));
+  };
 
   return (
     <OverlayTrigger
@@ -71,13 +30,13 @@ export default function CartPopup() {
           <Popover.Body>
             <div className="d-flex flex-column align-items-center">
               <div>
-                {productList.map((product) => {
+                {cart.productsList.map((product) => {
                   return (
                     <div
                       key={product.id}
                       className={`d-flex justify-content-between align-items-center mt-2 pb-2 border-bottom`}
                     >
-                      <Image fluid className={style.productImage} src={product.image} />
+                      <Image fluid className={style.productImage} src={product.images[0]} />
                       <div className="d-flex flex-column mx-3">
                         <span className="fw-bold text-black">{product.name}</span>
                         <div>
@@ -87,12 +46,15 @@ export default function CartPopup() {
                           <span className="fw-light fst-italic">x{product.count}</span>
                         </div>
                       </div>
-                      <IoClose className={`fs-4`} />
+                      <IoClose
+                        className={`fs-4 cursor-pointer`}
+                        onClick={() => handleRemoveFromCart(product.id)}
+                      />
                     </div>
                   );
                 })}
               </div>
-              <span className="fs-5 mt-2">{priceFormatter.format(parseInt(totalPrice))}</span>
+              <span className="fs-5 mt-2">{priceFormatter.format(parseInt(31755))}</span>
               <Button
                 to="/cart"
                 as={Link}

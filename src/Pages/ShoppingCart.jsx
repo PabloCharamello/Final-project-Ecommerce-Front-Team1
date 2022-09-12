@@ -4,8 +4,6 @@ import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import style from "../styles/ShoppingCart.module.css";
 import { IoCaretForward, IoCaretBack, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addProductToCart,
@@ -16,19 +14,9 @@ import {
 export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [productList, setProductList] = useState([]);
 
-  const getProductFromApi = async (id) => {
-    const response = await axios({
-      url: "/products/" + id,
-      method: "GET",
-    });
-    const data = await response.data;
-    return data;
-  };
-
-  const handleAddToCart = (id) => {
-    dispatch(addProductToCart(id));
+  const handleAddToCart = (product) => {
+    dispatch(addProductToCart(product));
   };
 
   const handleMinusFromCart = (id) => {
@@ -44,52 +32,6 @@ export default function ShoppingCart() {
     currency: "USD",
     maximumFractionDigits: 0,
   });
-
-  useEffect(() => {
-    const isInCart = (id) => {
-      for (let i = 0; i < cart.productsList.length; i++) {
-        if (cart.productsList[i].id === id) {
-          return true;
-        }
-      }
-    };
-    let cartLength = productList.length;
-    for (let i = 0; i < cartLength; i++) {
-      if (!isInCart(productList[i].id)) {
-        setProductList((p) => p.filter((product) => product.id !== productList[i].id));
-        cartLength -= 1;
-      }
-    }
-    cart.productsList.forEach((productInCart) => {
-      const index = productList.findIndex((product) => product.id === productInCart.id);
-      if (index !== -1) {
-        setProductList((prevProductList) =>
-          prevProductList.map((item) => {
-            return item.id !== productInCart.id
-              ? item
-              : {
-                  ...item,
-                  count: productInCart.count,
-                };
-          }),
-        );
-      } else {
-        getProductFromApi(productInCart.id).then((data) => {
-          setProductList((prevProductList) => [
-            ...prevProductList,
-            {
-              id: productInCart.id,
-              name: data.name,
-              price: data.price,
-              image: data.images[0],
-              count: productInCart.count,
-            },
-          ]);
-        });
-      }
-    });
-    // eslint-disable-next-line
-  }, [cart]);
   return (
     <>
       <Navbar />
@@ -97,7 +39,7 @@ export default function ShoppingCart() {
         <Row className="mb-5">
           <h1 className="fw-3 mb-3">SHOPPING CART</h1>
           <Col lg={8} className="pe-5">
-            {productList.map((product) => {
+            {cart.productsList.map((product) => {
               return (
                 <div key={product.id}>
                   <div
@@ -108,7 +50,7 @@ export default function ShoppingCart() {
                       className={`fs-4 cursor-pointer`}
                       onClick={() => handleRemoveFromCart(product.id)}
                     />
-                    <Image fluid className={style.productImage} src={product.image} />
+                    <Image fluid className={style.productImage} src={product.images[0]} />
 
                     <span className="fw-bold text-black">{product.name}</span>
                     <span className="fw-light fst-italic">
@@ -129,7 +71,7 @@ export default function ShoppingCart() {
                         role="button"
                         className="fs-3 mx-2 opacity-50"
                         onClick={() => {
-                          handleAddToCart(product.id);
+                          handleAddToCart(product);
                         }}
                       />
                     </div>
