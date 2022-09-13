@@ -1,9 +1,87 @@
+@import url("http://fonts.cdnfonts.com/css/amoitar");
+
 .footer {
-  background-color: rgb(24, 24, 24);
-  color: white;
-  padding-bottom: 2rem;
+  color: rgb(83, 83, 83);
+  /* background-color: #606060; */
+}
+
+.hackDesignParagraph {
+  text-align: left;
+  margin-left: 25px;
 }
 
 .footerLink {
-  font-size: .8rem;
+  margin-top: 150px;
+  font-size: 0.8rem;
+  text-align: left;
+  margin-left: 120px;
+}
+
+.footerLinkAbout {
+  margin-top: 150px;
+  font-size: 0.8rem;
+  font-weight: 200;
+  font-weight: 400;
+}
+
+.footerLinksContact {
+  margin-top: 150px;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.footerLinkSocialNet {
+  margin-top: 150px;
+  font-size: 0.8rem;
+  text-align: left;
+  font-weight: 400;
+  margin-left: 58px;
+}
+
+.containerEmpty {
+  height: 20px;
+}
+
+.footerContainer {
+  position: relative;
+  bottom: -140px;
+  background-color: #0c0c0c;
+  border-radius: 15%;
+}
+
+.hackDesignFooter {
+  font-family: "Amoitar", sans-serif;
+  color: white;
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
+.footerTitles {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 65px;
+  font-weight: 700;
+}
+
+.allRightsReserved {
+  position: relative;
+  bottom: -120px;
+  background-color: #0c0c0c;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+
+.spacer {
+  aspect-ratio: 1200/350;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.layer1 {
+  background-image: url("../../assets/svg/layer1.svg");
+  height: 550px;
+  padding-top: 100px;
+  bottom: 0;
 }
