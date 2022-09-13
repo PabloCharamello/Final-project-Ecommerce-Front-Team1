@@ -23,16 +23,18 @@ export default function Category() {
   const categoryId = params.id;
   const [category, setCategory] = useState(null);
 
-  const getCategoryFromApi = async () => {
+  const getCategoryFromApi = async (id) => {
     const response = await axios({
-      url: "/categories/" + categoryId,
+      url: "/categories/" + id,
       method: "GET",
     });
     setCategory(response.data);
   };
 
   // eslint-disable-next-line
-  useEffect(() => getCategoryFromApi, [categoryId]);
+  useEffect(() => {
+    getCategoryFromApi(categoryId);
+  }, [categoryId]);
 
   if (!category) {
     return <p>Loading...</p>;
