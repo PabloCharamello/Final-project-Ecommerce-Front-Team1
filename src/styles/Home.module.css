@@ -152,7 +152,6 @@
   }
 }
 
-
 /*ICONS*/
 
 .rowServicesIcons {
@@ -168,7 +167,6 @@
   width: 50px;
   opacity: 50%;
 }
-
 
 /*CATEGORIES*/
 
@@ -228,6 +226,7 @@
 
 .divSeparatorCategories {
   width: 100%;
+  margin-bottom: 120px;
 }
 
 .titleFirstSeparator {
