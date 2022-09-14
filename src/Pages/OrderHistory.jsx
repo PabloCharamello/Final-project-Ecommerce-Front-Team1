@@ -25,7 +25,6 @@ export default function OrderHistory() {
   if (!orders) {
     return <>Loading...</>;
   }
-  console.log(orders[0]["product-list"]);
 
   return (
     <>
