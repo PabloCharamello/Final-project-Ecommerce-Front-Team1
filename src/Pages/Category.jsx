@@ -20,12 +20,12 @@ const priceFormatter = new Intl.NumberFormat("en", {
 export default function Category() {
   const dispatch = useDispatch();
   const params = useParams();
-  const categoryId = params.id;
+  const categorySlug = params.slug;
   const [category, setCategory] = useState(null);
 
-  const getCategoryFromApi = async (id) => {
+  const getCategoryFromApi = async (slug) => {
     const response = await axios({
-      url: "/categories/" + id,
+      url: "/categories/" + slug,
       method: "GET",
     });
     setCategory(response.data);
@@ -33,8 +33,8 @@ export default function Category() {
 
   // eslint-disable-next-line
   useEffect(() => {
-    getCategoryFromApi(categoryId);
-  }, [categoryId]);
+    getCategoryFromApi(categorySlug);
+  }, [categorySlug]);
 
   if (!category) {
     return <p>Loading...</p>;
@@ -57,7 +57,7 @@ export default function Category() {
                 lg={6}
                 className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}
               >
-                <Link to={"/product/" + product.id}>
+                <Link to={"/product/" + product.slug}>
                   <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
                 </Link>
                 <h2 className="text-start fs-4">{product.name}</h2>
@@ -68,106 +68,6 @@ export default function Category() {
                   className="float-lg-end rounded-pill mb-5"
                   onClick={() => {
                     handleAddToCart(product);
-                  }}
-                >
-                  ADD TO CART
-                </Button>
-              </Col>
-            );
-          })}
-          {category.products.map((product) => {
-            return (
-              <Col
-                key={product.id}
-                lg={6}
-                className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}
-              >
-                <Link to={"/product/" + product.id}>
-                  <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
-                </Link>
-                <h2 className="text-start fs-4">{product.name}</h2>
-                <span className="fst-italic fs-6 mb-2">{priceFormatter.format(product.price)}</span>
-                <Button
-                  variant="outline-dark"
-                  size="sm"
-                  className="float-lg-end rounded-pill mb-5"
-                  onClick={() => {
-                    handleAddToCart(product.id);
-                  }}
-                >
-                  ADD TO CART
-                </Button>
-              </Col>
-            );
-          })}
-          {category.products.map((product) => {
-            return (
-              <Col
-                key={product.id}
-                lg={6}
-                className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}
-              >
-                <Link to={"/product/" + product.id}>
-                  <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
-                </Link>
-                <h2 className="text-start fs-4">{product.name}</h2>
-                <span className="fst-italic fs-6 mb-2">{priceFormatter.format(product.price)}</span>
-                <Button
-                  variant="outline-dark"
-                  size="sm"
-                  className="float-lg-end rounded-pill mb-5"
-                  onClick={() => {
-                    handleAddToCart(product.id);
-                  }}
-                >
-                  ADD TO CART
-                </Button>
-              </Col>
-            );
-          })}
-          {category.products.map((product) => {
-            return (
-              <Col
-                key={product.id}
-                lg={6}
-                className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}
-              >
-                <Link to={"/product/" + product.id}>
-                  <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
-                </Link>
-                <h2 className="text-start fs-4">{product.name}</h2>
-                <span className="fst-italic fs-6 mb-2">{priceFormatter.format(product.price)}</span>
-                <Button
-                  variant="outline-dark"
-                  size="sm"
-                  className="float-lg-end rounded-pill mb-5"
-                  onClick={() => {
-                    handleAddToCart(product.id);
-                  }}
-                >
-                  ADD TO CART
-                </Button>
-              </Col>
-            );
-          })}
-          {category.products.map((product) => {
-            return (
-              <Col
-                key={product.id}
-                lg={6}
-                className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}
-              >
-                <Link to={"/product/" + product.id}>
-                  <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
-                </Link>
-                <h2 className="text-start fs-4">{product.name}</h2>
-                <span className="fst-italic fs-6 mb-2">{priceFormatter.format(product.price)}</span>
-                <Button
-                  variant="outline-dark"
-                  size="sm"
-                  className="float-lg-end rounded-pill mb-5"
-                  onClick={() => {
-                    handleAddToCart(product.id);
                   }}
                 >
                   ADD TO CART

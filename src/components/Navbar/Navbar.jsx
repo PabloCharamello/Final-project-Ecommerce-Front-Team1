@@ -42,7 +42,7 @@ function BasicExample() {
               {categories &&
                 categories.map((category) => {
                   return (
-                    <NavDropdown.Item key={category.id} as={Link} to={"/category/" + category.id}>
+                    <NavDropdown.Item key={category.id} as={Link} to={"/category/" + category.slug}>
                       {category.name}
                     </NavDropdown.Item>
                   );

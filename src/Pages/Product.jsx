@@ -18,19 +18,19 @@ const priceFormatter = new Intl.NumberFormat("en", {
 export default function Home() {
   const dispatch = useDispatch();
   const params = useParams();
-  const productId = params.id;
+  const productSlug = params.slug;
   const [product, setProduct] = useState(null);
 
   const getProductFromApi = async () => {
     const response = await axios({
-      url: "/products/" + productId,
+      url: "/products/" + productSlug,
       method: "GET",
     });
     setProduct(response.data);
   };
 
   // eslint-disable-next-line
-  useEffect(() => getProductFromApi, [productId]);
+  useEffect(() => getProductFromApi, [productSlug]);
 
   if (!product) {
     return <>Loading...</>;

@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const apiCall = await axios({
-        url: "users/token/",
+        url: "tokens/",
         method: "POST",
         data: {
           email,
