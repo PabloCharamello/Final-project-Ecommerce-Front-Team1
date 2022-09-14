@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* .heroDivImage {
+} */
+
+.heroImage {
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
+
+.heroParagraphDiv {
+  left: 15px;
+  position: absolute;
+  top: 280px;
+  text-align: center;
+  z-index: 5;
+}
+
+.heroParagraph {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.divMer {
+  margin-top: 100px;
+  padding: 60px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+}
+
+.leftColMer {
+  background-color: grey;
+  height: 600px;
+}
+
+.merImage {
+  width: 80%;
+}
+
+.paragraphMer {
+  text-align: start;
+}
+
+.tecnologiesLeft {
+}
+
+.tecnologiesRight p {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*TECNOLOGIES*/
