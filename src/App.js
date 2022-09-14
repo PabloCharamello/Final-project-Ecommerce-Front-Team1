@@ -8,8 +8,15 @@ import ShoppingCart from "./Pages/ShoppingCart";
 import ShippingInfo from "./Pages/ShippingInfo";
 import Register from "./Pages/Register";
 import AboutOurProject from "./Pages/AboutOurProject";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 function App() {
+  const user = useSelector((state) => state.user);
+
+  axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+  axios.defaults.headers.common["Authorization"] = "Bearer " + user.token;
+
   return (
     <div className="App">
       <Routes>
