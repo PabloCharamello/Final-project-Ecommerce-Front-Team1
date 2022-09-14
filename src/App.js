@@ -21,8 +21,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:id" element={<Category />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/category/:slug" element={<Category />} />
+        <Route path="/product/:slug" element={<Product />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-our-project" element={<AboutOurProject />} />
         <Route path="/admin" element={<Home />} />

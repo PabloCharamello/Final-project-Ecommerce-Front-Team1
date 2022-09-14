@@ -20,12 +20,12 @@ const priceFormatter = new Intl.NumberFormat("en", {
 export default function Category() {
   const dispatch = useDispatch();
   const params = useParams();
-  const categoryId = params.id;
+  const categorySlug = params.slug;
   const [category, setCategory] = useState(null);
 
-  const getCategoryFromApi = async (id) => {
+  const getCategoryFromApi = async (slug) => {
     const response = await axios({
-      url: "/categories/" + id,
+      url: "/categories/" + slug,
       method: "GET",
     });
     setCategory(response.data);
@@ -33,8 +33,8 @@ export default function Category() {
 
   // eslint-disable-next-line
   useEffect(() => {
-    getCategoryFromApi(categoryId);
-  }, [categoryId]);
+    getCategoryFromApi(categorySlug);
+  }, [categorySlug]);
 
   if (!category) {
     return <p>Loading...</p>;
