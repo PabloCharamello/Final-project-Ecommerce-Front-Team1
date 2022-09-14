@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { OverlayTrigger, Popover, ListGroup } from "react-bootstrap";
 import { BiUser } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { unsetUser } from "../../redux/user/userSlice";
 import style from "./UserNavbar.module.css";
 
@@ -33,8 +34,11 @@ export default function Login() {
       rootClose="true"
       overlay={
         <Popover>
-          <Popover.Body className="px-0">
+          <Popover.Body className="px-0 py-1">
             <ListGroup variant="flush">
+              <ListGroup.Item action as={Link} to="/order-history">
+                Order history
+              </ListGroup.Item>
               <ListGroup.Item action onClick={handleLogout}>
                 Log out
               </ListGroup.Item>

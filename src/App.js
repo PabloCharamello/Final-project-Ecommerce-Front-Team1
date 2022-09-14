@@ -9,6 +9,7 @@ import ShippingInfo from "./Pages/ShippingInfo";
 import Register from "./Pages/Register";
 import AboutOurProject from "./Pages/AboutOurProject";
 import AdminProducts from "./Pages/Admin/Products/Index";
+import OrderHistory from "./Pages/OrderHistory";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admin/products/" element={<AdminProducts />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/shipping" element={<ShippingInfo />} />
+        <Route path="/order-history" element={<OrderHistory />} />
       </Routes>
     </div>
   );
