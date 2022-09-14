@@ -48,7 +48,7 @@ function BasicExample() {
                   );
                 })}
             </NavDropdown>
-            <Nav.Link as={Link} to="#">
+            <Nav.Link as={Link} to="/about-our-project">
               OUR PROJECT
             </Nav.Link>
           </Nav>

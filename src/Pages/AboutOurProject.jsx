@@ -7,8 +7,8 @@ export default function AboutOurProject() {
   return (
     <>
       <Navbar />
-      <div className="container-fluid p-0 m-0 g-0">
-        <Row>
+      <div className="container-fluid p-0 m-0">
+        <Row className="p-0">
           <Col className="g-0 p-0">
             <div className={style.heroDivImage}>
               <Image
@@ -37,7 +37,7 @@ export default function AboutOurProject() {
               </div>
             </div>
           </Col>
-          <Col lg={6} className="p-0 g-0">
+          <Col lg={6} className={style.divMer}>
             <div>
               <p className={style.paragraphMer}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
@@ -52,7 +52,7 @@ export default function AboutOurProject() {
             </div>
           </Col>
         </Row>
-        <Row className={style.divMer}>
+        <Row className={`{style.divMer}p-0`}>
           <Col lg={6}>
             <div>
               <p className={style.paragraphMer}>
@@ -91,7 +91,7 @@ export default function AboutOurProject() {
             </div>
           </Col>
           <Col lg={3}>
-            <div>
+            <div className={style.tecnologiesUp}>
               <p>React.js</p>
               <p>Express.js</p>
             </div>
@@ -102,8 +102,8 @@ export default function AboutOurProject() {
               <p>NodeJS</p>
             </div>
           </Col>
-          <Col lg={3}>
-            <div>
+          <Col lg={3} className="p-0 m-0">
+            <div className={style.tecnologiesUp}>
               <p>JavaScrip</p>
               <p>Express.js</p>
             </div>
