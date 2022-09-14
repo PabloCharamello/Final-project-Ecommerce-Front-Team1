@@ -13,7 +13,7 @@ export default function Categories() {
   };
 
   const handleDelete = async (categoryId) => {
-    const response = await axios({
+    await axios({
       url: "/categories/" + categoryId,
       method: "DELETE",
     });

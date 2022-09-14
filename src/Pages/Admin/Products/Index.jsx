@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState(null);
-  const user = useSelector((state) => state.user);
   const getProductFromApi = async () => {
     const response = await axios({
       url: "/products/",
@@ -24,7 +22,7 @@ export default function AdminProducts() {
   };
 
   const handleUpdate = async (productId) => {
-    const response = await axios({
+    await axios({
       url: "/products/" + productId,
       method: "PATCH",
     });
