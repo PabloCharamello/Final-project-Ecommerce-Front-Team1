@@ -23,6 +23,13 @@ export default function AdminProducts() {
     }
   };
 
+  const handleUpdate = async (productId) => {
+    const response = await axios({
+      url: "/products/" + productId,
+      method: "PATCH",
+    });
+  };
+
   console.log(products);
   // eslint-disable-next-line
   useEffect(() => getProductFromApi, []);
@@ -53,7 +60,13 @@ export default function AdminProducts() {
                 <td>{product.stock}</td>
                 <td>{product.featured.toString()}</td>
                 <td>
-                  <button>Edit</button>
+                  <button
+                    onClick={() => {
+                      handleUpdate(product.id);
+                    }}
+                  >
+                    Edit
+                  </button>
                   <button
                     onClick={() => {
                       handleDelete(product.id);
