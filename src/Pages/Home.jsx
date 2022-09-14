@@ -117,16 +117,16 @@ export default function Home() {
       <div className="container-lg grandContainer m-auto my-5">
         <Row className={style.cardsContainer}>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/armchairs">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/2676/iambiance1/1/0/1005ki_1848x1848.jpg"
               />
             </Link>
-            <p className={style.beds}>Chairs</p>
+            <p className={style.beds}>Armchairs</p>
           </Col>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/tables">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/2514/iambiance1/0/1/0105q_2000x2000.jpg"
@@ -135,7 +135,7 @@ export default function Home() {
             <p className={style.beds}>Tables</p>
           </Col>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/sofas">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc681ee04/images/productsets/1583359.jpg?sw=2000&sh=1125"
@@ -146,7 +146,7 @@ export default function Home() {
         </Row>
         <Row className={style.cardsContainer}>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/sofas">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/1768/iambiance1/0/0/00tlu_c02_1848x1848.jpg"
@@ -155,7 +155,7 @@ export default function Home() {
             <p className={style.beds}>Beds</p>
           </Col>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/lighting">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/2385/iambiance1/0/1/011v0_600x600.jpg"
@@ -164,7 +164,7 @@ export default function Home() {
             <p className={style.beds}>Lighting</p>
           </Col>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/1">
+            <Link className="text-decoration-none" to="/category/office">
               <Image
                 className={style.categoryCardsImg}
                 src="https://images.ligne-roset.com/cache/models/2570/iambiance1/1/0/100200_c01_1848x1848.jpg"
