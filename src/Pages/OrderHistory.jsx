@@ -5,8 +5,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const dateFormatter = new Intl.DateTimeFormat("en-GB");
-
 export default function OrderHistory() {
   const [orders, setOrders] = useState(null);
   const user = useSelector((state) => state.user);
