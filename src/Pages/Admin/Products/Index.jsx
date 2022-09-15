@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Sidebar from "../../../components/Admin/Sidebar";
 import { Row, Col, Button } from "react-bootstrap";
 
 export default function AdminProducts() {
@@ -39,56 +40,59 @@ export default function AdminProducts() {
   }
 
   return (
-    <div className="card-body">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Stock</th>
-            <th>Price</th>
-            <th>Featured</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+    <div className="d-flex">
+      <Sidebar />
+      <div className="card-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Stock</th>
+              <th>Price</th>
+              <th>Featured</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {products.map((product) => {
-            return (
-              <tr key={product.id}>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.stock}</td>
-                <td>{product.featured.toString()}</td>
-                <td>
-                  <Link to={"/admin/products/" + product.id}>
+          <tbody>
+            {products.map((product) => {
+              return (
+                <tr key={product.id}>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.stock}</td>
+                  <td>{product.featured.toString()}</td>
+                  <td>
+                    <Link to={"/admin/products/" + product.id}>
+                      <Button
+                        className="mx-2"
+                        onClick={() => {
+                          handleUpdate(product.id);
+                        }}
+                      >
+                        {" "}
+                        Edit
+                      </Button>
+                    </Link>
                     <Button
-                      className="mx-2"
                       onClick={() => {
-                        handleUpdate(product.id);
+                        handleDelete(product.id);
                       }}
                     >
-                      {" "}
-                      Edit
+                      Delete
                     </Button>
-                  </Link>
-                  <Button
-                    onClick={() => {
-                      handleDelete(product.id);
-                    }}
-                  >
-                    Delete
-                  </Button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-        <div className="d-flex justify-content-end">
-          <Link to="/admin/products/create/">
-            <Button>New</Button>
-          </Link>
-        </div>
-      </table>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+          <div className="d-flex justify-content-end">
+            <Link to="/admin/products/create/">
+              <Button>New</Button>
+            </Link>
+          </div>
+        </table>
+      </div>
     </div>
   );
 }
