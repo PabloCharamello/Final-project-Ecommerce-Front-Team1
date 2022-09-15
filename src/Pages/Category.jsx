@@ -41,7 +41,7 @@ export default function Category() {
   }
 
   const handleAddToCart = (product) => {
-    dispatch(addProductToCart({ ...product, count: 1 }));
+    dispatch(addProductToCart({ ...product, quantity: 1 }));
   };
 
   return (

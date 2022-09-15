@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
     addProductToCart: (state, action) => {
       const index = state.productsList.findIndex((product) => product.id === action.payload.id);
       if (index !== -1) {
-        state.productsList[index].count++;
+        state.productsList[index].quantity++;
       } else {
         state.productsList.push(action.payload);
       }
@@ -20,8 +20,8 @@ export const cartSlice = createSlice({
     },
     minusProductFromCart: (state, action) => {
       const index = state.productsList.findIndex((product) => product.id === action.payload);
-      if (state.productsList[index].count > 1) {
-        state.productsList[index].count--;
+      if (state.productsList[index].quantity > 1) {
+        state.productsList[index].quantity--;
       } else {
         state.productsList.splice(index, 1);
       }
@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
     },
     removeProductFromCart: (state, action) => {
       const index = state.productsList.findIndex((product) => product.id === action.payload);
-      state.totalCount -= state.productsList[index].count;
+      state.totalCount -= state.productsList[index].quantity;
       state.productsList.splice(index, 1);
     },
   },

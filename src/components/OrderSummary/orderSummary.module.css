@@ -20,11 +20,17 @@
   transition: 0.15s;
   align-items: center;
   border-radius: 2px;
+  border: none;
 }
 
 .checkoutButton:hover {
-  background-color: #424649;
+  background-color: #424649 !important;
   color: white;
+}
+
+.checkoutButtonDisabled, .checkoutButtonDisabled:hover {
+  background-color: #8d9092 !important;
+  border: none;
 }
 
 .bg-gray {

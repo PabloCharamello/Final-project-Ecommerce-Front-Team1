@@ -43,7 +43,7 @@ export default function CartPopup() {
                           <span className="fw-light me-1">
                             {priceFormatter.format(parseInt(product.price))}
                           </span>
-                          <span className="fw-light fst-italic">x{product.count}</span>
+                          <span className="fw-light fst-italic">x{product.quantity}</span>
                         </div>
                       </div>
                       <IoClose

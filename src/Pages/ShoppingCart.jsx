@@ -66,7 +66,7 @@ export default function ShoppingCart() {
                         }}
                       />
 
-                      <span className="fs-5">{product.count}</span>
+                      <span className="fs-5">{product.quantity}</span>
                       <IoCaretForward
                         role="button"
                         className="fs-3 mx-2 opacity-50"
@@ -76,7 +76,7 @@ export default function ShoppingCart() {
                       />
                     </div>
                     <span className="fw-bold">
-                      {priceFormatter.format(parseInt(product.price * product.count))}
+                      {priceFormatter.format(parseInt(product.price * product.quantity))}
                     </span>
                   </div>
                 </div>
