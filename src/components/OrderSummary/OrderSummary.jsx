@@ -1,6 +1,6 @@
 import { Button, Col } from "react-bootstrap";
 import style from "./orderSummary.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 

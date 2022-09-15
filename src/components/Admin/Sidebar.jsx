@@ -1,6 +1,5 @@
-import { BiHome, BiLogOut, BiTable } from "react-icons/bi";
+import { BiLogOut, BiTable } from "react-icons/bi";
 import { BsSpeedometer } from "react-icons/bs";
-import { GrGrid } from "react-icons/gr";
 import { IoGrid, IoPeopleCircle } from "react-icons/io5";
 import { Link } from "react-router-dom";
 

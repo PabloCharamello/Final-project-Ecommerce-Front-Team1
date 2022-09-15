@@ -3,10 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Sidebar from "../../../components/Admin/Sidebar";
 import { Row, Col, Button } from "react-bootstrap";
-import style from "./styles/index.module.css";
-import { BsTrash } from "react-icons/bs";
-import { FiEdit3 } from "react-icons/fi";
-import { VscNewFolder } from "react-icons/vsc";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState(null);
