@@ -24,7 +24,7 @@ export default function AdminProducts() {
   const handleUpdate = async (productId) => {
     await axios({
       url: "/products/" + productId,
-      method: "PATCH",
+      method: "PUT",
     });
   };
 

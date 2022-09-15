@@ -13,6 +13,7 @@ import AdminCategories from "./Pages/Admin/Categories/Index";
 import OrderHistory from "./Pages/OrderHistory";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import AdminEditProducts from "./Pages/Admin/Products/Edit";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/about-our-project" element={<AboutOurProject />} />
         <Route path="/admin" element={<Home />} />
         <Route path="/admin/products/" element={<AdminProducts />} />
+        <Route path="/admin/products/:id" element={<AdminEditProducts />} />
         <Route path="/admin/categories/" element={<AdminCategories />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/shipping" element={<ShippingInfo />} />
