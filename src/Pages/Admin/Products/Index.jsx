@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { Row, Col, Button } from "react-bootstrap";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState(null);
@@ -58,25 +60,34 @@ export default function AdminProducts() {
                 <td>{product.stock}</td>
                 <td>{product.featured.toString()}</td>
                 <td>
-                  <button
-                    onClick={() => {
-                      handleUpdate(product.id);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
+                  <Link to={"/admin/products/" + product.id}>
+                    <Button
+                      className="mx-2"
+                      onClick={() => {
+                        handleUpdate(product.id);
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </Button>
+                  </Link>
+                  <Button
                     onClick={() => {
                       handleDelete(product.id);
                     }}
                   >
                     Delete
-                  </button>
+                  </Button>
                 </td>
               </tr>
             );
           })}
         </tbody>
+        <div className="d-flex justify-content-end">
+          <Link to="/admin/products/create/">
+            <Button>New</Button>
+          </Link>
+        </div>
       </table>
     </div>
   );

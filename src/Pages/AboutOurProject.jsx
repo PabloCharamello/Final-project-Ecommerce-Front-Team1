@@ -2,6 +2,14 @@ import Navbar from "../components/Navbar/Navbar";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "../styles/AboutOurProyect.module.css";
 import Footer from "../components/Footer/Footer";
+import { TbBrandJavascript } from "react-icons/tb";
+import { BiGitBranch } from "react-icons/bi";
+import { SiRedux, SiExpress, SiMysql } from "react-icons/si";
+import { DiNodejs } from "react-icons/di";
+import { GrReactjs } from "react-icons/gr";
+import { BsBootstrap } from "react-icons/bs";
+import { FiTrello } from "react-icons/fi";
+import { FaFigma } from "react-icons/fa";
 
 export default function AboutOurProject() {
   return (
@@ -52,8 +60,8 @@ export default function AboutOurProject() {
             </div>
           </Col>
         </Row>
-        <Row className={`{style.divMer}p-0`}>
-          <Col lg={6}>
+        <Row>
+          <Col lg={6} className={style.divMer}>
             <div>
               <p className={style.paragraphMer}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
@@ -80,32 +88,93 @@ export default function AboutOurProject() {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-5">
           <div>
             <h3>Tecnologías</h3>
           </div>
-          <Col lg={3}>
+          <Col lg={3} md={6} xs={6}>
             <div className={style.tecnologiesUp}>
+              <SiMysql size="3rem" />
               <p>MySQL</p>
+            </div>
+            <div>
+              <DiNodejs size="3rem" />
               <p>NodeJS</p>
             </div>
           </Col>
-          <Col lg={3}>
+          <Col lg={3} md={6} xs={6}>
             <div className={style.tecnologiesUp}>
+              <GrReactjs size="3rem" />
               <p>React.js</p>
+            </div>
+            <div>
+              <SiExpress size="3rem" />
               <p>Express.js</p>
             </div>
           </Col>
-          <Col lg={3}>
+          <Col lg={3} md={6} xs={6}>
             <div className={style.tecnologiesUp}>
+              <BiGitBranch size="3rem" />
+              <p>Git</p>
+            </div>
+            <div>
+              <SiRedux size="3rem" />
+              <p>Redux + RTK</p>
+            </div>
+          </Col>
+          <Col lg={3} md={6} xs={6} className="p-0 m-0">
+            <div className={style.tecnologiesUp}>
+              <TbBrandJavascript size="3rem" />
+              <p>JavaScript</p>
+            </div>
+            <div>
+              <BsBootstrap size="3rem" />
+              <p>Bootstrap</p>
+            </div>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <div>
+            <h3>Herramientas</h3>
+          </div>
+          <Col lg={3} md={6} xs={6}>
+            <div className={style.tecnologiesUp}>
+              <SiMysql size="3rem" />
               <p>GitHub</p>
-              <p>NodeJS</p>
+            </div>
+            <div>
+              <FiTrello size="3rem" />
+              <p>Trello</p>
             </div>
           </Col>
-          <Col lg={3} className="p-0 m-0">
+          <Col lg={3} md={6} xs={6}>
             <div className={style.tecnologiesUp}>
-              <p>JavaScrip</p>
+              <FaFigma size="3rem" />
+              <p>Figma</p>
+            </div>
+            <div>
+              <SiExpress size="3rem" />
               <p>Express.js</p>
+            </div>
+          </Col>
+          <Col lg={3} md={6} xs={6}>
+            <div className={style.tecnologiesUp}>
+              <BiGitBranch size="3rem" />
+              <p>Git</p>
+            </div>
+            <div>
+              <SiRedux size="3rem" />
+              <p>Redux + RTK</p>
+            </div>
+          </Col>
+          <Col lg={3} md={6} xs={6} className="p-0 m-0">
+            <div className={style.tecnologiesUp}>
+              <TbBrandJavascript size="3rem" />
+              <p>JavaScript</p>
+            </div>
+            <div>
+              <BsBootstrap size="3rem" />
+              <p>Bootstrap</p>
             </div>
           </Col>
         </Row>

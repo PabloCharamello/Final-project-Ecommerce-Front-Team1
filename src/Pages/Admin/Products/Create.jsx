@@ -4,31 +4,13 @@ import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
 
-export default function AdminEditProducts() {
-  const params = useParams();
-  const productId = params.id;
-  const [product, setProduct] = useState(null);
+export default function AdminCreateProduct() {
   const getProductFromApi = async () => {
     const response = await axios({
-      url: "/products/" + productId,
-      method: "GET",
-    });
-    setProduct(response.data);
-  };
-
-  const handleUpdate = async (productId) => {
-    const response = await axios({
-      url: "/products/" + productId,
-      method: "PATCH",
+      url: "/products/create/",
+      method: "POST",
     });
   };
-
-  // eslint-disable-next-line
-  useEffect(() => getProductFromApi, []);
-
-  if (!product) {
-    return <>Loading...</>;
-  }
 
   return (
     <div className="container">
@@ -44,7 +26,6 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="name"
                 id="name"
-                value={product.name}
               />
               <Form.Label className="m-0 mt-2 mx-1 " htmlFor="price">
                 Price
@@ -54,28 +35,15 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="price"
                 id="price"
-                value={product.price}
               />
               <Form.Label className="m-0 mt-2 mx-1 mt-4 mb-2" htmlFor="description">
                 Description
               </Form.Label>
-              <textarea
-                className="mt-4 mb-2"
-                put
-                htmlFOR="description"
-                id="description"
-                value={product.description}
-              />
+              <textarea className="mt-4 mb-2" put htmlFOR="description" id="description" />
               <Form.Label className="mx-1 mt-4 mb-1 " htmlFor="featured">
                 Featured
               </Form.Label>
-              <select
-                className="mt-4 mb-2"
-                put
-                htmlFOR="featured"
-                id="featured"
-                value={product.featured}
-              >
+              <select className="mt-4 mb-2" put htmlFOR="featured" id="featured">
                 <option value="1">Yes</option>
                 <option value="0">No</option>
               </select>
@@ -87,7 +55,6 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="designer"
                 id="designer"
-                value={product.designer}
               />
               <Form.Label className="m-0 mt-2 mx-1 " htmlFor="image1">
                 Image-1
@@ -97,7 +64,6 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="image1"
                 id="image1"
-                value={product.images}
               />
               <Form.Label className="m-0 mt-2 mx-1 " htmlFor="image2">
                 Image-2
@@ -107,7 +73,6 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="image2"
                 id="image2"
-                value={product.images}
               />
               <Form.Label className="m-0 mt-2 mx-1 " htmlFor="image3">
                 Image-3
@@ -117,7 +82,6 @@ export default function AdminEditProducts() {
                 put
                 htmlFOR="image3"
                 id="image3"
-                value={product.images}
               />
               <Button className="mt-4 mx-2">Cancel</Button>
               <Button className="mt-4 mx-2">Apply</Button>
