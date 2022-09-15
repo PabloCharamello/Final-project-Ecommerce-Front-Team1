@@ -5,6 +5,12 @@ import { useParams } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
 
 export default function AdminCreateProduct() {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [featured, setFeatured] = useState("");
+  const [designer, setDesigner] = useState("");
+
   const getProductFromApi = async () => {
     const response = await axios({
       url: "/products/create/",
@@ -16,7 +22,13 @@ export default function AdminCreateProduct() {
     <div className="container">
       <div className="Row ">
         <div className="Col p-5 d-flex justify-content-center">
-          <Form.Group className="mb-3 mt-5 ">
+          <Form.Group
+            className="mb-3 mt-5"
+            // onSubmit={(e) => {
+            //   handleSubmit();
+            //   e.preventDefault();
+            // }}
+          >
             <div className="card-body">
               <Form.Label className="m-0 mt-2 mx-1 " htmlFor="name">
                 Name

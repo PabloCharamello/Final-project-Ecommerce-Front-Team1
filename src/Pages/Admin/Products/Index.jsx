@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Button } from "react-bootstrap";
+import style from "./styles/index.module.css";
+import { BsTrash } from "react-icons/bs";
+import { FiEdit3 } from "react-icons/fi";
+import { VscNewFolder } from "react-icons/vsc";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState(null);
@@ -60,32 +64,34 @@ export default function AdminProducts() {
                 <td>{product.stock}</td>
                 <td>{product.featured.toString()}</td>
                 <td>
-                  <Link to={"/admin/products/" + product.id}>
-                    <Button
-                      className="mx-2"
-                      onClick={() => {
-                        handleUpdate(product.id);
-                      }}
-                    >
-                      {" "}
-                      Edit
-                    </Button>
+                  <FiEdit3 />
+                  <Link
+                    to={"/admin/products/" + product.id}
+                    className={style.btnEditProduct}
+                    onClick={() => {
+                      handleUpdate(product.id);
+                    }}
+                  >
+                    Edit
                   </Link>
-                  <Button
+                  <BsTrash />
+                  <button
+                    className={style.btnDeleteProduct}
                     onClick={() => {
                       handleDelete(product.id);
                     }}
                   >
                     Delete
-                  </Button>
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
         <div className="d-flex justify-content-end">
-          <Link to="/admin/products/create/">
-            <Button>New</Button>
+          <VscNewFolder />
+          <Link className={style.btnNewProduct} to="/admin/products/create/">
+            New
           </Link>
         </div>
       </table>
