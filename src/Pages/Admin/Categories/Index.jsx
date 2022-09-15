@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Sidebar from "../../../components/Admin/Sidebar";
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
@@ -28,34 +29,37 @@ export default function Categories() {
   }
 
   return (
-    <div className="card-body">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map((category) => {
-            return (
-              <tr key={category.id}>
-                <td>{category.name}</td>
-                <td>
-                  <button>Edit</button>
-                  <button
-                    onClick={() => {
-                      handleDelete(category.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <div className="d-flex">
+      <Sidebar />
+      <div className="card-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => {
+              return (
+                <tr key={category.id}>
+                  <td>{category.name}</td>
+                  <td>
+                    <button>Edit</button>
+                    <button
+                      onClick={() => {
+                        handleDelete(category.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
