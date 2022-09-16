@@ -2,7 +2,9 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
 import style from "../styles/ShoppingCart.module.css";
+import "react-toastify/dist/ReactToastify.css";
 import { IoCaretForward, IoCaretBack, IoClose } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -15,7 +17,18 @@ export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = async (product) => {
+    if (product.quantity === product.stock) {
+      toast.error("No more stock!", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
     dispatch(addProductToCart(product));
   };
 
@@ -38,6 +51,7 @@ export default function ShoppingCart() {
       <Container>
         <Row className="mb-5">
           <h1 className="fw-3 mb-3">SHOPPING CART</h1>
+          <ToastContainer />
           <Col lg={8} className="pe-5">
             {cart.productsList.map((product) => {
               return (
@@ -56,7 +70,7 @@ export default function ShoppingCart() {
                     <span className="fw-light fst-italic">
                       {priceFormatter.format(parseInt(product.price))}
                     </span>
-                    <div className="d-flex align-items-center justify-content-center border px-5 py-3">
+                    <div className="d-flex align-items-center justify-content-center border px-5 py-3 user-select-none">
                       <span className="me-3">Quantity</span>
                       <IoCaretBack
                         role="button"

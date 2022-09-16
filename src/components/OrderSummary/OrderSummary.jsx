@@ -1,12 +1,14 @@
 import { Button, Col } from "react-bootstrap";
 import style from "./orderSummary.module.css";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { clearCart } from "../../redux/cart/cartSlice";
 
 export default function OrderSummary({ addressId }) {
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
+  const dispath = useDispatch();
   const handlePurchase = async () => {
     if (parseInt(addressId) === -1) {
       return;
@@ -22,6 +24,7 @@ export default function OrderSummary({ addressId }) {
         method: "POST",
         data,
       });
+      dispath(clearCart());
       navigate("/");
     } catch (error) {
       console.log(error);

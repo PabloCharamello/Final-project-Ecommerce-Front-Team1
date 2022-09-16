@@ -2,15 +2,17 @@ import { useState } from "react";
 import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
 import Sidebar from "../../../components/Admin/Sidebar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AdminCreateProduct() {
+  const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const data = {
         firstname,
@@ -18,11 +20,12 @@ export default function AdminCreateProduct() {
         email,
         password,
       };
-      const response = await axios({
-        url: "/products/create/",
+      await axios({
+        url: "/admins/",
         method: "POST",
         data,
       });
+      navigate("/admin/administrators");
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +36,12 @@ export default function AdminCreateProduct() {
       <Sidebar />
       <Container className="d-flex flex-column align-items-center">
         <h2>New Administrator</h2>
-        <Form className="text-start w-100" style={{ maxWidth: "500px" }}>
+        <Form
+          as={"form"}
+          onSubmit={handleSubmit}
+          className="text-start w-100"
+          style={{ maxWidth: "500px" }}
+        >
           <Form.Group>
             <Form.Label htmlFor="firstname">First Name</Form.Label>
             <Form.Control

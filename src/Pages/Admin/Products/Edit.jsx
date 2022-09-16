@@ -34,7 +34,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="name"
                 id="name"
                 value={product.name}
@@ -44,7 +43,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="price"
                 id="price"
                 value={product.price}
@@ -54,7 +52,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <textarea
                 className="mt-4 mb-2"
-                put
                 htmlFOR="description"
                 id="description"
                 value={product.description}
@@ -64,7 +61,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <select
                 className="mt-4 mb-2"
-                put
                 htmlFOR="featured"
                 id="featured"
                 value={product.featured}
@@ -77,7 +73,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="designer"
                 id="designer"
                 value={product.designer}
@@ -87,7 +82,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="image1"
                 id="image1"
                 value={product.images}
@@ -97,7 +91,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="image2"
                 id="image2"
                 value={product.images}
@@ -107,7 +100,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                put
                 htmlFOR="image3"
                 id="image3"
                 value={product.images}

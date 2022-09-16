@@ -1,8 +1,21 @@
 @import url("http://fonts.cdnfonts.com/css/amoitar");
 
-.footer {
+/* .footer {
   color: rgb(83, 83, 83);
-  /* background-color: #606060; */
+  background-color: #f6f6f6;
+} */
+.grandContainer {
+  background-color: #0c0c0c;
+  width: 100vw;
+}
+
+.footerContainer {
+  /* position: relative; */
+  margin-top: 160px;
+
+  background-color: #0c0c0c;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
 }
 
 .hackDesignParagraph {
@@ -38,17 +51,6 @@
   margin-left: 58px;
 }
 
-.containerEmpty {
-  height: 20px;
-}
-
-.footerContainer {
-  position: relative;
-  bottom: -140px;
-  background-color: #0c0c0c;
-  border-radius: 15%;
-}
-
 .hackDesignFooter {
   font-family: "Amoitar", sans-serif;
   color: white;
@@ -64,14 +66,12 @@
 }
 
 .allRightsReserved {
-  position: relative;
-  bottom: -120px;
+  /* position: relative; */
+
   background-color: #0c0c0c;
-  border-top-left-radius: 30%;
-  border-top-right-radius: 30%;
 }
 
-.spacer {
+/* .spacer {
   aspect-ratio: 1200/350;
   width: 100%;
   background-repeat: no-repeat;
@@ -84,4 +84,4 @@
   height: 550px;
   padding-top: 100px;
   bottom: 0;
-}
+} */
