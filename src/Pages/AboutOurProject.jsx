@@ -260,7 +260,7 @@ export default function AboutOurProject() {
                 </div>
               </Col>
               <Col lg={3} md={6}>
-                <div>
+                <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
                     fluid
@@ -286,7 +286,7 @@ export default function AboutOurProject() {
                 </div>
               </Col>
               <Col lg={3} md={6}>
-                <div>
+                <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
                     fluid
@@ -315,7 +315,7 @@ export default function AboutOurProject() {
                 </div>
               </Col>
               <Col lg={3} md={6}>
-                <div>
+                <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
                     fluid
