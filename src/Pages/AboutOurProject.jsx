@@ -320,7 +320,7 @@ export default function AboutOurProject() {
                     className={style.ourPhotos}
                     fluid
                     src={require("../assets/img/ourPhotos/juan.jpeg")}
-                    alt="presentation image"
+                    alt="presentation"
                   />
                   <div className="paragraphProfileNamesDiv">
                     <p className={style.ourNames}>Juan Zubillaga</p>
