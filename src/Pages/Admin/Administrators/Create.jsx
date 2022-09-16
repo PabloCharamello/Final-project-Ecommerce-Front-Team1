@@ -19,7 +19,7 @@ export default function AdminCreateProduct() {
         email,
         password,
       };
-      const response = await axios({
+      await axios({
         url: "/products/create/",
         method: "POST",
         data,

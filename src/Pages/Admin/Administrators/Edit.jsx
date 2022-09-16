@@ -41,7 +41,7 @@ export default function AdminEditProduct() {
         email,
         password,
       };
-      const response = await axios({
+      await axios({
         url: "/admins/" + adminId,
         method: "PUT",
         data,
