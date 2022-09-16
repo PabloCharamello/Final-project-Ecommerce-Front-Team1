@@ -21,6 +21,7 @@ import AdminEditProducts from "./Pages/Admin/Products/Edit";
 import AdminAdministrators from "./Pages/Admin/Administrators/Index";
 import AdminCreateAdministrators from "./Pages/Admin/Administrators/Create";
 import AdminEditAdministrators from "./Pages/Admin/Administrators/Edit";
+import AdminEditCategories from "./Pages/Admin/Categories/Edit";
 import AdminCategories from "./Pages/Admin/Categories/Index";
 
 function App() {

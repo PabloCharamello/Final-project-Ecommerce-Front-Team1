@@ -17,7 +17,12 @@ export default function Categories() {
     setCategories(response.data);
   };
 
-  const handleUpdate = async (categoryId) => {};
+  const handleUpdate = async (categoryId) => {
+    await axios({
+      url: "/categories/" + categoryId,
+      method: "PATCH",
+    });
+  };
 
   const handleDelete = async (categoryId) => {
     await axios({
