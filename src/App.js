@@ -1,6 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import ProtectedRoute from "./ProtectedRoute";
+
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Category from "./Pages/Category";
@@ -8,17 +12,16 @@ import ShoppingCart from "./Pages/ShoppingCart";
 import ShippingInfo from "./Pages/ShippingInfo";
 import Register from "./Pages/Register";
 import AboutOurProject from "./Pages/AboutOurProject";
-import AdminProducts from "./Pages/Admin/Products/Index";
-import AdminCategories from "./Pages/Admin/Categories/Index";
 import OrderHistory from "./Pages/OrderHistory";
-import axios from "axios";
-import { useSelector } from "react-redux";
+
 import AdminInex from "./Pages/Admin/Index";
-import AdminEditProducts from "./Pages/Admin/Products/Edit";
+import AdminProducts from "./Pages/Admin/Products/Index";
 import AdminCreateProduct from "./Pages/Admin/Products/Create";
+import AdminEditProducts from "./Pages/Admin/Products/Edit";
 import AdminAdministrators from "./Pages/Admin/Administrators/Index";
 import AdminCreateAdministrators from "./Pages/Admin/Administrators/Create";
 import AdminEditAdministrators from "./Pages/Admin/Administrators/Edit";
+import AdminCategories from "./Pages/Admin/Categories/Index";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -29,22 +32,36 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/category/:slug" element={<Category />} />
-        <Route path="/product/:slug" element={<Product />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about-our-project" element={<AboutOurProject />} />
-        <Route path="/admin" element={<AdminInex />} />
-        <Route path="/admin/products/" element={<AdminProducts />} />
-        <Route path="/admin/products/create/" element={<AdminCreateProduct />} />
-        <Route path="/admin/products/:id" element={<AdminEditProducts />} />
-        <Route path="/admin/categories/" element={<AdminCategories />} />
-        <Route path="/admin/administrators/" element={<AdminAdministrators />} />
-        <Route path="/admin/administrators/create" element={<AdminCreateAdministrators />} />
-        <Route path="/admin/administrators/:id" element={<AdminEditAdministrators />} />
-        <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/shipping" element={<ShippingInfo />} />
-        <Route path="/order-history" element={<OrderHistory />} />
+        <Route
+          element={
+            <ProtectedRoute
+              isAllowed={!user.token || (user.token && !user.isAdmin)}
+              redirectPath="/admin"
+            />
+          }
+        >
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:slug" element={<Category />} />
+          <Route path="/product/:slug" element={<Product />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/about-our-project" element={<AboutOurProject />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+        </Route>
+        <Route element={<ProtectedRoute isAllowed={user.token && !user.isAdmin} />}>
+          <Route path="/shipping" element={<ShippingInfo />} />
+          <Route path="/order-history" element={<OrderHistory />} />
+        </Route>
+
+        <Route element={<ProtectedRoute isAllowed={user.token && user.isAdmin} />}>
+          <Route path="/admin/" element={<AdminInex />} />
+          <Route path="/admin/products/" element={<AdminProducts />} />
+          <Route path="/admin/products/create/" element={<AdminCreateProduct />} />
+          <Route path="/admin/products/:id" element={<AdminEditProducts />} />
+          <Route path="/admin/categories/" element={<AdminCategories />} />
+          <Route path="/admin/administrators/" element={<AdminAdministrators />} />
+          <Route path="/admin/administrators/create" element={<AdminCreateAdministrators />} />
+          <Route path="/admin/administrators/:id" element={<AdminEditAdministrators />} />
+        </Route>
       </Routes>
     </div>
   );
