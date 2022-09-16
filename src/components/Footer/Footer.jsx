@@ -9,7 +9,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Container>
+    <Container fluid>
       <Row className={style.footerContainer}>
         <Col lg={3} md={6} xs={6}>
           <p className={style.hackDesignFooter}>Hack Design®</p>

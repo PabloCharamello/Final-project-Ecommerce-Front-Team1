@@ -32,7 +32,7 @@ export default function AdminEditCategories() {
       const data = {
         name,
       };
-      const response = await axios({
+      await axios({
         url: "/categories/" + categoryId,
         method: "PUT",
         data,
