@@ -17,18 +17,14 @@ export default function Categories() {
     setCategories(response.data);
   };
 
-  const handleUpdate = async (categoryId) => {
-    await axios({
-      url: "/categories/" + categoryId,
-      method: "PATCH",
-    });
-  };
-
   const handleDelete = async (categoryId) => {
-    await axios({
+    const response = await axios({
       url: "/categories/" + categoryId,
       method: "DELETE",
     });
+    if (response.statusText === "OK") {
+      setCategories(categories.filter((category) => category.id !== categoryId));
+    }
   };
 
   // eslint-disable-next-line
@@ -66,12 +62,7 @@ export default function Categories() {
                       <td>{category.name}</td>
                       <td className="d-flex justify-content-end align-items-center">
                         <Link to={"/admin/categories/" + category.id}>
-                          <Button
-                            onClick={() => {
-                              handleUpdate(category.id);
-                            }}
-                            className="bg-info rounded-circle text-white d-flex p-2 border-0 me-3"
-                          >
+                          <Button className="bg-info rounded-circle text-white d-flex p-2 border-0 me-3">
                             <BiEdit />
                           </Button>
                         </Link>

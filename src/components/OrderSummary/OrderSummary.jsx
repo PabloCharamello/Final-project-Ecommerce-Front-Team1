@@ -25,7 +25,7 @@ export default function OrderSummary({ addressId }) {
         data,
       });
       dispath(clearCart());
-      navigate("/");
+      navigate("/order-history");
     } catch (error) {
       console.log(error);
     }

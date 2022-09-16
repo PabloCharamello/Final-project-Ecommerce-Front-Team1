@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Sidebar from "../../../components/Admin/Sidebar";
 
 export default function AdminEditCategories() {
@@ -9,6 +9,7 @@ export default function AdminEditCategories() {
   const categoryId = params.id;
   const [name, setName] = useState("");
   const [category, setCategory] = useState(null);
+  const navigate = useNavigate();
 
   const getCategory = async () => {
     const response = await axios({
@@ -37,6 +38,7 @@ export default function AdminEditCategories() {
         method: "PUT",
         data,
       });
+      navigate("/admin/categories");
     } catch (error) {
       console.log(error);
     }
