@@ -16,6 +16,9 @@ import { useSelector } from "react-redux";
 import AdminInex from "./Pages/Admin/Index";
 import AdminEditProducts from "./Pages/Admin/Products/Edit";
 import AdminCreateProduct from "./Pages/Admin/Products/Create";
+import AdminAdministrators from "./Pages/Admin/Administrators/Index";
+import AdminCreateAdministrators from "./Pages/Admin/Administrators/Create";
+import AdminEditAdministrators from "./Pages/Admin/Administrators/Edit";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -36,6 +39,9 @@ function App() {
         <Route path="/admin/products/create/" element={<AdminCreateProduct />} />
         <Route path="/admin/products/:id" element={<AdminEditProducts />} />
         <Route path="/admin/categories/" element={<AdminCategories />} />
+        <Route path="/admin/administrators/" element={<AdminAdministrators />} />
+        <Route path="/admin/administrators/create" element={<AdminCreateAdministrators />} />
+        <Route path="/admin/administrators/:id" element={<AdminEditAdministrators />} />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/shipping" element={<ShippingInfo />} />
         <Route path="/order-history" element={<OrderHistory />} />

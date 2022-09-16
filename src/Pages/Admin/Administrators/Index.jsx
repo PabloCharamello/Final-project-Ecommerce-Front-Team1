@@ -4,47 +4,32 @@ import { Link } from "react-router-dom";
 import Sidebar from "../../../components/Admin/Sidebar";
 import { Card, Table, Container, Button } from "react-bootstrap";
 import { BiEdit, BiTrash } from "react-icons/bi";
-import { AiFillStar } from "react-icons/ai";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 
-const priceFormatter = new Intl.NumberFormat("en", {
-  style: "currency",
-  currency: "USD",
-  maximumFractionDigits: 0,
-});
-
-export default function AdminProducts() {
-  const [products, setProducts] = useState(null);
-  const getProductFromApi = async () => {
+export default function AdminAdministrators() {
+  const [administrators, setAdministrators] = useState(null);
+  const getAdministratorsFromApi = async () => {
     const response = await axios({
-      url: "/products/",
+      url: "/admins/",
       method: "GET",
     });
-    setProducts(response.data);
+    setAdministrators(response.data);
   };
 
-  const handleDelete = async (productId) => {
+  const handleDelete = async (adminId) => {
     const response = await axios({
-      url: "/products/" + productId,
+      url: "/admins/" + adminId,
       method: "DELETE",
     });
     if (response.statusText === "OK") {
-      setProducts(products.filter((product) => product.id !== productId));
+      setAdministrators(administrators.filter((admin) => admin.id !== adminId));
     }
   };
 
-  const handleUpdate = async (productId) => {
-    await axios({
-      url: "/products/" + productId,
-      method: "PUT",
-    });
-  };
-
-  console.log(products);
   // eslint-disable-next-line
-  useEffect(() => getProductFromApi, []);
+  useEffect(() => getAdministratorsFromApi, []);
 
-  if (!products) {
+  if (!administrators) {
     return <>Loading...</>;
   }
 
@@ -54,8 +39,8 @@ export default function AdminProducts() {
       <main className="bg-surface-secondary w-100">
         <Container>
           <div className="d-flex justify-content-between align-items-center">
-            <h1 className="pt-3">Products</h1>
-            <Link to={"/admin/products/create"}>
+            <h1 className="pt-3">Administrators</h1>
+            <Link to={"/admin/administrators/create"}>
               <Button className="bg-primary rounded-circle text-white d-flex p-2 border-0 me-3">
                 <MdOutlineAddCircleOutline size="1.5rem" />
               </Button>
@@ -65,35 +50,28 @@ export default function AdminProducts() {
             <Table hover responsive className="table-nowrap">
               <thead className="thead-light">
                 <tr>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Stock</th>
-                  <th>Featured</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                {products.map((product) => {
+                {administrators.map((admin) => {
                   return (
-                    <tr key={product.id} className="align-middle">
-                      <td className="fw-bold">{product.name}</td>
-                      <td>{priceFormatter.format(product.price)}</td>
-                      <td>{product.stock}</td>
-                      <td>{product.featured && <AiFillStar />}</td>
+                    <tr key={admin.id} className="align-middle">
+                      <td className="fw-bold">{admin.firstname}</td>
+                      <td>{admin.lastname}</td>
+                      <td>{admin.email}</td>
                       <td className="d-flex justify-content-end align-items-center">
-                        <Link to={"/admin/products/" + product.id}>
-                          <Button
-                            onClick={() => {
-                              handleUpdate(product.id);
-                            }}
-                            className="bg-info rounded-circle text-white d-flex p-2 border-0 me-3"
-                          >
+                        <Link to={"/admin/administrators/" + admin.id}>
+                          <Button className="bg-info rounded-circle text-white d-flex p-2 border-0 me-3">
                             <BiEdit />
                           </Button>
                         </Link>
                         <Button
                           onClick={() => {
-                            handleDelete(product.id);
+                            handleDelete(admin.id);
                           }}
                           className="bg-danger rounded-circle text-white d-flex p-2 border-0 me-3"
                         >

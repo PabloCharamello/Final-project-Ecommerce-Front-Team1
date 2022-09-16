@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
-import { Row, Col, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 export default function AdminEditProducts() {
   const params = useParams();
@@ -14,13 +14,6 @@ export default function AdminEditProducts() {
       method: "GET",
     });
     setProduct(response.data);
-  };
-
-  const handleUpdate = async (productId) => {
-    const response = await axios({
-      url: "/products/" + productId,
-      method: "PATCH",
-    });
   };
 
   // eslint-disable-next-line

@@ -1,13 +1,22 @@
 import { BiLogOut, BiTable } from "react-icons/bi";
 import { BsSpeedometer } from "react-icons/bs";
 import { IoGrid, IoPeopleCircle } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { unsetUser } from "../../redux/user/userSlice";
 
 export default function Sidebar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    dispatch(unsetUser());
+    navigate("/");
+  };
   return (
     <>
       <div
-        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark position-sticky"
+        className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark position-sticky top-0"
         style={{ width: "280px", height: "100vh" }}
       >
         <Link
@@ -45,10 +54,10 @@ export default function Sidebar() {
         </ul>
         <ul className="nav nav-pills flex-column text-start">
           <li>
-            <Link to="#" className="nav-link text-white text-start">
+            <button onClick={handleLogout} className="nav-link text-white text-start">
               <BiLogOut className="me-3" />
               Logout
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
