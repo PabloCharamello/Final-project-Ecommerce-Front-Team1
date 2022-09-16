@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
 import { Row, Col, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import style from "../styles/AboutOurProyect.module.css";
 import Footer from "../components/Footer/Footer";
 import { TbBrandJavascript } from "react-icons/tb";
@@ -14,18 +13,7 @@ import { FaFigma } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
 
-import {
-  Animator,
-  FadeIn,
-  ScrollContainer,
-  ScrollPage,
-  Sticky,
-  Zoom,
-  MoveOut,
-  MoveIn,
-  Fade,
-  batch,
-} from "react-scroll-motion";
+import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
 
 export default function AboutOurProject() {
   return (
@@ -303,7 +291,7 @@ export default function AboutOurProject() {
                     className={style.ourPhotos}
                     fluid
                     src={require("../assets/img/ourPhotos/pablo.png")}
-                    alt="presentation image"
+                    alt="presentation"
                   />
                   <div className="paragraphProfileNamesDiv">
                     <p className={style.ourNames}>Pablo Charamello</p>
@@ -332,14 +320,14 @@ export default function AboutOurProject() {
                     className={style.ourPhotos}
                     fluid
                     src={require("../assets/img/ourPhotos/sebastian.jpeg")}
-                    alt="presentation image"
+                    alt="presentation"
                   />
                   <div className="paragraphProfileNamesDiv">
                     <p className={style.ourNames}>Juan Zubillaga</p>
                   </div>
                 </div>
                 <div>
-                  <a className={style.profilesLinks} href="#">
+                  <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
                     <AiOutlineLinkedin size="1.3rem" className="me-1" />
                     LinkedIn
                   </a>

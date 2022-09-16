@@ -31,7 +31,7 @@ export default function AdminEditCategory() {
       const data = {
         name,
       };
-      const response = await axios({
+      await axios({
         url: "/categories/" + categoryId,
         method: "PUT",
         data,
