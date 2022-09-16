@@ -34,7 +34,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="name"
                 id="name"
                 value={product.name}
               />
@@ -43,28 +42,17 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="price"
                 id="price"
                 value={product.price}
               />
               <Form.Label className="m-0 mt-2 mx-1 mt-4 mb-2" htmlFor="description">
                 Description
               </Form.Label>
-              <textarea
-                className="mt-4 mb-2"
-                htmlFOR="description"
-                id="description"
-                value={product.description}
-              />
+              <textarea className="mt-4 mb-2" id="description" value={product.description} />
               <Form.Label className="mx-1 mt-4 mb-1 " htmlFor="featured">
                 Featured
               </Form.Label>
-              <select
-                className="mt-4 mb-2"
-                htmlFOR="featured"
-                id="featured"
-                value={product.featured}
-              >
+              <select className="mt-4 mb-2" id="featured" value={product.featured}>
                 <option value="1">Yes</option>
                 <option value="0">No</option>
               </select>
@@ -73,7 +61,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="designer"
                 id="designer"
                 value={product.designer}
               />
@@ -82,7 +69,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="image1"
                 id="image1"
                 value={product.images}
               />
@@ -91,7 +77,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="image2"
                 id="image2"
                 value={product.images}
               />
@@ -100,7 +85,6 @@ export default function AdminEditProducts() {
               </Form.Label>
               <Form.Control
                 className={` {style.registerForm} placeholder-wave`}
-                htmlFOR="image3"
                 id="image3"
                 value={product.images}
               />
