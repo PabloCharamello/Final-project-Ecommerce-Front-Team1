@@ -14,7 +14,7 @@ import Register from "./Pages/Register";
 import AboutOurProject from "./Pages/AboutOurProject";
 import OrderHistory from "./Pages/OrderHistory";
 
-import AdminInex from "./Pages/Admin/Index";
+import AdminDashboard from "./Pages/Admin/Dashboard";
 import AdminProducts from "./Pages/Admin/Products/Index";
 import AdminCreateProduct from "./Pages/Admin/Products/Create";
 import AdminEditProducts from "./Pages/Admin/Products/Edit";
@@ -55,7 +55,7 @@ function App() {
         </Route>
 
         <Route element={<ProtectedRoute isAllowed={user.token && user.isAdmin} />}>
-          <Route path="/admin/" element={<AdminInex />} />
+          <Route path="/admin/" element={<AdminDashboard />} />
           <Route path="/admin/products/" element={<AdminProducts />} />
           <Route path="/admin/products/create/" element={<AdminCreateProduct />} />
           <Route path="/admin/products/:id" element={<AdminEditProducts />} />
