@@ -4,6 +4,13 @@ import { Container, Accordion } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { format, parseJSON } from "date-fns";
+
+const priceFormatter = new Intl.NumberFormat("en", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
 
 export default function OrderHistory() {
   const [orders, setOrders] = useState(null);
@@ -34,15 +41,18 @@ export default function OrderHistory() {
             return (
               <Accordion.Item key={order.id} eventKey={order.id}>
                 <Accordion.Header>
-                  Order ID: {order.id} | Date: {order.createdAt} | Total: {order.total}
+                  Date: {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")} | Total:{" "}
+                  {priceFormatter.format(order.total)} | Status: {order.status}
                 </Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.
+                  {order.cart.productsList.map((product) => {
+                    return (
+                      <div key={product.id}>
+                        {product.name} x{product.quantity} -{" "}
+                        {priceFormatter.format(product.price * product.quantity)}
+                      </div>
+                    );
+                  })}
                 </Accordion.Body>
               </Accordion.Item>
             );

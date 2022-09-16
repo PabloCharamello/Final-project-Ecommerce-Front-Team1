@@ -162,7 +162,7 @@ function AdminInex() {
                       <td>
                         {order.user.firstname} {order.user.lastname}
                       </td>
-                      <td>{format(parseJSON(order.createdAt), "MM/dd/yyyy - KK:m:s")}</td>
+                      <td>{format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}</td>
                       <td>{priceFormatter.format(order.total)}</td>
                       <td>{order.status}</td>
                     </tr>

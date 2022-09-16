@@ -2,11 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
 import Sidebar from "../../../components/Admin/Sidebar";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function AdminEditProduct() {
   const params = useParams();
+  const navigate = useNavigate();
   const adminId = params.id;
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -46,6 +47,7 @@ export default function AdminEditProduct() {
         method: "PUT",
         data,
       });
+      navigate("/admin/administrators");
     } catch (error) {
       console.log(error);
     }
