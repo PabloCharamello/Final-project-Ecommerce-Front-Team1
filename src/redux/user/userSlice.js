@@ -8,10 +8,12 @@ export const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.userId = action.payload.id;
+      state.isAdmin = action.payload.isAdmin;
       state.token = action.payload.token;
     },
     unsetUser: (state) => {
       delete state.userId;
+      delete state.isAdmin;
       delete state.token;
     },
   },
