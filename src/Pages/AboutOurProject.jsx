@@ -274,7 +274,7 @@ export default function AboutOurProject() {
                 <div>
                   <a
                     className={style.profilesLinks}
-                    href="https://www.linkedin.com/in/sebastianguadalupe?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B898ycWfjTsiLQOryKlMLQw%3D%3D"
+                    href="https://www.linkedin.com/in/sebastianguadalupe/"
                   >
                     <AiOutlineLinkedin className="me-1" size="1.3rem" />
                     LinkedIn
