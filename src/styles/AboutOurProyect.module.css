@@ -28,8 +28,42 @@
   font-weight: 700;
 }
 
+.paragraphPresentation {
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 0 50px;
+}
+
+.paragraphBootcamp {
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 0 50px;
+}
+
+.titleSection {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+.hackAcademyLnk {
+  text-decoration: none;
+  color: rgb(29, 29, 29);
+  padding: 10px 20px;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.pcColorful {
+  margin-top: 60px;
+}
+
+.paragraphColorSec {
+  margin-bottom: 50px;
+}
+
 .divMer {
-  margin-top: 100px;
   padding: 60px;
   flex-wrap: wrap;
   display: flex;
@@ -42,12 +76,16 @@
 }
 
 .merImage {
-  width: 80%;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.592);
 }
 
 .paragraphMer {
   text-align: start;
 }
+
+/*TECNOLOGIES*/
 
 .tecnologiesUp {
   padding: 0;
@@ -60,4 +98,43 @@
   align-items: center;
 }
 
-/*TECNOLOGIES*/
+/* OUR PHOTOS*/
+
+.ourPhotos {
+  margin-top: 30px;
+  border-radius: 50%;
+  width: 200px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.27s;
+}
+
+.ourPhotos:hover {
+  transform: scale(105%);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.276);
+}
+
+.developerTeamTitle {
+  margin-top: 80px;
+}
+
+.ourNames {
+  margin-bottom: -3px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.profilesLinks {
+  color: rgb(11, 11, 11);
+
+  border-radius: 15px;
+  padding: 0.2px 3px 3px;
+  transition: 0.15s;
+}
+
+.profilesLinks:hover {
+  color: rgb(76, 0, 0);
+  padding: 0.5px 15px 3px;
+  background-color: rgb(213, 213, 213);
+  border-radius: 15px;
+  border: 0.2px solid black;
+}
