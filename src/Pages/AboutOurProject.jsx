@@ -331,7 +331,7 @@ export default function AboutOurProject() {
                   <img
                     className={style.ourPhotos}
                     fluid
-                    src={require("../assets/img/ourPhotos/sebastian.jpeg")}
+                    src={require("../assets/img/ourPhotos/juan.jpeg")}
                     alt="presentation image"
                   />
                   <div className="paragraphProfileNamesDiv">

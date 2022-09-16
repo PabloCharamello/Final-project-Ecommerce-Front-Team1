@@ -8,15 +8,12 @@ export default function AdminEditCategories() {
   const params = useParams();
   const categoryId = params.id;
   const [name, setName] = useState("");
-  const [category, setCategory] = useState(null);
 
   const getCategory = async () => {
     const response = await axios({
       url: "/categories/" + categoryId,
       method: "GET",
     });
-    setCategory(response.data);
-    setName(response.data.name);
   };
 
   // eslint-disable-next-line
@@ -34,7 +31,7 @@ export default function AdminEditCategories() {
       };
       const response = await axios({
         url: "/categories/" + categoryId,
-        method: "PUT",
+        method: "POST",
         data,
       });
     } catch (error) {
@@ -65,11 +62,11 @@ export default function AdminEditCategories() {
             />
           </Form.Group>
           <Link to="/admin/categories">
-            <Button className="mt-4 mx-2">Cancel</Button>
+            <Button type="submit" className="mt-4 mx-2">
+              Cancel
+            </Button>
           </Link>
-          <Button type="submit" className="mt-4 mx-2">
-            Apply
-          </Button>
+          <Button className="mt-4 mx-2">Apply</Button>
         </Form>
       </Container>
     </div>
