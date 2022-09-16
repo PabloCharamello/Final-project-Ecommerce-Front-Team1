@@ -3,32 +3,34 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminCreateProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [details, setDetails] = useState("");
-  const [featured, setFeatured] = useState("");
+  const [featured, setFeatured] = useState(0);
   const [designer, setDesigner] = useState("");
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
   const [stock, setStock] = useState("");
   const [shortDescription, setShortDescription] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const data = {
         name,
-        price: parseFloat(price),
+        price,
         "short-description": shortDescription,
         description,
         details,
         featured,
         designer,
-        stock: parseInt(stock),
+        stock,
         images: [image1, image2, image3],
       };
       await axios({
@@ -36,7 +38,10 @@ export default function AdminCreateProduct() {
         method: "POST",
         data,
       });
-    } catch {}
+      navigate("/admin/products");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

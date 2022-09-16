@@ -144,7 +144,7 @@ function AdminInex() {
           </Row>
           <Card className="mb-7">
             <Card.Header>
-              <h5 className="mb-0">Lastest Orders</h5>
+              <h5 className="mb-0">Orders</h5>
             </Card.Header>
             <Table hover responsive className="table-nowrap">
               <thead className="thead-light">
