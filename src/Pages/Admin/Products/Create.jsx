@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
-
+import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 export default function AdminCreateProduct() {
@@ -181,9 +181,11 @@ export default function AdminCreateProduct() {
                   }}
                   value={image3}
                 />
-                <Button className="mt-4 mx-2">Cancel</Button>
+                <Button as={Link} to="/admin/products" className="mt-4 mx-2">
+                  Cancel
+                </Button>
                 <Button className="mt-4 mx-2" type="submit">
-                  Apply
+                  Update
                 </Button>
               </div>
             </Form.Group>
