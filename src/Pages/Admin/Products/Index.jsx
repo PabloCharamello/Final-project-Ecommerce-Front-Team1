@@ -6,6 +6,7 @@ import { Card, Table, Container, Button } from "react-bootstrap";
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
+import swal from "sweetalert";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -31,6 +32,20 @@ export default function AdminProducts() {
     if (response.statusText === "OK") {
       setProducts(products.filter((product) => product.id !== productId));
     }
+  };
+
+  const modalConfirmation = (productId) => {
+    swal({
+      title: "Delete?",
+      text: "Are you sure want delete this product?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+    }).then((resYes) => {
+      if (resYes) {
+        swal({ text: "The product was deleted", icon: "success" });
+        handleDelete(productId);
+      }
+    });
   };
 
   const handleUpdate = async (productId) => {
@@ -92,7 +107,7 @@ export default function AdminProducts() {
                         </Link>
                         <Button
                           onClick={() => {
-                            handleDelete(product.id);
+                            modalConfirmation(product.id);
                           }}
                           className="bg-danger rounded-circle text-white d-flex p-2 border-0 me-3"
                         >

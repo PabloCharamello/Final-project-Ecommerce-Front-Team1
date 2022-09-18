@@ -5,6 +5,7 @@ import Sidebar from "../../../components/Admin/Sidebar";
 import { Card, Table, Container, Button } from "react-bootstrap";
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
+import swal from "sweetalert";
 
 export default function AdminAdministrators() {
   const [administrators, setAdministrators] = useState(null);
@@ -24,6 +25,20 @@ export default function AdminAdministrators() {
     if (response.statusText === "OK") {
       setAdministrators(administrators.filter((admin) => admin.id !== adminId));
     }
+  };
+
+  const modalConfirmation = (adminId) => {
+    swal({
+      title: "Delete?",
+      text: "Are you sure want delete this product?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+    }).then((resYes) => {
+      if (resYes) {
+        swal({ text: "The product was deleted", icon: "success" });
+        handleDelete(adminId);
+      }
+    });
   };
 
   // eslint-disable-next-line
@@ -71,7 +86,7 @@ export default function AdminAdministrators() {
                         </Link>
                         <Button
                           onClick={() => {
-                            handleDelete(admin.id);
+                            modalConfirmation(admin.id);
                           }}
                           className="bg-danger rounded-circle text-white d-flex p-2 border-0 me-3"
                         >

@@ -1,6 +1,3 @@
-import { BiLogOut, BiTable } from "react-icons/bi";
-import { BsSpeedometer } from "react-icons/bs";
-import { IoGrid, IoPeopleCircle } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { unsetUser } from "../../redux/user/userSlice";

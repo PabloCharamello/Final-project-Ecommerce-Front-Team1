@@ -5,6 +5,7 @@ import { Card, Table, Container, Button } from "react-bootstrap";
 import { BiEdit, BiTrash } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
+import swal from "sweetalert";
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
@@ -25,6 +26,20 @@ export default function Categories() {
     if (response.statusText === "OK") {
       setCategories(categories.filter((category) => category.id !== categoryId));
     }
+  };
+
+  const modalConfirmation = (categoryId) => {
+    swal({
+      title: "Delete?",
+      text: "Are you sure want delete this product?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+    }).then((resYes) => {
+      if (resYes) {
+        swal({ text: "The product was deleted", icon: "success" });
+        handleDelete(categoryId);
+      }
+    });
   };
 
   // eslint-disable-next-line
@@ -68,7 +83,7 @@ export default function Categories() {
                         </Link>
                         <Button
                           onClick={() => {
-                            handleDelete(category.id);
+                            modalConfirmation(category.id);
                           }}
                           className="bg-danger rounded-circle text-white d-flex p-2 border-0 me-3"
                         >
