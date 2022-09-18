@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeProductFromCart } from "../../redux/cart/cartSlice";
 import style from "./CartPopup.module.css";
+import swal from "sweetalert";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -18,6 +19,20 @@ export default function CartPopup() {
 
   const handleRemoveFromCart = (id) => {
     dispatch(removeProductFromCart(id));
+  };
+
+  const modalConfirmation = (productId) => {
+    swal({
+      title: "Delete?",
+      text: "Are you sure want delete this product?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+    }).then((resYes) => {
+      if (resYes) {
+        swal({ text: "The product was deleted", icon: "success" });
+        handleRemoveFromCart(productId);
+      }
+    });
   };
 
   return (
@@ -48,7 +63,7 @@ export default function CartPopup() {
                       </div>
                       <IoClose
                         className={`fs-4 cursor-pointer`}
-                        onClick={() => handleRemoveFromCart(product.id)}
+                        onClick={() => modalConfirmation(product.id)}
                       />
                     </div>
                   );

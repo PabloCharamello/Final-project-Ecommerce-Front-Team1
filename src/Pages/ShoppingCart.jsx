@@ -12,10 +12,25 @@ import {
   minusProductFromCart,
   removeProductFromCart,
 } from "../redux/cart/cartSlice";
+import swal from "sweetalert";
 
 export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const modalConfirmation = (productId) => {
+    swal({
+      title: "Delete?",
+      text: "Are you sure want delete this product?",
+      icon: "warning",
+      buttons: ["No", "Yes"],
+    }).then((resYes) => {
+      if (resYes) {
+        swal({ text: "The product was deleted", icon: "success" });
+        handleRemoveFromCart(productId);
+      }
+    });
+  };
 
   const handleAddToCart = async (product) => {
     if (product.quantity === product.stock) {
@@ -62,7 +77,9 @@ export default function ShoppingCart() {
                     <IoClose
                       role="button"
                       className={`fs-4 cursor-pointer`}
-                      onClick={() => handleRemoveFromCart(product.id)}
+                      onClick={() => {
+                        modalConfirmation(product.id);
+                      }}
                     />
                     <Image fluid className={style.productImage} src={product.images[0]} />
 
