@@ -44,10 +44,10 @@ export default function AdminEditCategories() {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
+          <Button type="submit" variant="dark">
+            New
+          </Button>
           <Link to="/admin/categories">
-            <Button type="submit" variant="dark">
-              New
-            </Button>
             <Button variant="outline-dark" className=" ms-3">
               Cancel
             </Button>

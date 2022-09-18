@@ -40,7 +40,6 @@ export default function AdminProducts() {
     });
   };
 
-  console.log(products);
   // eslint-disable-next-line
   useEffect(() => getProductFromApi, []);
 
