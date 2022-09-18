@@ -54,7 +54,7 @@ export default function AdminEditCategories() {
           className="text-start w-100"
           style={{ maxWidth: "500px" }}
         >
-          <Form.Group className="mb-3 mt-5 ">
+          <Form.Group className="mb-3">
             <Form.Label className="m-0 mt-2 mx-1 " htmlFor="name">
               Name
             </Form.Label>
@@ -66,12 +66,14 @@ export default function AdminEditCategories() {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-          <Link to="/admin/categories">
-            <Button className="mt-4 mx-2">Cancel</Button>
-          </Link>
-          <Button type="submit" className="mt-4 mx-2">
-            Apply
+          <Button type="submit" variant="dark">
+            Save
           </Button>
+          <Link to="/admin/categories">
+            <Button variant="outline-dark" className=" ms-3">
+              Cancel
+            </Button>
+          </Link>
         </Form>
       </Container>
     </div>

@@ -83,7 +83,7 @@ export default function AdminCreateProduct() {
             />
           </Form.Group>
           <Button type="submit" variant="dark" className="mt-3">
-            Create
+            New
           </Button>
           <Link to="/admin/administrators">
             <Button variant="outline-dark" className="mt-3 ms-3">
