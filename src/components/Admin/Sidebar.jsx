@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { unsetUser } from "../../redux/user/userSlice";
-
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -21,7 +20,7 @@ export default function Sidebar() {
     navigate("/");
   };
   return (
-    <div style={{ display: "flex", height: "100vh", overflow: "scroll initial" }}>
+    <div style={{ display: "flex", height: "100vh", position: "sticky", top: "0" }}>
       <CDBSidebar textColor="#fff" className="bg-dark">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <Link

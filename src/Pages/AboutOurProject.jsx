@@ -12,7 +12,7 @@ import { FiTrello } from "react-icons/fi";
 import { FaFigma } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
-
+import hackDesignImage from "../assets/img/ourProjectImages/HackDsn1.jpg";
 import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
 
 export default function AboutOurProject() {
@@ -23,16 +23,11 @@ export default function AboutOurProject() {
       <div className="container-fluid">
         <Row className="p-0">
           <Col className="g-0 p-0">
-            <Image
-              className={style.heroImage}
-              fluid
-              src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw46f7c3f9/images/productsets/1544033.jpg?sw=2000"
-              alt="presentation image"
-            />
+            <Image className={style.heroImage} fluid src={hackDesignImage} alt="presentation" />
 
-            <div className={style.heroParagraphDiv}>
+            {/* <div className={style.heroParagraphDiv}>
               <p className={style.heroParagraph}>About our Proyect</p>
-            </div>
+            </div> */}
           </Col>
         </Row>
         <div className="container">

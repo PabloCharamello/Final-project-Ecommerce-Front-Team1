@@ -17,7 +17,7 @@
 .heroImg {
   object-fit: cover;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   animation-name: fadeHeroImg;
   opacity: 0;
   animation-duration: 3s;
