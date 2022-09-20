@@ -82,6 +82,7 @@ export default function AdminProducts() {
                   <th>Name</th>
                   <th>Price</th>
                   <th>Stock</th>
+                  <th>Category</th>
                   <th>Featured</th>
                   <th></th>
                 </tr>
@@ -93,6 +94,7 @@ export default function AdminProducts() {
                       <td className="fw-bold">{product.name}</td>
                       <td>{priceFormatter.format(product.price)}</td>
                       <td>{product.stock}</td>
+                      <td>{product.categoryId}</td>
                       <td>{product.featured && <AiFillStar />}</td>
                       <td className="d-flex justify-content-end align-items-center">
                         <Link to={"/admin/products/" + product.id}>

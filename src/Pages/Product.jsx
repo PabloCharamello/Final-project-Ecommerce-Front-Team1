@@ -52,7 +52,6 @@ export default function Home() {
             <div className="w-75">
               <h1 className="text-center text-lg-end">
                 <span className="text-uppercase">{product.name}</span>{" "}
-                <span className="fw-light fst-italic">by {product.designer}</span>
               </h1>
               <p className="text-center text-lg-end">{product["short-description"]}</p>
             </div>
@@ -94,7 +93,10 @@ export default function Home() {
           >
             <div className="d-flex flex-column w-50 mx-5">
               <h2 className="text-start fs-4">Technical specifications:</h2>
-              <p className="text-start fw-light">{product.details}</p>
+              <p
+                className="text-start fw-light"
+                dangerouslySetInnerHTML={{ __html: product.details }}
+              ></p>
             </div>
           </Col>
         </Row>

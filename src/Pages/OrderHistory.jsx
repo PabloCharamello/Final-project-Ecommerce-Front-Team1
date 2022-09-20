@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import { Container, Accordion } from "react-bootstrap";
+import { Container, Accordion, Image, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -41,18 +41,49 @@ export default function OrderHistory() {
             return (
               <Accordion.Item key={order.id} eventKey={order.id}>
                 <Accordion.Header>
-                  Date: {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")} | Total:{" "}
-                  {priceFormatter.format(order.total)} | Status: {order.status}
+                  <strong className="mx-1">Date: </strong>{" "}
+                  {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")} |{" "}
+                  <strong className="mx-1">Total:</strong> {priceFormatter.format(order.total)} |{" "}
+                  <strong className="mx-1">Status:</strong> {order.status}
                 </Accordion.Header>
                 <Accordion.Body>
-                  {order.cart.productsList.map((product) => {
-                    return (
-                      <div key={product.id}>
-                        {product.name} x{product.quantity} -{" "}
-                        {priceFormatter.format(product.price * product.quantity)}
+                  <Row>
+                    <Col lg={8}>
+                      {order.cart.productsList.map((product) => {
+                        return (
+                          <div
+                            key={product.id}
+                            className={`d-flex justify-content-between align-items-center mt-2 pb-2 border-bottom`}
+                          >
+                            <Image fluid height="100px" width="100px" src={product.images[0]} />
+                            <span className="fw-bold text-black">{product.name}</span>
+                            <div>
+                              <span className="fw-light me-1">
+                                {priceFormatter.format(parseInt(product.price))}
+                              </span>
+                              <span className="fw-light fst-italic">x{product.quantity}</span>
+                            </div>
+                            <span className="me-1">
+                              {priceFormatter.format(parseInt(product.price * product.quantity))}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </Col>
+                    <Col lg={4} className="border-start">
+                      <h3 className="text-start">Ship to:</h3>
+                      <div className="text-start mt-3 ms-2">
+                        <p className="fw-bold">{order.address.name}</p>
+                        <p>Street: {order.address.street}</p>
+                        <p>Corner: {order.address.corner}</p>
+                        <p>Zipcode: {order.address.zipcode}</p>
+                        <p>City: {order.address.city}</p>
+                        <p>State: {order.address.state}</p>
+                        <p>Country: {order.address.country}</p>
+                        <p>Phone: {order.address.phone}</p>
                       </div>
-                    );
-                  })}
+                    </Col>
+                  </Row>
                 </Accordion.Body>
               </Accordion.Item>
             );
