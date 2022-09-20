@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,9 +7,15 @@ import Sidebar from "../../../components/Admin/Sidebar";
 export default function AdminEditCategories() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [categories, setCategories] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formIsValid = nameValidation();
+    if (!formIsValid) {
+      return;
+    }
     try {
       await axios({
         url: "/categories/",
@@ -21,6 +27,37 @@ export default function AdminEditCategories() {
       console.log(error);
     }
   };
+
+  const getCategories = async () => {
+    const response = await axios({
+      url: "/categories/",
+      method: "GET",
+    });
+    setCategories(response.data);
+  };
+
+  const nameValidation = () => {
+    let formIsValid = true;
+    for (const category of categories) {
+      if (name === category.name) {
+        formIsValid = false;
+        setError("Category name already used");
+      }
+    }
+    if (typeof name !== "undefined") {
+      if (!name.match(/^[a-zA-Z]+$/)) {
+        formIsValid = false;
+        setError("Category name can only have letters and numbers");
+      }
+    }
+    if (name.length > 15) {
+      formIsValid = false;
+      setError("Name length must be less than 15 characters");
+    }
+    return formIsValid;
+  };
+  useEffect(() => getCategories, []);
+
   return (
     <div className="d-flex align-items-center">
       <Sidebar />
@@ -44,6 +81,7 @@ export default function AdminEditCategories() {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
+          <p className="text-danger">{error}</p>
           <Button type="submit" variant="dark">
             New
           </Button>
