@@ -116,7 +116,7 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/armchairs">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2676/iambiance1/1/0/1005ki_1848x1848.jpg"
+                src="https://www.ikea.com/nl/en/images/products/strandmon-wing-chair-grann-bomstad-dark-brown__0998384_pe823015_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Armchairs</p>
@@ -125,7 +125,7 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/tables">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2514/iambiance1/0/1/0105q_2000x2000.jpg"
+                src="https://www.ikea.com/nl/en/images/products/strandtorp-extendable-table-brown__0946320_ph172863_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Tables</p>
@@ -134,7 +134,7 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/sofas">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dwc681ee04/images/productsets/1583359.jpg?sw=2000&sh=1125"
+                src="https://www.ikea.com/nl/en/images/products/gronlid-corner-sofa-5-seat-w-chaise-longue-ljungen-medium-grey__0787563_pe763289_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Sofas</p>
@@ -142,10 +142,10 @@ export default function Home() {
         </Row>
         <Row className={style.cardsContainer}>
           <Col lg={4} className="p-2">
-            <Link className="text-decoration-none" to="/category/sofas">
+            <Link className="text-decoration-none" to="/category/beds">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/1768/iambiance1/0/0/00tlu_c02_1848x1848.jpg"
+                src="https://www.ikea.com/nl/en/images/products/lommedalen-divan-bed-vatnestrom-firm-tistedal-skiftebo-light-beige__0936887_pe793454_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Beds</p>
@@ -154,7 +154,7 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/lighting">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2385/iambiance1/0/1/011v0_600x600.jpg"
+                src="https://www.ikea.com/nl/en/images/products/frihult-wall-lamp-stainless-steel-colour__1052390_pe846070_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Lighting</p>
@@ -163,7 +163,7 @@ export default function Home() {
             <Link className="text-decoration-none" to="/category/office">
               <Image
                 className={style.categoryCardsImg}
-                src="https://images.ligne-roset.com/cache/models/2570/iambiance1/1/0/100200_c01_1848x1848.jpg"
+                src="https://www.ikea.com/nl/en/images/products/trotten-cabinet-combination-anthracite__1038437_pe839676_s5.jpg?f=xl"
               />
             </Link>
             <p className={style.beds}>Office</p>
