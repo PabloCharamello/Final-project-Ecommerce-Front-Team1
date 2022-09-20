@@ -4,7 +4,7 @@ import style from "../styles/AboutOurProyect.module.css";
 import Footer from "../components/Footer/Footer";
 import { TbBrandJavascript } from "react-icons/tb";
 import { BiGitBranch } from "react-icons/bi";
-import { SiRedux, SiExpress, SiMysql } from "react-icons/si";
+import { SiRedux, SiExpress, SiMysql, SiSupabase } from "react-icons/si";
 import { DiNodejs } from "react-icons/di";
 import { GrReactjs } from "react-icons/gr";
 import { BsBootstrap } from "react-icons/bs";
@@ -12,6 +12,7 @@ import { FiTrello } from "react-icons/fi";
 import { FaFigma } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { TbBrandDiscord } from "react-icons/tb";
 import hackDesignImage from "../assets/img/ourProjectImages/HackDsn1.jpg";
 import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
 
@@ -245,6 +246,18 @@ export default function AboutOurProject() {
                 <div>
                   <FiTrello size="3rem" />
                   <p>Trello</p>
+                </div>
+              </Col>
+              <Col lg={2} md={6} xs={6}>
+                <div>
+                  <SiSupabase size="3rem" />
+                  <p>Supabase</p>
+                </div>
+              </Col>
+              <Col lg={2} md={6} xs={6}>
+                <div>
+                  <TbBrandDiscord size="3rem" />
+                  <p>Discord</p>
                 </div>
               </Col>
             </Row>

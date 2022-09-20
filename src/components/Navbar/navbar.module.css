@@ -43,6 +43,37 @@
   font-weight: 500;
 }
 
+.aboutProjectDiv {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 8px 40px 8px;
+  top: 320px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-family: "Amoitar", sans-serif;
+  background-color: #0d0d0d;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 10;
+  transition: 0.3s;
+  transform: rotate(90deg);
+  right: -140px;
+}
+
+.aboutProjectDiv:hover {
+  color: rgb(195, 241, 255);
+  background-color: rgba(0, 0, 0, 0.692);
+  /* color: white; */
+}
+
+.aboutProject {
+  background-color: rgb(97, 97, 97);
+  margin-bottom: 5px;
+}
+
 .rightColIcon {
   margin: 5px;
   width: 1.3rem;

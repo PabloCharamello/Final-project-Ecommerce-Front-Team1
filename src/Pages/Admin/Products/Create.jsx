@@ -207,8 +207,10 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="image1"
                     id="image1"
+                    type="file"
                     onChange={(e) => {
-                      setImage1(e.target.value);
+                      console.log(e.files[0]);
+                      setImage1(e.files[0]);
                     }}
                     value={image1}
                   />
@@ -219,6 +221,7 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="image2"
                     id="image2"
+                    type="file"
                     onChange={(e) => {
                       setImage2(e.target.value);
                     }}
@@ -231,6 +234,7 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="image3"
                     id="image3"
+                    type="file"
                     onChange={(e) => {
                       setImage3(e.target.value);
                     }}
