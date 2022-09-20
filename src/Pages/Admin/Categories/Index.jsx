@@ -31,12 +31,12 @@ export default function Categories() {
   const modalConfirmation = (categoryId) => {
     swal({
       title: "Delete?",
-      text: "Are you sure want delete this product?",
+      text: "Are you sure want delete this category?",
       icon: "warning",
       buttons: ["No", "Yes"],
     }).then((resYes) => {
       if (resYes) {
-        swal({ text: "The product was deleted", icon: "success" });
+        swal({ text: "The category was deleted", icon: "success" });
         handleDelete(categoryId);
       }
     });
