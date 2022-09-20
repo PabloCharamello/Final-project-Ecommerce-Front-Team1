@@ -41,10 +41,16 @@ export default function OrderHistory() {
             return (
               <Accordion.Item key={order.id} eventKey={order.id}>
                 <Accordion.Header>
-                  <strong className="mx-1">Date: </strong>{" "}
-                  {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")} |{" "}
-                  <strong className="mx-1">Total:</strong> {priceFormatter.format(order.total)} |{" "}
-                  <strong className="mx-1">Status:</strong> {order.status}
+                  <p>
+                    <strong className="mx-1">Date: </strong>
+                    {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}
+                  </p>
+                  <p>
+                    <strong className="mx-1">Total:</strong> {priceFormatter.format(order.total)}
+                  </p>
+                  <p>
+                    <strong className="mx-1">Status:</strong> {order.status}
+                  </p>
                 </Accordion.Header>
                 <Accordion.Body>
                   <Row>

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Row, Col, Card, Table, Container } from "react-bootstrap";
+import { Row, Col, Card, Table, Container, Button } from "react-bootstrap";
 import { BiCreditCard, BiDownArrowCircle, BiUpArrowCircle } from "react-icons/bi";
 import { HiCursorClick, HiShoppingBag } from "react-icons/hi";
 import { MdOutlineCreditScore } from "react-icons/md";
 import { format, parseJSON } from "date-fns";
 import Sidebar from "../../components/Admin/Sidebar";
+import { Link } from "react-router-dom";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -149,22 +150,30 @@ function AdminInex() {
             <Table hover responsive className="table-nowrap">
               <thead className="thead-light">
                 <tr>
+                  <th scope="col">Order ID</th>
                   <th scope="col">Name</th>
                   <th scope="col">Date</th>
                   <th scope="col">Total</th>
                   <th scope="col">Status</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
                 {orders.map((order) => {
                   return (
                     <tr key={order.id}>
+                      <td>{order.id}</td>
                       <td>
                         {order.user.firstname} {order.user.lastname}
                       </td>
                       <td>{format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}</td>
                       <td>{priceFormatter.format(order.total)}</td>
                       <td>{order.status}</td>
+                      <td>
+                        <Link to={"/admin/order/" + order.id}>
+                          <Button variant="dark-outline">View order</Button>
+                        </Link>
+                      </td>
                     </tr>
                   );
                 })}

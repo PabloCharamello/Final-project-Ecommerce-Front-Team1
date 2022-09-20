@@ -35,10 +35,13 @@ function BasicExample() {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="mx-auto my-2 my-lg-0 justify-content-center">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" className="fw-bold text-black">
               HOME
             </Nav.Link>
-            <NavDropdown title="CATEGORIES">
+            <NavDropdown
+              title={<span className="fw-bold text-black my-auto">CATEGORIES</span>}
+              className="mx-5"
+            >
               {categories &&
                 categories.map((category) => {
                   return (
@@ -48,7 +51,7 @@ function BasicExample() {
                   );
                 })}
             </NavDropdown>
-            <Nav.Link as={Link} to="/about-our-project">
+            <Nav.Link as={Link} to="/about-our-project" className="fw-bold text-black">
               OUR PROJECT
             </Nav.Link>
           </Nav>

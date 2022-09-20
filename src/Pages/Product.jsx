@@ -55,12 +55,7 @@ export default function Home() {
               </h1>
               <p className="text-center text-lg-end">{product["short-description"]}</p>
             </div>
-            <Button
-              variant="outline-dark"
-              size="lg"
-              className="rounded-pill px-5"
-              onClick={handleAddToCart}
-            >
+            <Button variant="outline-dark" size="lg" className="px-5" onClick={handleAddToCart}>
               Add to cart
             </Button>
           </Col>
