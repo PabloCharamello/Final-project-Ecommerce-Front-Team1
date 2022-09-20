@@ -7,8 +7,8 @@
 }
 
 .imageProduct {
-    object-fit: cover;
-    width: 500px;
-    height: 400px;
+    object-fit: scale-down;
+    width: 450px;
+    height: 450px;
 
 }
