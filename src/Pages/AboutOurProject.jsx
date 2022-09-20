@@ -271,7 +271,7 @@ export default function AboutOurProject() {
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/sebastianguadalupe/"
                   >
-                    <AiOutlineLinkedin className="me-1" size="1.3rem" />
+                    <AiOutlineLinkedin className="me-1" size="1.47rem" />
                     LinkedIn
                   </a>
                   <a href="https://github.com/SebastianGuadalupe" className={style.profilesLinks}>
@@ -297,7 +297,7 @@ export default function AboutOurProject() {
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/pablocharamello"
                   >
-                    <AiOutlineLinkedin className="me-1" size="1.3rem" />
+                    <AiOutlineLinkedin className="me-1" size="1.47rem" />
                     LinkedIn
                   </a>
                   <a
@@ -323,7 +323,7 @@ export default function AboutOurProject() {
                 </div>
                 <div>
                   <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
-                    <AiOutlineLinkedin size="1.3rem" className="me-1" />
+                    <AiOutlineLinkedin size="1.47rem" className="me-1" />
                     LinkedIn
                   </a>
                   <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">

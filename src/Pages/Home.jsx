@@ -11,6 +11,7 @@ import sendingAllWorld from "../assets/svg/ofrecemos/flight-takeoff-line.svg";
 import weColaborate from "../assets/svg/ofrecemos/hand-heart-line.svg";
 import customerService from "../assets/svg/ofrecemos/customer-service-2-fill.svg";
 import securePayment from "../assets/svg/ofrecemos/secure-payment-line.svg";
+import HdHero from "../assets/img/ourProjectImages/HdHeroHome.jpg";
 
 export default function Home() {
   return (
@@ -18,12 +19,7 @@ export default function Home() {
       <Navbar />
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
-          <Image
-            fluid
-            className={style.heroImg}
-            src="https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw46f7c3f9/images/productsets/1544033.jpg?sw=2000"
-            alt="presentation image"
-          />
+          <Image fluid className={style.heroImg} src={HdHero} alt="presentation image" />
         </Col>
       </Row>
       <div className="container">

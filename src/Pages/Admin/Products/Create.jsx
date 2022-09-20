@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../../components/Admin/Sidebar";
+import { useEffect } from "react";
 
 export default function AdminCreateProduct() {
   const [name, setName] = useState("");
@@ -18,6 +19,9 @@ export default function AdminCreateProduct() {
   const [image3, setImage3] = useState("");
   const [stock, setStock] = useState("");
   const [shortDescription, setShortDescription] = useState("");
+  const [categories, setCategories] = useState(null);
+  const [categoryId, setCategoryId] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -31,9 +35,14 @@ export default function AdminCreateProduct() {
         details,
         featured,
         designer,
+        categoryId,
         stock,
         images: [image1, image2, image3],
       };
+      if (categoryId === "") {
+        setError("You need to specify a category");
+        return;
+      }
       await axios({
         url: "/products",
         method: "POST",
@@ -44,6 +53,20 @@ export default function AdminCreateProduct() {
       console.log(error);
     }
   };
+
+  const getCategoriesFromApi = async () => {
+    const response = await axios({
+      url: "/categories",
+      method: "GET",
+    });
+    setCategories(response.data);
+  };
+  useEffect(() => {
+    getCategoriesFromApi();
+  }, []);
+  if (!categories) {
+    return <>Loading...</>;
+  }
 
   return (
     <>
@@ -115,6 +138,27 @@ export default function AdminCreateProduct() {
                     }}
                     value={details}
                   />
+                  <Form.Label className="mx-1 mt-4 mb-1 " htmlFor="category">
+                    Category
+                  </Form.Label>
+                  <select
+                    className="mt-2 mb-2 rounded-2"
+                    htmlFor="category"
+                    id="category"
+                    onChange={(e) => {
+                      setCategoryId(e.target.value);
+                    }}
+                    value={categoryId}
+                  >
+                    <option value="">-</option>
+                    {categories.map((category) => {
+                      return (
+                        <option key={category.id} value={category.id}>
+                          {category.name}
+                        </option>
+                      );
+                    })}
+                  </select>
                   <Form.Label className="mx-1 mt-4 mb-1 " htmlFor="featured">
                     Featured
                   </Form.Label>
@@ -192,6 +236,7 @@ export default function AdminCreateProduct() {
                     }}
                     value={image3}
                   />
+                  <p className="ms-1 text-danger fs-5">{error}</p>
                   <Button variant="dark" className="mt-3" type="submit">
                     New
                   </Button>

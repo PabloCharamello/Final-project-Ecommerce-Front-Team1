@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/user/userSlice";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -39,14 +41,17 @@ export default function Register() {
         },
       });
 
-      const login = await axios({
-        url: "users/token/",
-        method: "POST",
-        data: {
-          email,
-          password,
+      const login = await axios(
+        {
+          url: "users/token/",
+          method: "POST",
+          data: {
+            email,
+            password,
+          },
         },
-      });
+        navigate("/"),
+      );
       dispatch(setUser(login.data));
     } catch (error) {
       setError(error.response.data.error);
@@ -134,6 +139,7 @@ export default function Register() {
             required
           />
           <p className="fw-bold">{error}</p>
+
           <Button as="button" type="submit" variant="dark">
             Register
           </Button>
