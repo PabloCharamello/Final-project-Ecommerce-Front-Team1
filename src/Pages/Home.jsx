@@ -14,7 +14,7 @@ import {
 } from "react-icons/ri";
 import { BsAward } from "react-icons/bs";
 
-import HdHero from "../assets/img/ourProjectImages/HdHeroHome.jpg";
+import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
 
 export default function Home() {
   return (
