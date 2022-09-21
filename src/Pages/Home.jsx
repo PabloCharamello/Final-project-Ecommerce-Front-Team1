@@ -15,6 +15,7 @@ import {
 import { BsAward } from "react-icons/bs";
 
 import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
+import HdHeroWebP from "../assets/img/ourProjectImages/HdHeroHome.webp";
 
 export default function Home() {
   return (
@@ -22,7 +23,10 @@ export default function Home() {
       <Navbar />
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
-          <Image fluid className={style.heroImg} src={HdHero} alt="presentation image" />
+          <picture>
+            <source srcset={HdHero} type="image/avif" />
+            <img className={`${style.heroImg} fluid`} src={HdHeroWebP} alt="hero" />
+          </picture>
         </Col>
       </Row>
       <div className="container">
