@@ -170,50 +170,46 @@ export default function Home() {
           src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
         />
       </div>
-      <section>
-        <div className="container">
-          <div className="row">
-            <Col lg={3} className={style.tableSection}>
-              <div className={style.divCardsStylesTitles}>
-                <h2 className={style.CardsStylesTitles}>Rustic</h2>
-              </div>
-              <Image
-                className={style.TableSectionImg}
-                src="https://c1.wallpaperflare.com/preview/793/775/760/vintage-interior-home-old.jpg"
-              />
-            </Col>
-
-            <Col lg={3} className={style.tableSection}>
-              <div className={style.divCardsStylesTitles}>
-                <h2 className={style.CardsStylesTitles}>Colorful</h2>
-              </div>
-              <Image
-                className={style.TableSectionImg}
-                src="https://c4.wallpaperflare.com/wallpaper/917/933/286/design-style-room-interior-wallpaper-preview.jpg"
-              />
-            </Col>
-            <Col lg={3} className={style.tableSection}>
-              <div className={style.divCardsStylesTitles}>
-                <h2 className={style.CardsStylesTitles}>Modern</h2>
-              </div>
-              <Image
-                className={style.TableSectionImg}
-                src="https://c1.wallpaperflare.com/preview/1002/272/31/architecture-building.jpg"
-              />
-            </Col>
-            <Col lg={3} className={style.tableSection}>
-              <div className={style.divCardsStylesTitles}>
-                <h2 className={style.CardsStylesTitles}>Minimalist</h2>
-              </div>
-              <Image
-                className={style.TableSectionImg}
-                src="https://c0.wallpaperflare.com/preview/243/242/451/bed-bedroom-clean-clouds.jpg"
-              />
-            </Col>
-          </div>
-        </div>
-      </section>
-
+      <div className="container">
+        <Row>
+          <Col lg={3} className={style.tableSection}>
+            <div className={style.divCardsStylesTitles}>
+              <h2 className={style.CardsStylesTitles}>Rustic</h2>
+            </div>
+            <Image
+              className={style.TableSectionImg}
+              src="https://c1.wallpaperflare.com/preview/793/775/760/vintage-interior-home-old.jpg"
+            />
+          </Col>
+          <Col lg={3} className={style.tableSection}>
+            <div className={style.divCardsStylesTitles}>
+              <h2 className={style.CardsStylesTitles}>Colorful</h2>
+            </div>
+            <Image
+              className={style.TableSectionImg}
+              src="https://c4.wallpaperflare.com/wallpaper/917/933/286/design-style-room-interior-wallpaper-preview.jpg"
+            />
+          </Col>
+          <Col lg={3} className={style.tableSection}>
+            <div className={style.divCardsStylesTitles}>
+              <h2 className={style.CardsStylesTitles}>Modern</h2>
+            </div>
+            <Image
+              className={style.TableSectionImg}
+              src="https://c1.wallpaperflare.com/preview/1002/272/31/architecture-building.jpg"
+            />
+          </Col>
+          <Col lg={3} className={style.tableSection}>
+            <div className={style.divCardsStylesTitles}>
+              <h2 className={style.CardsStylesTitles}>Minimalist</h2>
+            </div>
+            <Image
+              className={style.TableSectionImg}
+              src="https://c0.wallpaperflare.com/preview/243/242/451/bed-bedroom-clean-clouds.jpg"
+            />
+          </Col>
+        </Row>
+      </div>
       <Footer />
     </>
   );
