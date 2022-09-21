@@ -15,15 +15,14 @@
 }
 
 .heroImg {
-  object-fit: cover;
+  object-fit: content;
   width: 100vw;
-  height: 100%;
+  height: calc(100vh - 74px);
   animation-name: fadeHeroImg;
   opacity: 0;
   animation-duration: 3s;
   animation-play-state: running, paused, paused;
   animation-fill-mode: forwards;
-  margin-bottom: 3rem;
   transition: all 2s;
 }
 
@@ -185,7 +184,6 @@
   object-fit: cover;
   box-shadow: 0 0 8px 1px rgba(46, 46, 46, 0.106);
   transition: 0.25s ease-in-out;
-  filter: saturate(1.2);
 }
 
 .categoryCardsImg:hover {
@@ -267,9 +265,8 @@
 
 .divCardsStylesTitles {
   position: relative;
-  top: 190px;
+  top: 420px;
   line-height: 80px;
-  font-size: 3rem;
   z-index: 4;
   font-weight: 600;
   color: #ffffff;
@@ -279,12 +276,12 @@
 
 .CardsStylesTitles {
   line-height: 80px;
-  font-family: "Amoitar", sans-serif;
-  font-size: 2.3rem;
-  font-weight: -100;
+  font-size: 1.8rem;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.549);
   z-index: 4;
   color: #ffffff;
-  transform-origin: center;
+
   text-shadow: 1px 1px 5px rgba(31, 31, 31, 0.719);
 }
 

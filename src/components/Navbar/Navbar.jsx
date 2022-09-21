@@ -28,7 +28,7 @@ function BasicExample() {
 
   return (
     <>
-      <Navbar bg="light" sticky="top" expand="lg" className="px-lg-5">
+      <Navbar bg="dark" sticky="top" expand="lg" className="px-lg-5">
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className={style.logoNavbar}>
             Hack Design
@@ -36,7 +36,7 @@ function BasicExample() {
           <img src="../../assets/img/logo.png" alt="" />
           <Navbar.Toggle />
           <Navbar.Collapse>
-            <Nav className="mx-auto my-2 my-lg-0 justify-content-center">
+            <Nav className="mx-auto my-2 my-lg-0 justify-content-center text-white">
               <Nav.Link as={Link} to="/">
                 HOME
               </Nav.Link>
