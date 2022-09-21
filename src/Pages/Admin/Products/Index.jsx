@@ -16,13 +16,6 @@ const priceFormatter = new Intl.NumberFormat("en", {
 
 export default function AdminProducts() {
   const [products, setProducts] = useState(null);
-  const getProductFromApi = async () => {
-    const response = await axios({
-      url: "/products/",
-      method: "GET",
-    });
-    setProducts(response.data);
-  };
 
   const handleDelete = async (productId) => {
     const response = await axios({
@@ -55,8 +48,16 @@ export default function AdminProducts() {
     });
   };
 
-  // eslint-disable-next-line
-  useEffect(() => getProductFromApi, []);
+  useEffect(() => {
+    const getProductFromApi = async () => {
+      const response = await axios({
+        url: "/products/",
+        method: "GET",
+      });
+      setProducts(response.data);
+    };
+    getProductFromApi();
+  }, []);
 
   if (!products) {
     return <>Loading...</>;

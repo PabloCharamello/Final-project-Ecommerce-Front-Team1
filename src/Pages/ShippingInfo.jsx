@@ -23,14 +23,6 @@ export default function ShippingInfo() {
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
 
-  const getAddressesFromApi = async () => {
-    const response = await axios({
-      url: "/address/",
-      method: "GET",
-    });
-    setAddresses(response.data);
-  };
-
   const getAddressFromApi = async (id) => {
     const response = await axios({
       url: "/address/" + id,
@@ -70,8 +62,16 @@ export default function ShippingInfo() {
     } catch (error) {}
   };
 
-  // eslint-disable-next-line
-  useEffect(() => getAddressesFromApi, [address]);
+  useEffect(() => {
+    const getAddressesFromApi = async () => {
+      const response = await axios({
+        url: "/address/",
+        method: "GET",
+      });
+      setAddresses(response.data);
+    };
+    getAddressesFromApi();
+  }, [address]);
 
   return (
     <>

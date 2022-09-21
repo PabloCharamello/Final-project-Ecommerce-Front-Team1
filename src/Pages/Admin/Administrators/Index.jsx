@@ -9,13 +9,6 @@ import swal from "sweetalert";
 
 export default function AdminAdministrators() {
   const [administrators, setAdministrators] = useState(null);
-  const getAdministratorsFromApi = async () => {
-    const response = await axios({
-      url: "/admins/",
-      method: "GET",
-    });
-    setAdministrators(response.data);
-  };
 
   const handleDelete = async (adminId) => {
     const response = await axios({
@@ -41,8 +34,16 @@ export default function AdminAdministrators() {
     });
   };
 
-  // eslint-disable-next-line
-  useEffect(() => getAdministratorsFromApi, []);
+  useEffect(() => {
+    const getAdministratorsFromApi = async () => {
+      const response = await axios({
+        url: "/admins/",
+        method: "GET",
+      });
+      setAdministrators(response.data);
+    };
+    getAdministratorsFromApi();
+  }, []);
 
   if (!administrators) {
     return <>Loading...</>;

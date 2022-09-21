@@ -16,16 +16,17 @@ const priceFormatter = new Intl.NumberFormat("en", {
 
 function AdminInex() {
   const [orders, setOrders] = useState(null);
-  const getOrdersFromApi = async () => {
-    const response = await axios({
-      url: "/orders/",
-      method: "GET",
-    });
-    setOrders(response.data);
-  };
 
-  // eslint-disable-next-line
-  useEffect(() => getOrdersFromApi, []);
+  useEffect(() => {
+    const getOrdersFromApi = async () => {
+      const response = await axios({
+        url: "/orders/",
+        method: "GET",
+      });
+      setOrders(response.data);
+    };
+    getOrdersFromApi();
+  }, []);
 
   if (!orders) {
     return <>Loading...</>;

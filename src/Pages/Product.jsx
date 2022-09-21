@@ -21,16 +21,16 @@ export default function Home() {
   const productSlug = params.slug;
   const [product, setProduct] = useState(null);
 
-  const getProductFromApi = async () => {
-    const response = await axios({
-      url: "/products/" + productSlug,
-      method: "GET",
-    });
-    setProduct(response.data);
-  };
-
-  // eslint-disable-next-line
-  useEffect(() => getProductFromApi, [productSlug]);
+  useEffect(() => {
+    const getProductFromApi = async () => {
+      const response = await axios({
+        url: "/products/" + productSlug,
+        method: "GET",
+      });
+      setProduct(response.data);
+    };
+    getProductFromApi();
+  }, [productSlug]);
 
   if (!product) {
     return <>Loading...</>;

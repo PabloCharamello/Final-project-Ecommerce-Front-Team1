@@ -16,20 +16,20 @@ export default function Order() {
   const orderId = params.id;
   const [order, setOrder] = useState(null);
 
-  const getOrder = async () => {
-    try {
-      const response = await axios({
-        url: "/orders/" + orderId,
-        method: "GET",
-      });
-      setOrder(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // eslint-disable-next-line
-  useEffect(() => getOrder, [orderId]);
+  useEffect(() => {
+    const getOrder = async () => {
+      try {
+        const response = await axios({
+          url: "/orders/" + orderId,
+          method: "GET",
+        });
+        setOrder(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getOrder();
+  }, [orderId]);
 
   if (!order) {
     return <>Loading...</>;

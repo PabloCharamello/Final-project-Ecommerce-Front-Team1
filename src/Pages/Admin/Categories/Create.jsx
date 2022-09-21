@@ -28,14 +28,6 @@ export default function AdminEditCategories() {
     }
   };
 
-  const getCategories = async () => {
-    const response = await axios({
-      url: "/categories/",
-      method: "GET",
-    });
-    setCategories(response.data);
-  };
-
   const nameValidation = () => {
     let formIsValid = true;
     for (const category of categories) {
@@ -56,7 +48,20 @@ export default function AdminEditCategories() {
     }
     return formIsValid;
   };
-  useEffect(() => getCategories, []);
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        url: "/categories/",
+        method: "GET",
+      });
+      setCategories(response.data);
+    };
+    getCategories();
+  }, []);
+
+  if (!categories) {
+    return <>Loading...</>;
+  }
 
   return (
     <div className="d-flex align-items-center">

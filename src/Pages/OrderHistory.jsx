@@ -18,16 +18,16 @@ export default function OrderHistory() {
   const [orders, setOrders] = useState(null);
   const user = useSelector((state) => state.user);
 
-  const getOrdersFromApi = async () => {
-    const response = await axios({
-      url: "/orders?userId=" + user.userId,
-      method: "GET",
-    });
-    setOrders(response.data);
-  };
-
-  // eslint-disable-next-line
-  useEffect(() => getOrdersFromApi, [user]);
+  useEffect(() => {
+    const getOrdersFromApi = async () => {
+      const response = await axios({
+        url: "/orders?userId=" + user.userId,
+        method: "GET",
+      });
+      setOrders(response.data);
+    };
+    getOrdersFromApi();
+  }, [user]);
 
   if (!orders) {
     return <>Loading...</>;

@@ -10,14 +10,6 @@ import swal from "sweetalert";
 export default function Categories() {
   const [categories, setCategories] = useState(null);
 
-  const getCategories = async () => {
-    const response = await axios({
-      url: "/categories/",
-      method: "GET",
-    });
-    setCategories(response.data);
-  };
-
   const handleDelete = async (categoryId) => {
     const response = await axios({
       url: "/categories/" + categoryId,
@@ -42,8 +34,16 @@ export default function Categories() {
     });
   };
 
-  // eslint-disable-next-line
-  useEffect(() => getCategories, []);
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        url: "/categories/",
+        method: "GET",
+      });
+      setCategories(response.data);
+    };
+    getCategories();
+  }, []);
 
   if (!categories) {
     return <>Loading...</>;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { Button, Container, Col, Row, Card } from "react-bootstrap";
+import { Button, Container, Col, Row } from "react-bootstrap";
 import Sidebar from "../../../components/Admin/Sidebar";
 
 export default function AdminEditProducts() {
@@ -22,32 +22,30 @@ export default function AdminEditProducts() {
   const [image3, setImage3] = useState("");
   const [stock, setStock] = useState("");
 
-  const getProductFromApi = async () => {
-    try {
-      const result = await axios({
-        method: "GET",
-        url: "/products/" + productId,
-      });
-      setProduct(result.data);
-      setName(result.data.name);
-      setPrice(result.data.price);
-      setShortDescription(result.data["short-description"]);
-      setDescription(result.data.description);
-      setDetails(result.data.details);
-      setFeatured(result.data.featured);
-      setDesigner(result.data.designer);
-      setStock(result.data.stock);
-      setImage1(result.data.images[0]);
-      setImage2(result.data.images[1]);
-      setImage3(result.data.images[2]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getProductFromApi = async () => {
+      try {
+        const result = await axios({
+          method: "GET",
+          url: "/products/" + productId,
+        });
+        setProduct(result.data);
+        setName(result.data.name);
+        setPrice(result.data.price);
+        setShortDescription(result.data["short-description"]);
+        setDescription(result.data.description);
+        setDetails(result.data.details);
+        setFeatured(result.data.featured);
+        setDesigner(result.data.designer);
+        setStock(result.data.stock);
+        setImage1(result.data.images[0]);
+        setImage2(result.data.images[1]);
+        setImage3(result.data.images[2]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getProductFromApi();
-    // eslint-disable-next-line
   }, [productId]);
 
   const handleSubmit = async (e) => {
@@ -75,10 +73,10 @@ export default function AdminEditProducts() {
     }
   };
 
-  // eslint-disable-next-line
   if (!product) {
     return <>Loading...</>;
   }
+
   return (
     <>
       <div className="d-flex align-items-center">

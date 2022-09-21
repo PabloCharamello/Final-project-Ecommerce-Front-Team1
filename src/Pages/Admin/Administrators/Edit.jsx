@@ -15,19 +15,19 @@ export default function AdminEditProduct() {
   const [password, setPassword] = useState("");
   const [admin, setAdmin] = useState(null);
 
-  const getAdminFromApi = async () => {
-    const response = await axios({
-      url: "/admins/" + adminId,
-      method: "GET",
-    });
-    setAdmin(response.data);
-    setFirstname(response.data.firstname);
-    setLastname(response.data.lastname);
-    setEmail(response.data.email);
-  };
-
-  // eslint-disable-next-line
-  useEffect(() => getAdminFromApi, [adminId]);
+  useEffect(() => {
+    const getAdminFromApi = async () => {
+      const response = await axios({
+        url: "/admins/" + adminId,
+        method: "GET",
+      });
+      setAdmin(response.data);
+      setFirstname(response.data.firstname);
+      setLastname(response.data.lastname);
+      setEmail(response.data.email);
+    };
+    getAdminFromApi();
+  }, [adminId]);
 
   if (!admin) {
     return <>Loading...</>;

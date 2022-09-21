@@ -14,7 +14,6 @@ function BasicExample() {
   const user = useSelector((state) => state.user);
   const [categories, setCategories] = useState(null);
 
-  // eslint-disable-next-line
   useEffect(() => {
     const getCategoriesFromApi = async () => {
       const response = await axios({

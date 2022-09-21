@@ -11,17 +11,17 @@ export default function AdminEditCategories() {
   const [category, setCategory] = useState(null);
   const navigate = useNavigate();
 
-  const getCategory = async () => {
-    const response = await axios({
-      url: "/categories/" + categoryId,
-      method: "GET",
-    });
-    setCategory(response.data);
-    setName(response.data.name);
-  };
-
-  // eslint-disable-next-line
-  useEffect(() => getCategory, [categoryId]);
+  useEffect(() => {
+    const getCategory = async () => {
+      const response = await axios({
+        url: "/categories/" + categoryId,
+        method: "GET",
+      });
+      setCategory(response.data);
+      setName(response.data.name);
+    };
+    getCategory();
+  }, [categoryId]);
 
   if (!category) {
     return <>Loading...</>;
