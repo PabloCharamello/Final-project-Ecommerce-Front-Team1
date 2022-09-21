@@ -1,8 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/episode-i");
-@import url("http://fonts.cdnfonts.com/css/amoitar");
-@import url("http://fonts.cdnfonts.com/css/switzer");
-@import url("https://fonts.googleapis.com/css2?family=Tangerine&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Rubik+Marker+Hatch&display=swap");
+@import url("https://fonts.cdnfonts.com/css/amoitar");
 
 * {
   padding: 0;
@@ -17,7 +13,7 @@
 .heroImg {
   object-fit: content;
   width: 100vw;
-  height: calc(100vh - 74px);
+  /* height: calc(100vh - 74px); */
   animation-name: fadeHeroImg;
   opacity: 0;
   animation-duration: 3s;
@@ -169,7 +165,7 @@
 }
 
 .customStroke path {
-  stroke-width: .5px;
+  stroke-width: 0.5px;
   stroke: white;
 }
 
@@ -199,7 +195,6 @@
 
 .beds {
   position: relative;
-  font-family: "Switzer", sans-serif;
   margin-top: 5px;
   font-size: 1.5rem;
   color: rgb(135, 135, 135);
