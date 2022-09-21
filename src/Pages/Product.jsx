@@ -72,7 +72,7 @@ export default function Home() {
               </span>
               <div className="d-flex flex-column w-50 mx-5">
                 <h2 className="text-start fs-4">{product.name}</h2>
-                <p className="text-start fw-light">{product.description}</p>
+                <p className="text-start">{product.description}</p>
               </div>
             </div>
           </Col>
@@ -88,10 +88,7 @@ export default function Home() {
           >
             <div className="d-flex flex-column w-50 mx-5">
               <h2 className="text-start fs-4">Technical specifications:</h2>
-              <p
-                className="text-start fw-light"
-                dangerouslySetInnerHTML={{ __html: product.details }}
-              ></p>
+              <p className="text-start" dangerouslySetInnerHTML={{ __html: product.details }}></p>
             </div>
           </Col>
         </Row>

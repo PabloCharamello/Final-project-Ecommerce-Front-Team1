@@ -27,7 +27,7 @@ function BasicExample() {
 
   return (
     <>
-      <Navbar bg="light" sticky="top" expand="lg" className="px-lg-5">
+      <Navbar sticky="top" expand="lg" className={`${style.background} px-lg-5`}>
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className={style.logoNavbar}>
             Hack Design
@@ -56,9 +56,9 @@ function BasicExample() {
                     );
                   })}
               </NavDropdown>
-              {/* <Nav.Link as={Link} to="/about-our-project" className="fw-bold text-black">
-              OUR PROJECT
-            </Nav.Link> */}
+              <Nav.Link as={Link} to="/about-our-project" className="fw-bold text-black">
+                OUR PROJECT
+              </Nav.Link>
               <Link className={style.aboutProjectDiv} as={Link} to="/about-our-project">
                 ABOUT OUR PROJECT
               </Link>

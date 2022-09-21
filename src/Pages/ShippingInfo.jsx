@@ -87,7 +87,7 @@ export default function ShippingInfo() {
             ) : (
               <Form.Select
                 size="lg"
-                className="mb-1 placeholder-wave"
+                className={`${style.selectAddress} mb-1 placeholder-wave`}
                 value={address}
                 onChange={handleAddressChange}
               >
@@ -104,13 +104,27 @@ export default function ShippingInfo() {
             {parseInt(address) !== -1 ? (
               addressData && (
                 <div className="text-start mt-3 ms-2">
-                  <p>Street: {addressData.street}</p>
-                  <p>Corner: {addressData.corner}</p>
-                  <p>Zipcode: {addressData.zipcode}</p>
-                  <p>City: {addressData.city}</p>
-                  <p>State: {addressData.state}</p>
-                  <p>Country: {addressData.country}</p>
-                  <p>Phone: {addressData.phone}</p>
+                  <p>
+                    <strong>Street: </strong> {addressData.street}
+                  </p>
+                  <p>
+                    <strong>Corner: </strong> {addressData.corner}
+                  </p>
+                  <p>
+                    <strong>Zipcode: </strong> {addressData.zipcode}
+                  </p>
+                  <p>
+                    <strong>City: </strong> {addressData.city}
+                  </p>
+                  <p>
+                    <strong>State: </strong> {addressData.state}
+                  </p>
+                  <p>
+                    <strong>Country: </strong> {addressData.country}
+                  </p>
+                  <p>
+                    <strong>Phone: </strong> {addressData.phone}
+                  </p>
                 </div>
               )
             ) : (

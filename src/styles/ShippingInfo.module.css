@@ -35,6 +35,11 @@
   border-color: #000000 !important;
 }
 
+.selectAddress, .selectAddress:focus {
+  border-radius: 2px;
+  border-color: black;
+}
+
 textarea:focus,
 input:focus,
 input[type]:focus {

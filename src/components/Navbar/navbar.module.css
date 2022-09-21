@@ -7,10 +7,10 @@
   width: 100%;
   z-index: 100;
 }
-/* 
-.navLinkGeneral {
-  margin-left: 450px;
-} */
+
+.background {
+  background-color: #F5F5F5;
+}
 
 .rightColIcon {
   display: block;

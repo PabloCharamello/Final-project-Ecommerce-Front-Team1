@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { format, parseJSON } from "date-fns";
 
+import style from "../styles/OrderHistory.module.css";
+
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
   currency: "USD",
@@ -36,21 +38,23 @@ export default function OrderHistory() {
       <Navbar />
       <Container>
         <h1 className="pt-5">Order History</h1>
-        <Accordion className="py-5">
+        <Accordion className={`py-5`}>
           {orders.map((order) => {
             return (
               <Accordion.Item key={order.id} eventKey={order.id}>
-                <Accordion.Header>
-                  <p>
-                    <strong className="mx-1">Date: </strong>
-                    {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}
-                  </p>
-                  <p>
-                    <strong className="mx-1">Total:</strong> {priceFormatter.format(order.total)}
-                  </p>
-                  <p>
-                    <strong className="mx-1">Status:</strong> {order.status}
-                  </p>
+                <Accordion.Header className={style.accordionHeader}>
+                  <div>
+                    <p>
+                      <strong className="mx-1">Date: </strong>
+                      {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}
+                    </p>
+                    <p>
+                      <strong className="mx-1">Total:</strong> {priceFormatter.format(order.total)}
+                    </p>
+                    <p>
+                      <strong className="mx-1">Status:</strong> {order.status}
+                    </p>
+                  </div>
                 </Accordion.Header>
                 <Accordion.Body>
                   <Row>

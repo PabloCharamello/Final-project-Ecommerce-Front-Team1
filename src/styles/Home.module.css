@@ -161,11 +161,17 @@
 .weOfferDiv {
   place-items: center;
   width: 150px;
+  margin-top: 15px;
 }
 
 .weOffer {
   width: 50px;
   opacity: 50%;
+}
+
+.customStroke path {
+  stroke-width: .5px;
+  stroke: white;
 }
 
 /*CATEGORIES*/
