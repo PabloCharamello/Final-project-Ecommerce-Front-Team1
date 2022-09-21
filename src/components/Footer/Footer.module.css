@@ -6,64 +6,51 @@
 }
 
 .footerContainer {
-  /* margin-top: 160px; */
   background-color: #0c0c0c;
 }
 
 .hackDesignParagraph {
-  text-align: left;
-  margin-left: 25px;
+  /* margin-left: 25px; */
+  text-align: start;
 }
 
 .footerLink {
-  margin-top: 150px;
   font-size: 0.8rem;
-  text-align: left;
-  margin-left: 120px;
 }
 
 .footerLinkAbout {
-  margin-top: 150px;
+  text-align: start;
   font-size: 0.8rem;
   font-weight: 200;
   font-weight: 400;
 }
 
 .footerLinksContact {
-  margin-top: 150px;
   font-size: 0.8rem;
   font-weight: 400;
 }
 
 .footerLinkSocialNet {
-  margin-top: 150px;
   font-size: 0.8rem;
   text-align: left;
   font-weight: 400;
-  margin-left: 58px;
 }
 
 .hackDesignFooter {
   font-family: "Amoitar", sans-serif;
-  color: white;
+  color: rgb(210, 210, 210);
   font-size: 2rem;
   margin-top: 50px;
 }
 
 .footerTitles {
-  color: white;
+  color: rgb(210, 210, 210);
   font-size: 1.2rem;
-  margin-top: 65px;
+  margin-top: 50px;
   font-weight: 700;
+  text-align: start;
 }
 
 .allRightsReserved {
-  background-color: #0c0c0c;
-}
-
-.layer1 {
-  background-image: url("../../assets/svg/layer1.svg");
-  height: 550px;
-  padding-top: 100px;
-  bottom: 0;
+  color: rgb(210, 210, 210);
 }

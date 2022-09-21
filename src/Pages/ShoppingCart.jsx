@@ -61,7 +61,7 @@ export default function ShoppingCart() {
     maximumFractionDigits: 0,
   });
   return (
-    <>
+    <div>
       <Navbar />
       <Container>
         <Row className="mb-5">
@@ -72,7 +72,7 @@ export default function ShoppingCart() {
               return (
                 <div key={product.id}>
                   <div
-                    className={`${style.gray} d-flex justify-content-between align-items-center py-3 border-bottom`}
+                    className={`d-flex justify-content-between align-items-center py-3 border-bottom`}
                   >
                     <IoClose
                       role="button"
@@ -84,9 +84,7 @@ export default function ShoppingCart() {
                     <Image fluid className={style.productImage} src={product.images[0]} />
 
                     <span className="fw-bold text-black">{product.name}</span>
-                    <span className="fw-light fst-italic">
-                      {priceFormatter.format(parseInt(product.price))}
-                    </span>
+                    <span className="">{priceFormatter.format(parseInt(product.price))}</span>
                     <div className="d-flex align-items-center justify-content-center border px-5 py-3 user-select-none">
                       <span className="me-3">Quantity</span>
                       <IoCaretBack
@@ -106,7 +104,7 @@ export default function ShoppingCart() {
                         }}
                       />
                     </div>
-                    <span className="fw-bold">
+                    <span className="">
                       {priceFormatter.format(parseInt(product.price * product.quantity))}
                     </span>
                   </div>
@@ -118,16 +116,16 @@ export default function ShoppingCart() {
             <div className={`${style.cartTotals} d-flex flex-column mt-3`}>
               <h2 className="mb-3">CART TOTALS</h2>
               <div>
-                <span className="me-3">SUBTOTAL</span>
-                <span className="fw-light">$31,755</span>
+                <span className="me-3 fw-bold">SUBTOTAL</span>
+                <span className="">$31,755</span>
               </div>
               <div className="border-bottom pb-4 bg-gray">
-                <span className="me-3">SHIPPING</span>
-                <span className="fw-light">Free</span>
+                <span className="me-3 fw-bold">SHIPPING</span>
+                <span className="">Free</span>
               </div>
               <div className="pt-4">
-                <span className="me-5 fs-3">TOTAL</span>
-                <span className="fw-bold fs-3">$31,755</span>
+                <span className="fw-bold me-5 fs-3">TOTAL</span>
+                <span className="fs-3">$31,755</span>
                 <div className="d-flex justify-content-center">
                   <Button as={Link} to="/shipping" variant="dark" className={style.checkoutButton}>
                     PROCEED TO CHECKOUT
@@ -139,6 +137,6 @@ export default function ShoppingCart() {
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }

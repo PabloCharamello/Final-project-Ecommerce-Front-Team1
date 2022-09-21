@@ -84,7 +84,7 @@ export default function CartPopup() {
       }
     >
       <button className={`${style.button} d-flex align-items-center border-0 bg-transparent me-3`}>
-        <BiShoppingBag className="me-2 fs-5" /> <span className="fw-bold">CART </span>
+        <BiShoppingBag className="me-2 fs-5" /> <span className="fw-bold me-2">CART </span>
         <span className="me-2">({cart.totalCount})</span>
       </button>
     </OverlayTrigger>

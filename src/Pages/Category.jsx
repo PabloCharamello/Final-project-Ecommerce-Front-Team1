@@ -61,7 +61,7 @@ export default function Category() {
                   <Image fluid className={`${style.imageProduct} mb-2`} src={product.images[0]} />
                 </Link>
                 <h2 className="text-start fs-4">{product.name}</h2>
-                <span className="fst-italic fs-6 mb-2">{priceFormatter.format(product.price)}</span>
+                <span className="fs-6 mb-2">{priceFormatter.format(product.price)}</span>
                 <Button
                   variant="outline-dark"
                   size="sm"

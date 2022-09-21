@@ -9,7 +9,6 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Row, Col, Image } from "react-bootstrap";
 
 function BasicExample() {
   const user = useSelector((state) => state.user);
@@ -28,7 +27,7 @@ function BasicExample() {
 
   return (
     <>
-      <Navbar bg="dark" sticky="top" expand="lg" className="px-lg-5">
+      <Navbar sticky="top" expand="lg" className={`${style.background} px-lg-5`}>
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className={style.logoNavbar}>
             Hack Design
@@ -36,11 +35,14 @@ function BasicExample() {
           <img src="../../assets/img/logo.png" alt="" />
           <Navbar.Toggle />
           <Navbar.Collapse>
-            <Nav className="mx-auto my-2 my-lg-0 justify-content-center text-white">
-              <Nav.Link as={Link} to="/">
+            <Nav className="mx-auto my-2 my-lg-0 justify-content-center">
+              <Nav.Link as={Link} to="/" className="fw-bold text-black">
                 HOME
               </Nav.Link>
-              <NavDropdown title="CATEGORIES">
+              <NavDropdown
+                title={<span className="fw-bold text-black my-auto">CATEGORIES</span>}
+                className="mx-5"
+              >
                 {categories &&
                   categories.map((category) => {
                     return (
@@ -54,9 +56,9 @@ function BasicExample() {
                     );
                   })}
               </NavDropdown>
-              {/* <Nav.Link as={Link} to="/about-our-project">
-              OUR PROJECT
-            </Nav.Link> */}
+              <Nav.Link as={Link} to="/about-our-project" className="fw-bold text-black">
+                OUR PROJECT
+              </Nav.Link>
               <Link className={style.aboutProjectDiv} as={Link} to="/about-our-project">
                 ABOUT OUR PROJECT
               </Link>
