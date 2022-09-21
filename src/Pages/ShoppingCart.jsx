@@ -67,52 +67,57 @@ export default function ShoppingCart() {
         <Row className="mb-5">
           <h1 className="fw-3 mb-3">SHOPPING CART</h1>
           <ToastContainer />
-          <Col lg={8} className="pe-5">
+          <Col lg={8}>
             {cart.productsList.map((product) => {
               return (
-                <div key={product.id}>
-                  <div
-                    className={`d-flex justify-content-between align-items-center py-3 border-bottom`}
-                  >
-                    <IoClose
-                      role="button"
-                      className={`fs-4 cursor-pointer`}
-                      onClick={() => {
-                        modalConfirmation(product.id);
-                      }}
-                    />
-                    <Image fluid className={style.productImage} src={product.images[0]} />
+                <div className="d-flex align-items-center w-100">
+                  <IoClose
+                    role="button"
+                    className={`cursor-pointer me-3`}
+                    size="20px"
+                    style={{ width: "20px" }}
+                    onClick={() => {
+                      modalConfirmation(product.id);
+                    }}
+                  />
+                  <Row key={product.id} className="border-bottom w-100">
+                    <Col lg={3} className={`d-flex justify-content-around align-items-center py-3`}>
+                      <Image fluid className={style.productImage} src={product.images[0]} />
+                    </Col>
+                    <Col lg={3} className={`d-flex justify-content-around align-items-center py-3`}>
+                      <span className="fw-bold text-black">{product.name}</span>
+                      <span className="">{priceFormatter.format(parseInt(product.price))}</span>
+                    </Col>
+                    <Col lg={6} className={`d-flex justify-content-around align-items-center py-3`}>
+                      <div className="d-flex align-items-center justify-content-center border px-4 py-3 user-select-none">
+                        <span className="me-3">Quantity</span>
+                        <IoCaretBack
+                          role="button"
+                          className="fs-3 mx-2 opacity-50"
+                          onClick={() => {
+                            handleMinusFromCart(product.id);
+                          }}
+                        />
 
-                    <span className="fw-bold text-black">{product.name}</span>
-                    <span className="">{priceFormatter.format(parseInt(product.price))}</span>
-                    <div className="d-flex align-items-center justify-content-center border px-5 py-3 user-select-none">
-                      <span className="me-3">Quantity</span>
-                      <IoCaretBack
-                        role="button"
-                        className="fs-3 mx-2 opacity-50"
-                        onClick={() => {
-                          handleMinusFromCart(product.id);
-                        }}
-                      />
-
-                      <span className="fs-5">{product.quantity}</span>
-                      <IoCaretForward
-                        role="button"
-                        className="fs-3 mx-2 opacity-50"
-                        onClick={() => {
-                          handleAddToCart(product);
-                        }}
-                      />
-                    </div>
-                    <span className="">
-                      {priceFormatter.format(parseInt(product.price * product.quantity))}
-                    </span>
-                  </div>
+                        <span className="fs-5">{product.quantity}</span>
+                        <IoCaretForward
+                          role="button"
+                          className="fs-3 mx-2 opacity-50"
+                          onClick={() => {
+                            handleAddToCart(product);
+                          }}
+                        />
+                      </div>
+                      <span className="">
+                        {priceFormatter.format(parseInt(product.price * product.quantity))}
+                      </span>
+                    </Col>
+                  </Row>
                 </div>
               );
             })}
           </Col>
-          <Col lg={4} className="ps-5">
+          <Col lg={4}>
             <div className={`${style.cartTotals} d-flex flex-column mt-3`}>
               <h2 className="mb-3">CART TOTALS</h2>
               <div>
