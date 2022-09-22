@@ -7,6 +7,8 @@
 
 .footerContainer {
   background-color: #0c0c0c;
+  padding-top: 50px;
+  margin-top: 50px;
 }
 
 .hackDesignParagraph {
@@ -39,7 +41,7 @@
 .hackDesignFooter {
   font-family: "Amoitar", sans-serif;
   color: rgb(210, 210, 210);
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-top: 50px;
 }
 

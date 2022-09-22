@@ -28,10 +28,10 @@ export default function Footer() {
       <Container>
         <Row>
           <Col lg={3} md={6} xs={12}>
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-start">
               <p className={style.hackDesignFooter}>Hack Design®</p>
               <p
-                className={`${style.hackDesignParagraph} d-block text-decoration-none text-white mt-1`}
+                className={`${style.hackDesignParagraph} d-block text-decoration-none text-white mt-1 w-75`}
               >
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis eligendi
                 officia eos assumenda maxime eveniet autem quo sequi iure iste.

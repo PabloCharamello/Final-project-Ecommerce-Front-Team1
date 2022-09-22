@@ -34,8 +34,8 @@ export default function Slider() {
     return <>Loading...</>;
   }
 
-  const handleAddToCart = () => {
-    dispatch(addProductToCart({ ...products, quantity: 1 }));
+  const handleAddToCart = (product) => {
+    dispatch(addProductToCart({ ...product, quantity: 1 }));
   };
 
   const responsive = {
@@ -60,11 +60,10 @@ export default function Slider() {
 
   return (
     <>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} infinite>
         {products.map((product) => {
           return (
             <div key={product.id} className={style.cardFeaturedProductsDiv}>
-              {/* <Image src={product.images[0]} className={style.cardFeaturedProducts} /> */}
               <Link to={"/product/" + product.id}>
                 <Image fluid className={style.imageProduct} src={product.images[0]} />
               </Link>
