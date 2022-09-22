@@ -26,6 +26,7 @@ import AdminEditAdministrators from "./Pages/Admin/Administrators/Edit";
 import AdminCategories from "./Pages/Admin/Categories/Index";
 import AdminCreateCategories from "./Pages/Admin/Categories/Create";
 import AdminEditCategories from "./Pages/Admin/Categories/Edit";
+import WelcomeModal from "./components/WelcomeModal/WelcomeModal";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <div className="App">
+      <WelcomeModal />
       <Routes>
         <Route
           element={
