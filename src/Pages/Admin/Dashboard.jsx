@@ -37,8 +37,8 @@ function AdminInex() {
       <Sidebar />
       <main className="bg-surface-secondary w-100">
         <Container>
-          <h1 className="pt-3">Dashboard</h1>
-          <Row className="g-6 mb-6 py-4">
+          <h1 className="pt-3 pb-4 text-start">Dashboard</h1>
+          <Row className="g-6 mb-6">
             <Col xl={3} sm={6}>
               <Card className="">
                 <Card.Body>

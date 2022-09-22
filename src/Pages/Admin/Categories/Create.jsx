@@ -37,7 +37,7 @@ export default function AdminEditCategories() {
       }
     }
     if (typeof name !== "undefined") {
-      if (!name.match(/^[a-zA-Z]+$/)) {
+      if (!name.match(/^[a-zA-Z0-9\s]+$/g)) {
         formIsValid = false;
         setError("Category name can only have letters and numbers");
       }
