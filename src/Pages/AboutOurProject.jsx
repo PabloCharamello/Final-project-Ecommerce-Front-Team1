@@ -15,8 +15,13 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { TbBrandDiscord } from "react-icons/tb";
 import hackDesignImage from "../assets/img/ourProjectImages/HackDsn1.jpg";
 import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
+import { useEffect } from "react";
 
 export default function AboutOurProject() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />

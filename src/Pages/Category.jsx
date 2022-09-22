@@ -34,6 +34,10 @@ export default function Category() {
     getCategoryFromApi(categorySlug);
   }, [categorySlug]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [categorySlug]);
+
   if (!category) {
     return <p>Loading...</p>;
   }

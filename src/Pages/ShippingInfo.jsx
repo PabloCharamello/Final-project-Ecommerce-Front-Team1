@@ -23,6 +23,10 @@ export default function ShippingInfo() {
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const getAddressFromApi = async (id) => {
     const response = await axios({
       url: "/address/" + id,

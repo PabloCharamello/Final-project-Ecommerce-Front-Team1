@@ -29,6 +29,10 @@ export default function OrderHistory() {
     getOrdersFromApi();
   }, [user]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!orders) {
     return <>Loading...</>;
   }
