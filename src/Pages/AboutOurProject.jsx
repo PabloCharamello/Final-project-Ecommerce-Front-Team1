@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "../styles/AboutOurProyect.module.css";
 import Footer from "../components/Footer/Footer";
-import { TbBrandJavascript, TbH3 } from "react-icons/tb";
+import { TbBrandJavascript } from "react-icons/tb";
 import { BiGitBranch } from "react-icons/bi";
 import { SiRedux, SiExpress, SiMysql, SiSupabase } from "react-icons/si";
 import { DiNodejs } from "react-icons/di";
