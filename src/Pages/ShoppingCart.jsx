@@ -14,6 +14,7 @@ import {
 } from "../redux/cart/cartSlice";
 import swal from "sweetalert";
 import { useState, useEffect } from "react";
+import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
 
 export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
@@ -79,6 +80,7 @@ export default function ShoppingCart() {
   return (
     <div className={`${style.shoppingCart} d-flex flex-column justify-content-between`}>
       <Navbar />
+      <AboutOurProject />
       <Container className={style.shoppingContainer}>
         <h1 className="fw-3 mb-3 mt-2">SHOPPING CART</h1>
         <Row className="mb-5">

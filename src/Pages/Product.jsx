@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/cart/cartSlice";
+import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -47,6 +48,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <AboutOurProject />
       <Container fluid className="p-0">
         <Row className={`g-0`}>
           <Col

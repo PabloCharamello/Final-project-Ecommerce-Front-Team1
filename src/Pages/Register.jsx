@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ export default function Register() {
   return (
     <>
       <Navbar />
+      <AboutOurProject />
       <Container className="d-flex justify-content-center mt-4 mt-lg-0 pb-lg-5 align-items-lg-center min-vh-100">
         <Form
           as="form"
