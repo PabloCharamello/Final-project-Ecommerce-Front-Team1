@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Button, Col, Modal, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function WelcomeModal() {
   const [show, setShow] = useState(true);
@@ -14,6 +15,15 @@ export default function WelcomeModal() {
       await axios({
         url: "/database/reset",
         method: "POST",
+      });
+      toast.success("Database was reset!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
     } catch (error) {
       console.log(error);
