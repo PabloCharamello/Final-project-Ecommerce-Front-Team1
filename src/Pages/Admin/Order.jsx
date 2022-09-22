@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Col, Row, Image, Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Col, Row, Image, Container, Form, Button } from "react-bootstrap";
+import { useParams, Link } from "react-router-dom";
 import Sidebar from "../../components/Admin/Sidebar";
 
 const priceFormatter = new Intl.NumberFormat("en", {
@@ -15,6 +15,20 @@ export default function Order() {
   const params = useParams();
   const orderId = params.id;
   const [order, setOrder] = useState(null);
+  const [orderStatus, setOrderStatus] = useState("");
+
+  const handleStatusChange = async (value) => {
+    setOrderStatus(value);
+    try {
+      await axios({
+        url: "/orders/" + orderId,
+        method: "PUT",
+        data: { status: value },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const getOrder = async () => {
@@ -24,6 +38,7 @@ export default function Order() {
           method: "GET",
         });
         setOrder(response.data);
+        setOrderStatus(response.data.status);
       } catch (error) {
         console.log(error);
       }
@@ -65,7 +80,7 @@ export default function Order() {
               );
             })}
           </Col>
-          <Col lg={4} className="border-start">
+          <Col lg={4} className="sticky-top" style={{ height: "fit-content" }}>
             <h3 className="text-start">Ship to:</h3>
             <div className="text-start mt-3 ms-2">
               <p className="fw-bold">{order.address.name}</p>
@@ -77,6 +92,21 @@ export default function Order() {
               <p>Country: {order.address.country}</p>
               <p>Phone: {order.address.phone}</p>
             </div>
+            <Form>
+              <Form.Select
+                size="lg"
+                value={orderStatus}
+                onChange={(e) => handleStatusChange(e.target.value)}
+              >
+                <option value={""}></option>
+                <option value={"Pending"}>Pending</option>
+                <option value={"Shipping"}>Shipping</option>
+                <option value={"Delivered"}>Delivered</option>
+              </Form.Select>
+            </Form>
+            <Button as={Link} to="/admin" variant="dark" className="mt-3 px-5">
+              Back to Dashboard
+            </Button>
           </Col>
         </Row>
       </Container>

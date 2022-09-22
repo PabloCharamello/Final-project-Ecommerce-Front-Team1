@@ -23,7 +23,7 @@ export default function Home() {
       <Navbar />
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
-          <picture>
+          <picture className={`${style.pictureHero}`}>
             <source srcset={HdHero} type="image/avif" />
             <img className={`${style.heroImg} fluid`} src={HdHeroWebP} alt="hero" />
           </picture>

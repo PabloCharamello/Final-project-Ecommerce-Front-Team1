@@ -34,10 +34,10 @@ export default function OrderHistory() {
   }
 
   return (
-    <>
+    <div className={`${style.orderHistory} d-flex flex-column justify-content-between`}>
       <Navbar />
       <Container>
-        <h1 className="pt-5">Order History</h1>
+        <h1 className="pt-4">Order History</h1>
         <Accordion className={`py-5`}>
           {orders.map((order) => {
             return (
@@ -101,6 +101,6 @@ export default function OrderHistory() {
         </Accordion>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }
