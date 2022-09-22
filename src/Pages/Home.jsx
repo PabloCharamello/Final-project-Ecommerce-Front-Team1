@@ -28,7 +28,7 @@ export default function Home() {
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
           <picture className={`${style.pictureHero}`}>
-            <source srcset={HdHero} type="image/avif" />
+            <source srcSet={HdHero} type="image/avif" />
             <img className={`${style.heroImg} fluid`} src={HdHeroWebP} alt="hero" />
           </picture>
         </Col>

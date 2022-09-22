@@ -70,7 +70,6 @@ export default function ShoppingCart() {
 
   useEffect(() => {
     let newTotal = 0;
-    console.log(cart);
     for (const product of cart.productsList) {
       newTotal += product.price * product.quantity;
     }
