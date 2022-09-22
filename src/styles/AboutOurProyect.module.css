@@ -81,6 +81,12 @@
   box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.592);
 }
 
+.hackLogo{
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.592);
+}
+
 .paragraphMer {
   text-align: start;
 }
