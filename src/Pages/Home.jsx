@@ -16,6 +16,7 @@ import { BsAward } from "react-icons/bs";
 
 import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
 import HdHeroWebP from "../assets/img/ourProjectImages/HdHeroHome.webp";
+import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
 
 export default function Home() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <AboutOurProject />
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
           <picture className={`${style.pictureHero}`}>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../redux/cart/cartSlice";
-import { Row, Col, Image, Button } from "react-bootstrap";
+import { Image, Button } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import style from "./slider.module.css";
@@ -75,7 +75,7 @@ export default function Slider() {
                 size="sm"
                 className="ms-2 rounded-pill"
                 onClick={() => {
-                  handleAddToCart(products);
+                  handleAddToCart(product);
                 }}
               >
                 ADD TO CART

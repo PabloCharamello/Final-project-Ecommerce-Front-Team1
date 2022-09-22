@@ -58,9 +58,9 @@ function BasicExample() {
               <Nav.Link as={Link} to="/about-our-project" className="fw-bold text-black">
                 OUR PROJECT
               </Nav.Link>
-              <Link className={style.aboutProjectDiv} as={Link} to="/about-our-project">
+              {/* <Link className={style.aboutProjectDiv} as={Link} to="/about-our-project">
                 ABOUT OUR PROJECT
-              </Link>
+              </Link> */}
             </Nav>
             <div className="d-flex justify-content-center">
               <CartPopup />
