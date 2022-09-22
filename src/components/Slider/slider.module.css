@@ -6,3 +6,9 @@
   object-fit: cover;
   width: 100%;
 }
+
+.imageProduct {
+  object-fit: scale-down;
+  width: 450px;
+  height: 450px;
+}

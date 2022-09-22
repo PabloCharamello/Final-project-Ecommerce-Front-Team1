@@ -1,17 +1,22 @@
-import React from "react";
-import { Row, Col, Image } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../redux/cart/cartSlice";
+import { Row, Col, Image, Button } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import style from "./slider.module.css";
+
+const priceFormatter = new Intl.NumberFormat("en", {
+  style: "currency",
+  currency: "USD",
+  currencyDisplay: "code",
+  maximumFractionDigits: 0,
+});
 
 export default function Slider() {
   const dispatch = useDispatch();
-  const params = useParams();
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -21,7 +26,6 @@ export default function Slider() {
         method: "GET",
       });
       setProducts(response.data);
-      console.log(response.data);
     };
     getProductFromApi();
   }, []);
@@ -30,9 +34,9 @@ export default function Slider() {
     return <>Loading...</>;
   }
 
-  // const handleAddToCart = () => {
-  //   dispatch(addProductToCart({ ...product, quantity: 1 }));
-  // };
+  const handleAddToCart = () => {
+    dispatch(addProductToCart({ ...products, quantity: 1 }));
+  };
 
   const responsive = {
     superLargeDesktop: {
@@ -59,9 +63,23 @@ export default function Slider() {
       <Carousel responsive={responsive}>
         {products.map((product) => {
           return (
-            <div className={style.cardFeaturedProductsDiv}>
-              <Image src={product.images[0]} className={style.cardFeaturedProducts} />
-              <p>{products.name}</p>
+            <div key={product.id} className={style.cardFeaturedProductsDiv}>
+              {/* <Image src={product.images[0]} className={style.cardFeaturedProducts} /> */}
+              <Link to={"/product/" + product.id}>
+                <Image fluid className={style.imageProduct} src={product.images[0]} />
+              </Link>
+              <p className="text-center fs-4">{product.name}</p>
+              <span className="fs-6 mb-2">{priceFormatter.format(product.price)}</span>
+              <Button
+                variant="outline-dark"
+                size="sm"
+                className="ms-2 rounded-pill"
+                onClick={() => {
+                  handleAddToCart(products);
+                }}
+              >
+                ADD TO CART
+              </Button>
             </div>
           );
         })}
