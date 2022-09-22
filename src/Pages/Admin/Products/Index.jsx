@@ -69,7 +69,7 @@ export default function AdminProducts() {
       <main className="bg-surface-secondary w-100">
         <Container>
           <div className="d-flex justify-content-between align-items-center">
-            <h1 className="pt-3">Products</h1>
+            <h1 className="pt-3 pb-4">Products</h1>
             <Link to={"/admin/products/create"}>
               <Button className="bg-primary rounded-circle text-white d-flex p-2 border-0 me-3">
                 <MdOutlineAddCircleOutline size="1.5rem" />
