@@ -162,7 +162,7 @@ function AdminInex() {
               <tbody>
                 {orders.map((order) => {
                   return (
-                    <tr key={order.id}>
+                    <tr key={order.id} className="align-middle">
                       <td>{order.id}</td>
                       <td>
                         {order.user.firstname} {order.user.lastname}
@@ -172,7 +172,7 @@ function AdminInex() {
                       <td>{order.status}</td>
                       <td>
                         <Link to={"/admin/order/" + order.id}>
-                          <Button variant="dark-outline">View order</Button>
+                          <Button variant="outline-dark">View order</Button>
                         </Link>
                       </td>
                     </tr>

@@ -13,6 +13,7 @@ import ShippingInfo from "./Pages/ShippingInfo";
 import Register from "./Pages/Register";
 import AboutOurProject from "./Pages/AboutOurProject";
 import OrderHistory from "./Pages/OrderHistory";
+import Error404 from "./Pages/404";
 
 import AdminDashboard from "./Pages/Admin/Dashboard";
 import Order from "./Pages/Admin/Order";
@@ -68,6 +69,7 @@ function App() {
           <Route path="/admin/administrators/create" element={<AdminCreateAdministrators />} />
           <Route path="/admin/administrators/:id" element={<AdminEditAdministrators />} />
         </Route>
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
