@@ -4,7 +4,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import style from "../styles/Home.module.css";
 import Footer from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
-
+import Slider from "../components/Slider/Slider";
 import { GiAirplaneDeparture } from "react-icons/gi";
 import {
   Ri24HoursLine,
@@ -174,9 +174,14 @@ export default function Home() {
           src="https://porustudio.com/wp-content/uploads/dickson-center-table-3.jpg.webp"
         />
       </div>
+
       <div className="container">
         <Row>
-          <Col lg={3} className={style.tableSection}>
+          <Col>
+            <Slider />
+          </Col>
+
+          {/* <Col lg={3} className={style.tableSection}>
             <div className={style.divCardsStylesTitles}>
               <h2 className={style.CardsStylesTitles}>Rustic</h2>
             </div>
@@ -211,7 +216,7 @@ export default function Home() {
               className={style.TableSectionImg}
               src="https://c0.wallpaperflare.com/preview/243/242/451/bed-bedroom-clean-clouds.jpg"
             />
-          </Col>
+          </Col> */}
         </Row>
       </div>
       <Footer />

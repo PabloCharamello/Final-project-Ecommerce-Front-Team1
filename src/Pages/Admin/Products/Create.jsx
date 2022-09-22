@@ -26,19 +26,8 @@ export default function AdminCreateProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
     try {
-      const data = {
-        name,
-        price,
-        "short-description": shortDescription,
-        description,
-        details,
-        featured,
-        designer,
-        categoryId,
-        stock,
-        images: [image1, image2, image3],
-      };
       if (categoryId === "") {
         setError("You need to specify a category");
         return;
@@ -46,7 +35,10 @@ export default function AdminCreateProduct() {
       await axios({
         url: "/products",
         method: "POST",
-        data,
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       navigate("/admin/products");
     } catch (error) {
@@ -85,6 +77,7 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="name"
                     id="name"
+                    name="name"
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
@@ -97,6 +90,7 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="price"
                     id="price"
+                    name="price"
                     onChange={(e) => {
                       setPrice(e.target.value);
                     }}
@@ -106,7 +100,7 @@ export default function AdminCreateProduct() {
                     Short Description
                   </Form.Label>
                   <Form.Control
-                    className=""
+                    name="short-description"
                     htmlFor="shortDescription"
                     id="shortDescription"
                     onChange={(e) => {
@@ -121,6 +115,7 @@ export default function AdminCreateProduct() {
                     className="mb-0 m-0"
                     htmlFor="description"
                     id="description"
+                    name="description"
                     onChange={(e) => {
                       setDescription(e.target.value);
                     }}
@@ -133,6 +128,7 @@ export default function AdminCreateProduct() {
                     className=""
                     htmlFor="details"
                     id="details"
+                    name="details"
                     onChange={(e) => {
                       setDetails(e.target.value);
                     }}
@@ -145,6 +141,7 @@ export default function AdminCreateProduct() {
                     className="mt-2 mb-2 rounded-2"
                     htmlFor="category"
                     id="category"
+                    name="categoryId"
                     onChange={(e) => {
                       setCategoryId(e.target.value);
                     }}
@@ -166,6 +163,7 @@ export default function AdminCreateProduct() {
                     className="mt-2 mb-2 rounded-2"
                     htmlFor="featured"
                     id="featured"
+                    name="featured"
                     onChange={(e) => {
                       setFeatured(e.target.value);
                     }}
@@ -176,18 +174,6 @@ export default function AdminCreateProduct() {
                   </select>
                 </Col>
                 <Col lg={5}>
-                  <Form.Label className="m-0 mt-2 mx-1 d-block" htmlFor="designer">
-                    Designer
-                  </Form.Label>
-                  <Form.Control
-                    className={` {style.registerForm} placeholder-wave`}
-                    htmlFor="designer"
-                    id="designer"
-                    onChange={(e) => {
-                      setDesigner(e.target.value);
-                    }}
-                    value={designer}
-                  />
                   <Form.Label className="m-0 mt-2 mx-1 " htmlFor="stock">
                     Stock
                   </Form.Label>
@@ -195,6 +181,7 @@ export default function AdminCreateProduct() {
                     className={` {style.registerForm} placeholder-wave`}
                     htmlFor="stock"
                     id="stock"
+                    name="stock"
                     onChange={(e) => {
                       setStock(e.target.value);
                     }}
@@ -208,11 +195,7 @@ export default function AdminCreateProduct() {
                     htmlFor="image1"
                     id="image1"
                     type="file"
-                    onChange={(e) => {
-                      console.log(e.files[0]);
-                      setImage1(e.files[0]);
-                    }}
-                    value={image1}
+                    name="image1"
                   />
                   <Form.Label className="m-0 mt-2 mx-1 " htmlFor="image2">
                     Image-2
@@ -222,10 +205,7 @@ export default function AdminCreateProduct() {
                     htmlFor="image2"
                     id="image2"
                     type="file"
-                    onChange={(e) => {
-                      setImage2(e.target.value);
-                    }}
-                    value={image2}
+                    name="image2"
                   />
                   <Form.Label className="m-0 mt-2 mx-1 " htmlFor="image3">
                     Image-3
@@ -235,10 +215,7 @@ export default function AdminCreateProduct() {
                     htmlFor="image3"
                     id="image3"
                     type="file"
-                    onChange={(e) => {
-                      setImage3(e.target.value);
-                    }}
-                    value={image3}
+                    name="image3"
                   />
                   <p className="ms-1 text-danger fs-5">{error}</p>
                   <Button variant="dark" className="mt-3" type="submit">

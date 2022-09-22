@@ -1,0 +1,8 @@
+.cardFeaturedProductsDiv {
+  margin-bottom: 100px;
+}
+
+.cardFeaturedProducts {
+  object-fit: cover;
+  width: 100%;
+}
