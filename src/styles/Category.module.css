@@ -1,3 +1,7 @@
+.category {
+    min-height: 100vh;
+}
+
 .product {
     margin-right: auto;
     margin-left: auto;
