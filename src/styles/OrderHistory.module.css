@@ -1,3 +1,7 @@
+.orderHistory {
+  min-height: 100vh;
+}
+
 .accordionHeader button:not(.collapsed) {
   background-color: white;
   box-shadow: none;
