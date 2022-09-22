@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { Row, Col, Image } from "react-bootstrap";
 import style from "../styles/Home.module.css";
@@ -18,13 +18,17 @@ import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
 import HdHeroWebP from "../assets/img/ourProjectImages/HdHeroHome.webp";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />
       <Row className="p-0 g-0 rowHero">
         <Col className="p-0">
           <picture className={`${style.pictureHero}`}>
-            <source srcset={HdHero} type="image/avif" />
+            <source srcSet={HdHero} type="image/avif" />
             <img className={`${style.heroImg} fluid`} src={HdHeroWebP} alt="hero" />
           </picture>
         </Col>

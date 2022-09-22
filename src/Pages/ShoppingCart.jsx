@@ -65,8 +65,11 @@ export default function ShoppingCart() {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     let newTotal = 0;
-    console.log(cart);
     for (const product of cart.productsList) {
       newTotal += product.price * product.quantity;
     }

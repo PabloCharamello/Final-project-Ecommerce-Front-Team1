@@ -209,7 +209,6 @@ export default function AdminCreateProduct() {
                     id="image1"
                     type="file"
                     onChange={(e) => {
-                      console.log(e.files[0]);
                       setImage1(e.files[0]);
                     }}
                     value={image1}
