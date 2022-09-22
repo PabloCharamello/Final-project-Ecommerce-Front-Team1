@@ -13,10 +13,6 @@ export default function AdminCreateProduct() {
   const [description, setDescription] = useState("");
   const [details, setDetails] = useState("");
   const [featured, setFeatured] = useState(0);
-  const [designer, setDesigner] = useState("");
-  const [image1, setImage1] = useState("");
-  const [image2, setImage2] = useState("");
-  const [image3, setImage3] = useState("");
   const [stock, setStock] = useState("");
   const [shortDescription, setShortDescription] = useState("");
   const [categories, setCategories] = useState(null);

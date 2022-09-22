@@ -47,7 +47,7 @@ export default function Category() {
   };
 
   return (
-    <>
+    <div className={`${style.category} d-flex flex-column justify-content-between`}>
       <Navbar />
       <Container className={`mb-5`}>
         <h1 className="mb-5 mt-2">{category.name}</h1>
@@ -80,6 +80,6 @@ export default function Category() {
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -78,7 +78,7 @@ export default function ShippingInfo() {
   }, [address]);
 
   return (
-    <>
+    <div className={`${style.shippingInfo} d-flex flex-column justify-content-between`}>
       <Navbar />
       <div className="container">
         <Row className="m-0 g-0 p-0">
@@ -235,6 +235,6 @@ export default function ShippingInfo() {
         </Row>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
