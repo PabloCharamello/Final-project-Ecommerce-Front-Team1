@@ -32,6 +32,10 @@ export default function Home() {
     getProductFromApi();
   }, [productSlug]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [productSlug]);
+
   if (!product) {
     return <>Loading...</>;
   }

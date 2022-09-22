@@ -15,8 +15,13 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { TbBrandDiscord } from "react-icons/tb";
 import hackDesignImage from "../assets/img/ourProjectImages/HackDsn1.jpg";
 import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
+import { useEffect } from "react";
 
 export default function AboutOurProject() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -25,7 +30,6 @@ export default function AboutOurProject() {
         <Row className="p-0">
           <Col className="g-0 p-0">
             <Image className={style.heroImage} fluid src={hackDesignImage} alt="presentation" />
-
             {/* <div className={style.heroParagraphDiv}>
               <p className={style.heroParagraph}>About our Proyect</p>
             </div> */}
@@ -51,6 +55,7 @@ export default function AboutOurProject() {
 
                   <Col lg={6} className="d-flex justify-content-center align-items-center">
                     <div>
+                      <h3 className={style.titleSection}>What is Hack Design?</h3>
                       <p className={style.paragraphPresentation}>
                         Hack Design es un proyecto desarrollado por 3 estudiantes de un Bootcamp
                         ultra intensivo en Hack Academy realizado en un lapso de 3 semanas como
@@ -66,53 +71,49 @@ export default function AboutOurProject() {
               </Animator>
             </ScrollPage>
           </ScrollContainer>
-          <div className="d-flex justify-content-center p-3 m-3">
-            <p className={style.titleSection}>Sobre Hack Academy:</p>
-          </div>
           <Row className={`{style.divMer}`}>
             <Col lg={6} className="">
               <div className="d-flex align-items-center justify-content-center">
                 <Image
-                  className={style.merImage}
+                  className={style.hackLogo}
                   fluid
-                  src="https://grupodigital360.com/wp-content/uploads/2018/04/stockvault-coding-and-programming-computer-science-and-it239575_stockvault_net-1024x506.jpg"
-                  alt="presentation image"
+                  src={require("../assets/img/ourProjectImages/hack.jpg")}
+                  alt="hack logo"
                 />
               </div>
             </Col>
-
             <Col lg={6} className="d-flex justify-content-center align-items-center">
               <div>
-                <p className={style.paragraphBootcamp}>
+                <h3 className="text-start">Hack Academy</h3>
+                <p className="text-start">
                   Hack academy es una institución que se fundó en 2016 situada en Montevideo-Uruguay
                   donde se brindan capacitaciones ideadas para la preparación e inserción de sus
                   alumnos en el mundo del desarrollo.
                 </p>
                 <a
                   href="https://ha.dev/"
-                  className="hackAcademyLnk flex-start d-flex ms-5 ps-1 text-decoration-none"
+                  className="hackAcademyLnk flex-start d-flex text-decoration-none fs-6"
                 >
-                  Hack Academy
+                  ha.dev
                 </a>
               </div>
             </Col>
           </Row>
 
-          <div className="d-flex justify-content-center p-3 m-3">
-            <p className={style.titleSection}>Sobre la realización:</p>
-          </div>
           <Row className={`{style.divMer} mt-5 pt-2`}>
             <Col lg={6} className="d-flex justify-content-center align-items-center">
               <div>
+                <h3 className="text-start">Entity-Relations Diagram</h3>
                 <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio? Quisquam provident eius quam a similique ipsum cumque,
-                  ut explicabo optio exercitationem facere dolore velit? Ipsa doloribus quis
-                  necessitatibus! Ex nihil aliquid nostrum consequatur asperiores aspernatur a sed
-                  accusantium molestiae, laborum reprehenderit sit aperiam maxime! Doloremque, omnis
-                  similique dignissimos pariatur quasi sed harum ad mollitia blanditiis distinctio
-                  ut veritatis esse tempora nam impedit quis? Saepe?
+                  facere debitis illum optio?
+                </p>
+                <h3 className="text-start">Planning and Strategy</h3>
+                <p className={style.paragraphMer}>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
+                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
+                  facere debitis illum optio?
                 </p>
               </div>
             </Col>
@@ -121,7 +122,7 @@ export default function AboutOurProject() {
                 <Image
                   className={style.merImage}
                   fluid
-                  src={require("../assets/img/ourProjectImages/Mer.jpg")}
+                  src={require("../assets/img/ourProjectImages/mer.png")}
                   alt="Mer"
                 />
               </div>
@@ -133,27 +134,29 @@ export default function AboutOurProject() {
                 <Image
                   className={style.merImage}
                   fluid
-                  src={require("../assets/img/ourProjectImages/rutasDemo.jpg")}
+                  src={require("../assets/img/ourProjectImages/mer.png")}
                   alt="Mer"
                 />
               </div>
             </Col>
             <Col lg={6} className="d-flex justify-content-center align-items-center">
               <div>
-                <p className={`{style.paragraphMer} mt-5`}>
+                <h3 className="text-start">Team Organization</h3>
+                <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio? Quisquam provident eius quam a similique ipsum cumque,
-                  ut explicabo optio exercitationem facere dolore velit? Ipsa doloribus quis
-                  necessitatibus! Ex nihil aliquid nostrum consequatur asperiores aspernatur a sed
-                  accusantium molestiae, laborum reprehenderit sit aperiam maxime! Doloremque, omnis
-                  similique dignissimos pariatur quasi sed harum ad mollitia blanditiis distinctio
-                  ut veritatis esse tempora nam impedit quis? Saepe?
+                  facere debitis illum optio?
+                </p>
+                <h3 className="text-start">????</h3>
+                <p className={style.paragraphMer}>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
+                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
+                  facere debitis illum optio?
                 </p>
               </div>
             </Col>
           </Row>
-          <Row className={`{style.divMer}`}>
+          {/* <Row className={`{style.divMer}`}>
             <Col lg={12}>
               <p className={style.titleSection}>Un toque de color...</p>
               <div className="mt-2">
@@ -179,7 +182,7 @@ export default function AboutOurProject() {
                 </p>
               </div>
             </Col>
-          </Row>
+          </Row> */}
           <div className="container">
             <Row className="mt-5">
               <div className="mb-5">

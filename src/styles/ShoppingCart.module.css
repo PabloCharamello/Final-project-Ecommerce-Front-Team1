@@ -1,3 +1,7 @@
+.shoppingCart {
+  min-height: 100vh;
+}
+
 .productImage {
   width: 150px;
   height: 150px;
@@ -27,4 +31,9 @@
   border-radius: 0;
   margin-top: 1rem;
   border-radius: 2px;
+}
+
+.checkoutButtonDisabled, .checkoutButtonDisabled:hover {
+  background-color: #8d9092 !important;
+  border: none;
 }

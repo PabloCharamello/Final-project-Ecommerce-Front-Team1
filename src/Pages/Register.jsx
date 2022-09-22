@@ -6,6 +6,7 @@ import { setUser } from "../redux/user/userSlice";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -16,6 +17,10 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
