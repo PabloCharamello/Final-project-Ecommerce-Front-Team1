@@ -77,7 +77,7 @@ export default function ShoppingCart() {
     <div className={`${style.shoppingCart} d-flex flex-column justify-content-between`}>
       <Navbar />
       <Container className={style.shoppingContainer}>
-        <h1 className="fw-3 mb-3">SHOPPING CART</h1>
+        <h1 className="fw-3 mb-3 mt-2">SHOPPING CART</h1>
         <Row className="mb-5">
           <ToastContainer />
           {cart.productsList.length === 0 ? (
