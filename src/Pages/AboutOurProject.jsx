@@ -12,7 +12,7 @@ import { FiTrello } from "react-icons/fi";
 import { FaFigma } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { AiOutlineLinkedin } from "react-icons/ai";
-import { TbBrandDiscord } from "react-icons/tb";
+import { TbBrandDiscord, TbBrandVercel } from "react-icons/tb";
 import hackDesignImage from "../assets/img/ourProjectImages/HackDsn1.jpg";
 import { Animator, ScrollContainer, ScrollPage, MoveOut, Fade, batch } from "react-scroll-motion";
 import { useEffect } from "react";
@@ -186,7 +186,7 @@ export default function AboutOurProject() {
           <div className="container">
             <Row className="mt-5">
               <div className="mb-5">
-                <h3>Technologies</h3>
+                <h3 className="titles">Technologies</h3>
               </div>
               <Col lg={3} md={6} xs={6}>
                 <div className={style.tecnologiesUp}>
@@ -263,11 +263,17 @@ export default function AboutOurProject() {
                   <p>Discord</p>
                 </div>
               </Col>
+              <Col lg={2} md={6} xs={6}>
+                <div>
+                  <TbBrandVercel size="3rem" />
+                  <p>Vercel</p>
+                </div>
+              </Col>
             </Row>
             <Row className="d-flex justify-content-center mb-5 mt-5">
               <Col lg={12}>
                 <div className="mt-5 mb-5">
-                  <h2 className={style.developerTeamTitle}>Development Team</h2>
+                  <h2 className={style.titles}>Development Team</h2>
                 </div>
               </Col>
               <Col lg={3} md={6}>

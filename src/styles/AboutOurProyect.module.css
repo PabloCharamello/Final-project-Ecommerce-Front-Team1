@@ -78,10 +78,11 @@
 .merImage {
   width: 90%;
   border-radius: 10px;
+  margin-bottom: 50px;
   box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.592);
 }
 
-.hackLogo{
+.hackLogo {
   width: 40%;
   border-radius: 10px;
   box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.592);
@@ -123,7 +124,7 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.276);
 }
 
-.developerTeamTitle {
+.titles {
   margin-top: 80px;
 }
 
