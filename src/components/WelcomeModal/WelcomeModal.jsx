@@ -33,10 +33,10 @@ export default function WelcomeModal() {
   };
   return (
     <Modal size="lg" show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
-      <Modal.Header closeButton>
+      <Modal.Header closeButton id={style.modal}>
         <Modal.Title>Hack Design</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body id={style.modal}>
         <p>
           Welcome to our e-commerce website! Hack Design was created as the final project of Hack
           Academy's Coding Bootcamp. It was developed in 3 weeks by 3 students.
@@ -68,7 +68,7 @@ export default function WelcomeModal() {
           </p>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer id={style.modal}>
         <Button id={style.resetButtom} onClick={() => handleReset()}>
           {isReseting && <Spinner animation="border" size="sm" className="me-2" />}
           {isReseting ? "Resetting..." : "Reset Database"}

@@ -1,6 +1,10 @@
+#modal {
+  border-radius: 4px;
+}
+
 #resetButtom {
   background-color: #5c5959;
-  border: #252525;
+  border: #121212;
   border-radius: 4px;
 }
 
@@ -10,7 +14,7 @@
 
 #AbtOurPrjctButtom {
   background-color: #222222;
-  border: #1f1f1f;
+  border: #121212;
   border-radius: 4px;
 }
 
