@@ -54,14 +54,14 @@ export default function Login() {
                 />
                 <label htmlFor="floatingPassword">Password</label>
               </Form.Floating>
-              <Link to="/register" className="text-decoration-none">
+              <Link to="/register" className="text-decoration-none fs-6 d-block">
                 Don't have an account yet? Sign up!
               </Link>
-              <Button type="submit" variant="dark" className="mt-3 px-5">
+              <p className="mt-3 fw-bold">{invalidCredentials}</p>
+              <Button type="submit" variant="dark" className="px-5">
                 Log in
               </Button>
             </Form>
-            <p className="mt-3 fw-bold">{invalidCredentials}</p>
           </Popover.Body>
         </Popover>
       }

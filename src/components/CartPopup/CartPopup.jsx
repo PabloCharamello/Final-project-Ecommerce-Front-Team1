@@ -92,7 +92,7 @@ export default function CartPopup() {
                 </Button>
               </div>
             ) : (
-              <h4>Your cart is empty</h4>
+              <h5>Your cart is empty</h5>
             )}
           </Popover.Body>
         </Popover>
