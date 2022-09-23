@@ -236,7 +236,7 @@ export default function AboutOurProject() {
                   </div>
                 </div>
 
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/sebastianguadalupe/"
@@ -265,7 +265,7 @@ export default function AboutOurProject() {
                     <p className="mt-1 mb-1">Full Stack Developer Jr.</p>
                   </div>
                 </div>
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/pablocharamello"
@@ -297,7 +297,7 @@ export default function AboutOurProject() {
                     <p className="mt-1 mb-1">Full Stack Developer Jr.</p>
                   </div>
                 </div>
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
                     <AiOutlineLinkedin size="1.47rem" className="me-1" />
                     LinkedIn
