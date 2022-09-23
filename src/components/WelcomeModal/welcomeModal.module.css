@@ -1,0 +1,20 @@
+#resetButtom {
+  background-color: #5c5959;
+  border: #252525;
+  border-radius: 4px;
+}
+
+#resetButtom:hover {
+  background-color: #222222;
+}
+
+#AbtOurPrjctButtom {
+  background-color: #222222;
+  border: #1f1f1f;
+  border-radius: 4px;
+}
+
+#AbtOurPrjctButtom:hover {
+  background-color: #5c5959;
+  border: #5b5b5b;
+}
