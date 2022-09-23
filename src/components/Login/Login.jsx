@@ -8,8 +8,8 @@ import { setUser } from "../../redux/user/userSlice";
 import style from "./Login.module.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("seba@mail.com");
-  const [password, setPassword] = useState("password");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [invalidCredentials, setInvalidCredentials] = useState("");
   const dispatch = useDispatch();
 

@@ -55,7 +55,7 @@ export default function WelcomeModal() {
           <Col sm={6}>
             <h5>Admin:</h5>
             <p>
-              <strong>Email:</strong> admin@admin
+              <strong>Email:</strong> admin@admin.com
             </p>
             <p>
               <strong>Password:</strong> admin
