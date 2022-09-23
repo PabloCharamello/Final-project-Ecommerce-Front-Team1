@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/cart/cartSlice";
+import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
@@ -49,6 +50,7 @@ export default function Category() {
   return (
     <div className={`${style.category} d-flex flex-column justify-content-between`}>
       <Navbar />
+      <AboutOurProject />
       <Container className={`mb-5`}>
         <h1 className="mb-5 mt-2">{category.name}</h1>
         <Row>

@@ -70,6 +70,13 @@ export default function Footer() {
                 >
                   {"Help & Contact"}
                 </Link>
+                <Link
+                  className={`${style.footerLinkAbout} d-block text-decoration-none text-white mt-1`}
+                  as={Link}
+                  to="/about-our-project"
+                >
+                  ABOUT OUR PROJECT
+                </Link>
               </div>
             </div>
           </Col>
