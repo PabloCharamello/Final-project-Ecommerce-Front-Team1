@@ -54,13 +54,6 @@ export default function Footer() {
                   onClick={warnFunctionality}
                   className={`${style.footerLinkAbout} d-block text-decoration-none text-white mt-1`}
                 >
-                  {"Associated Foundations"}
-                </Link>
-                <Link
-                  to="#"
-                  onClick={warnFunctionality}
-                  className={`${style.footerLinkAbout} d-block text-decoration-none text-white mt-1`}
-                >
                   {"Work with us"}
                 </Link>
                 <Link

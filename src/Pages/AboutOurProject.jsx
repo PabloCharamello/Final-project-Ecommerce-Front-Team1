@@ -53,8 +53,8 @@ export default function AboutOurProject() {
               </a>
               <p className="text-start">
                 Hack academy es una institución que se fundó en 2016 situada en Montevideo-Uruguay
-                donde se brindan capacitaciones ideadas para la preparación e inserción de sus
-                alumnos en el mundo del desarrollo.
+                especializada en cursos de programación ideados para la preparación e inserción de
+                sus alumnos en el mundo laboral IT.
               </p>
             </div>
           </Container>
@@ -74,17 +74,19 @@ export default function AboutOurProject() {
             </Col>
             <Col lg={6} className="d-flex justify-content-center align-items-center ">
               <div>
-                <h3 className="text-start">1- Planning and Strategy</h3>
+                <h3 className="text-start">1 - Design</h3>
                 <p className={style.paragraphMer}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
-                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio?
+                  Queríamos buen contenido visual para nuestro ecommerce, por eso elegimos muebles.
+                  No encontramos una página de referencia que nos convenciera para replicar. Tomamos
+                  un camino que nos llevó el doble de trabajo con mayor riesgo, seguir un template a
+                  medias, pero pudimos verle el lado positivo, como por ejemplo desarrollar nuestras
+                  habilidades blandas.
                 </p>
-                <h3 className="text-start">2- Entity-Relations Diagram</h3>
+                <h3 className="text-start">2 - Entity-Relations Diagram</h3>
                 <p className={style.paragraphMer}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
-                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio?
+                  El siguiente paso fue definir el modelo entidad-relacion, tomando decisiones como
+                  que los productos de cada orden se guarden en formato JSON en lugar de ser una
+                  relacion, separar los administradores de los usuarios, entre muchas otras cosas.
                 </p>
               </div>
             </Col>
@@ -92,17 +94,18 @@ export default function AboutOurProject() {
           <Row className={`mt-3 g-5 pb-5 mb-5`}>
             <Col lg={6} className="d-flex justify-content-center align-items-center ps-lg-4">
               <div>
-                <h3 className="text-start">3- Team Organization</h3>
+                <h3 className="text-start">3 - Team Organization</h3>
                 <p className={style.paragraphMer}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
-                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio?
+                  Para organizarnos decidimos usar Figma, permitiendonos hacer diagramas y ver el
+                  gran esquema del proyecto. Despues utilizamos Trello para delinear, asignar y
+                  seguir tareas individuales. Y Discord para la comunicación constante y pair
+                  programming.
                 </p>
-                <h3 className="text-start">4- Team Organization</h3>
+                <h3 className="text-start">4 - Techonologies and Tools</h3>
                 <p className={style.paragraphMer}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
-                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio?
+                  Cómo base de datos elegimos Mysql ya que entendíamos que se adaptaba a nuestro
+                  modelo de applicación web, siendo además la elegida por el 46% de los programdores
+                  según StackOverflow.
                 </p>
               </div>
             </Col>
