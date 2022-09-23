@@ -30,12 +30,12 @@ export default function AboutOurProject() {
               <div className="mb-3">
                 <h1 className="mb-5 fw-bold">WHAT IS HACK DESIGN?</h1>
                 <p className={style.paragraphPresentation}>
-                  Hack Design es un proyecto desarrollado por 3 estudiantes de un Bootcamp ultra
-                  intensivo en Hack Academy realizado en un lapso de 3 semanas como proyecto final e
-                  integrador donde se pusieron en práctica todos los conocimientos adquiridos
-                  durante el período del curso ascendiendo a un total de más de 600 horas de
-                  capacitación en 3 meses. Una oportunidad para aprender sobre el maravilloso mundo
-                  del desarrollo web haciendo lo que más nos gusta... CODEAR!
+                  Hack Design is a project developed by 3 students from an ultra intensive Bootcamp
+                  at Hack Academy. It was created over a period of three weeks as the final and
+                  integrated project where all of the knowledge obtained during the course was put
+                  into practice, adding up to more than 600 training hours in 3 months. It has been
+                  an opportunity to learn about the phenomenal world of web development doing what
+                  we love the most…CODING
                 </p>
               </div>
               <div>
@@ -53,9 +53,8 @@ export default function AboutOurProject() {
                   </div>
                 </a>
                 <p className="text-start">
-                  Hack academy es una institución que se fundó en 2016 en Montevideo, Uruguay
-                  especializada en cursos de programación ideados para la preparación e inserción de
-                  sus alumnos en el mundo laboral IT.
+                  Hack Academy is an institution founded in 2016, in Montevideo Uruguay, where they
+                  train individuals for the preparation and insertion in the world of development.
                 </p>
               </div>
             </Container>
@@ -68,7 +67,7 @@ export default function AboutOurProject() {
                   <Image
                     className={style.merImage}
                     fluid
-                    src={require("../assets/img/ourProjectImages/mer.png")}
+                    src={require("../assets/img/ourProjectImages/erd.png")}
                     alt="Mer"
                   />
                 </div>
@@ -77,18 +76,18 @@ export default function AboutOurProject() {
                 <div>
                   <h3 className="text-start">1 - Design</h3>
                   <p className={style.paragraphMer}>
-                    Queríamos buen contenido visual para nuestro ecommerce, por eso elegimos
-                    muebles. No encontramos una página de referencia que nos convenciera para
-                    replicar. Tomamos un camino que nos llevó el doble de trabajo con mayor riesgo,
-                    seguir un template a medias, pero pudimos verle el lado positivo, como por
-                    ejemplo desarrollar nuestras habilidades blandas.
+                    We desired an excellent visual content for our ecommerce, so we decided to
+                    choose furniture. Due to the fact that we could not come across a reference page
+                    that convinced us completely in order to replicate, we faced a risky and
+                    challenging path using only a half-baked template. However, this has allowed us
+                    to gain and develop our soft skills.
                   </p>
-                  <h3 className="text-start">2 - Entity-Relations Diagram</h3>
+                  <h3 className="text-start">2 - Entity-Relationship Diagram</h3>
                   <p className={style.paragraphMer}>
-                    El siguiente paso fue definir el modelo entidad-relacion, tomando decisiones
-                    como que los productos de cada orden se guarden en formato JSON en lugar de ser
-                    una relacion, separar los administradores de los usuarios, entre muchas otras
-                    cosas.
+                    The following step was to define the entity-relationship model, taking into
+                    account certain factors such as saving the products of each order in JSON format
+                    instead of it being connected, separing administrators from the users, amongst
+                    others.
                   </p>
                 </div>
               </Col>
@@ -98,16 +97,16 @@ export default function AboutOurProject() {
                 <div>
                   <h3 className="text-start">3 - Team Organization</h3>
                   <p className={style.paragraphMer}>
-                    Para organizarnos decidimos usar Figma, permitiendonos hacer diagramas y ver el
-                    gran esquema del proyecto. Despues utilizamos Trello para delinear, asignar y
-                    seguir tareas individuales. Y Discord para la comunicación constante y pair
-                    programming.
+                    In order to organize our ideas, we started off by using Figma which allowed us
+                    to create the diagrams and visualize the grand scheme of the project. Next, we
+                    used Trello to outline, assign and track each other's tasks. Finally, Discord
+                    was the platform we used for constant communication and pair programming.
                   </p>
                   <h3 className="text-start">4 - Techonologies and Tools</h3>
                   <p className={style.paragraphMer}>
-                    Cómo base de datos elegimos Mysql ya que entendíamos que se adaptaba a nuestro
-                    modelo de applicación web, siendo además la elegida por el 46% de los
-                    programdores según StackOverflow.
+                    As a database we chose Mysql, since we understood that it adapted to our
+                    application web model and was chosen by 46% of the programmers according to
+                    StackOverflow.
                   </p>
                 </div>
               </Col>
@@ -116,7 +115,7 @@ export default function AboutOurProject() {
                   <Image
                     className={style.merImage}
                     fluid
-                    src={require("../assets/img/ourProjectImages/mer.png")}
+                    src={require("../assets/img/ourProjectImages/fsd.png")}
                     alt="Mer"
                   />
                 </div>
@@ -236,7 +235,7 @@ export default function AboutOurProject() {
                   </div>
                 </div>
 
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/sebastianguadalupe/"
@@ -265,7 +264,7 @@ export default function AboutOurProject() {
                     <p className="mt-1 mb-1">Full Stack Developer Jr.</p>
                   </div>
                 </div>
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
                     href="https://www.linkedin.com/in/pablocharamello"
@@ -297,7 +296,7 @@ export default function AboutOurProject() {
                     <p className="mt-1 mb-1">Full Stack Developer Jr.</p>
                   </div>
                 </div>
-                <div>
+                <div className={style.profileLinksDiv}>
                   <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
                     <AiOutlineLinkedin size="1.47rem" className="me-1" />
                     LinkedIn
