@@ -15,6 +15,30 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { TbBrandDiscord, TbBrandVercel } from "react-icons/tb";
 import { useEffect } from "react";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: "aos-init", // class applied after initialization
+  animatedClassName: "aos-animate", // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: "ease", // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+});
+
 export default function AboutOurProject() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,7 +51,7 @@ export default function AboutOurProject() {
         <Container fluid={"xs"} className="p-0">
           <div className={`${style.backgroundImageTech} py-5`}>
             <Container>
-              <div className="mb-3">
+              <div data-aos="fade-up">
                 <h1 className="mb-5 fw-bold">WHAT IS HACK DESIGN?</h1>
                 <p className={style.paragraphPresentation}>
                   Hack Design is a project developed by 3 students from an ultra intensive Bootcamp
@@ -62,7 +86,11 @@ export default function AboutOurProject() {
           <Container className="mb-5 pb-5">
             <Row className={`mt-5 pt-5 g-5`}>
               <h1 className="fw-bold">PLANNING</h1>
-              <Col lg={6} className="d-flex justify-content-center align-items-center">
+              <Col
+                lg={6}
+                className="d-flex justify-content-center align-items-center"
+                data-aos="fade-right"
+              >
                 <div>
                   <Image
                     className={style.merImage}
@@ -111,7 +139,12 @@ export default function AboutOurProject() {
                 </div>
               </Col>
               <Col lg={6} className="d-flex justify-content-center align-items-center">
-                <div>
+                <div
+                  className="mb-3"
+                  data-aos="fade-left"
+                  data-aos-easing="ease-in-out"
+                  data-aos-anchor-placement="top-center"
+                >
                   <Image
                     className={style.merImage}
                     fluid
@@ -124,7 +157,12 @@ export default function AboutOurProject() {
           </Container>
           <div className={`${style.backgroundImageTech} py-5 mt-5`}>
             <Container>
-              <Row className="">
+              <Row
+                className="mb-3"
+                data-aos="fade-left"
+                data-aos-easing="ease-in-out"
+                data-aos-anchor-placement="top-center"
+              >
                 <div className="mb-5">
                   <h1 className="fw-bold">TECHNOLOGIES</h1>
                 </div>
