@@ -31,7 +31,7 @@ export default function Home() {
         <Col className="p-0">
           <picture className={`${style.pictureHero}`}>
             <source srcSet={HdHero} type="image/avif" />
-            <img className={`${style.heroImg} fluid`} src={HdHeroWebP} alt="hero" />
+            <img className={`${style.heroImg} mb-4 fluid`} src={HdHeroWebP} alt="hero" />
           </picture>
         </Col>
       </Row>
@@ -45,7 +45,7 @@ export default function Home() {
             <div className="d-flex flex-column align-items-center justify-content-center">
               <GiAirplaneDeparture size="50px" className={style.customStroke} />
               <div className={style.weOfferDiv}>
-                <p>We do shipping to all the world</p>
+                <p>International Shipping</p>
               </div>
             </div>
           </Col>
@@ -57,19 +57,7 @@ export default function Home() {
             <div className="d-flex flex-column align-items-center justify-content-center">
               <RiCustomerService2Fill size="50px" className={style.customStroke} />
               <div className={style.weOfferDiv}>
-                <p>We have Customer Service</p>
-              </div>
-            </div>
-          </Col>
-          <Col
-            lg={2}
-            xs={6}
-            className="d-flex flex-direction-row justify-content-center align-items-start"
-          >
-            <div className="d-flex flex-column align-items-center justify-content-center">
-              <BsAward size="50px" className={style.customStroke} />
-              <div className={style.weOfferDiv}>
-                <p>All our products have a 5-year guarantee</p>
+                <p>Customer Service</p>
               </div>
             </div>
           </Col>
@@ -91,9 +79,21 @@ export default function Home() {
             className="d-flex flex-direction-row justify-content-center align-items-start"
           >
             <div className="d-flex flex-column align-items-center justify-content-center">
+              <BsAward size="50px" className={style.customStroke} />
+              <div className={style.weOfferDiv}>
+                <p>5-year product guarantee</p>
+              </div>
+            </div>
+          </Col>
+          <Col
+            lg={2}
+            xs={6}
+            className="d-flex flex-direction-row justify-content-center align-items-start"
+          >
+            <div className="d-flex flex-column align-items-center justify-content-center">
               <RiHandHeartLine size="50px" className={style.customStroke} />
               <div className={style.weOfferDiv}>
-                <p>With each purchase you collaborate with associated foundations</p>
+                <p>Associated foundations </p>
               </div>
             </div>
           </Col>
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="d-flex flex-column align-items-center justify-content-center">
               <RiSecurePaymentLine size="50px" className={style.customStroke} />
               <div className={style.weOfferDiv}>
-                <p>Your purchases are always protected</p>
+                <p>Secure Payment</p>
               </div>
             </div>
           </Col>
