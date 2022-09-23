@@ -16,7 +16,7 @@ import { BsAward } from "react-icons/bs";
 
 import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
 import HdHeroWebP from "../assets/img/ourProjectImages/HdHeroHome.webp";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 export default function Home() {
   useEffect(() => {
