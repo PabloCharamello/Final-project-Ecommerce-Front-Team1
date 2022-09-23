@@ -1,37 +1,25 @@
+.ourProject {
+  min-height: 100vh;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-size: 1.1rem;
 }
-
-/* .heroDivImage {
-} */
 
 .heroImage {
   object-fit: cover;
   width: 100vw;
-  height: 500px;
-  margin-bottom: 6rem;
-}
-
-.heroParagraphDiv {
-  left: 15px;
-  position: absolute;
-  top: 280px;
-  text-align: center;
-  z-index: 5;
-}
-
-.heroParagraph {
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
+  height: 400px;
+  margin-bottom: 100px;
 }
 
 .paragraphPresentation {
   font-size: 1.2rem;
+  line-height: 2rem;
   text-align: left;
-  padding: 0 50px;
 }
 
 .paragraphBootcamp {
@@ -40,34 +28,13 @@
   padding: 0 50px;
 }
 
-.titleSection {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  margin-top: 4rem;
+.haLink {
+  width: fit-content;
+  transition: all ease-in-out 200ms;
 }
 
-.hackAcademyLnk {
-  text-decoration: none;
-  color: rgb(29, 29, 29);
-  padding: 10px 20px;
-  background-color: grey;
-  border-radius: 5px;
-}
-
-.pcColorful {
-  margin-top: 60px;
-}
-
-.paragraphColorSec {
-  margin-bottom: 50px;
-}
-
-.divMer {
-  padding: 60px;
-  flex-wrap: wrap;
-  display: flex;
-  align-items: center;
+.haLink:hover {
+  transform: scale(1.1);
 }
 
 .leftColMer {

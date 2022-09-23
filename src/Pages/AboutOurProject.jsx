@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Container } from "react-bootstrap";
 import style from "../styles/AboutOurProyect.module.css";
 import Footer from "../components/Footer/Footer";
 import { TbBrandJavascript } from "react-icons/tb";
@@ -23,93 +23,53 @@ export default function AboutOurProject() {
   }, []);
 
   return (
-    <>
+    <div className={`${style.ourProject} d-flex flex-column justify-content-between`}>
       <Navbar />
-
-      <div className="container-fluid">
-        <Row className="p-0">
-          <Col className="g-0 p-0">
-            <Image className={style.heroImage} fluid src={hackDesignImage} alt="presentation" />
-            {/* <div className={style.heroParagraphDiv}>
-              <p className={style.heroParagraph}>About our Proyect</p>
-            </div> */}
-          </Col>
-        </Row>
-        <div className="container">
-          <ScrollContainer>
-            <ScrollPage page={0}>
-              <Animator animation={batch(MoveOut(-30, 500), Fade(0, 10))}>
-                <Row className={`{style.divMer} `}>
-                  <Col lg={6}>
-                    <div>
-                      <div>
-                        <Image
-                          // className={style.merImage}
-                          fluid
-                          src={require("../assets/img/ourProjectImages/webConstructionGrey.jpg")}
-                          alt="presentation"
-                        />
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col lg={6} className="d-flex justify-content-center align-items-center">
-                    <div>
-                      <h3 className={style.titleSection}>What is Hack Design?</h3>
-                      <p className={style.paragraphPresentation}>
-                        Hack Design es un proyecto desarrollado por 3 estudiantes de un Bootcamp
-                        ultra intensivo en Hack Academy realizado en un lapso de 3 semanas como
-                        proyecto final e integrador donde se pusieron en práctica todos los
-                        conocimientos adquiridos durante el período del curso ascendiendo a un total
-                        de más de 600 horas de capacitación en 3 meses. <br /> Una oportunidad para
-                        aprender sobre el maravilloso mundo del desarrollo web haciendo lo que más
-                        nos gusta... CODEAR!
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-              </Animator>
-            </ScrollPage>
-          </ScrollContainer>
-          <Row className={`{style.divMer}`}>
-            <Col lg={6} className="">
-              <div className="d-flex align-items-center justify-content-center">
+      <Container fluid={"xs"} className="p-0">
+        <Image className={`${style.heroImage}`} fluid src={hackDesignImage} alt="presentation" />
+        <Container>
+          <div className="mb-5">
+            <h1 className="mb-5">What is Hack Design?</h1>
+            <p className={style.paragraphPresentation}>
+              Hack Design es un proyecto desarrollado por 3 estudiantes de un Bootcamp ultra
+              intensivo en Hack Academy realizado en un lapso de 3 semanas como proyecto final e
+              integrador donde se pusieron en práctica todos los conocimientos adquiridos durante el
+              período del curso ascendiendo a un total de más de 600 horas de capacitación en 3
+              meses. <br /> Una oportunidad para aprender sobre el maravilloso mundo del desarrollo
+              web haciendo lo que más nos gusta... CODEAR!
+            </p>
+          </div>
+          <div>
+            <a
+              href="https://ha.dev/"
+              className="hackAcademyLnk text-black text-decoration-none fs-6 ms-5"
+            >
+              <div className={`${style.haLink} text-start d-flex align-items-center mb-3`}>
                 <Image
-                  className={style.hackLogo}
-                  fluid
                   src={require("../assets/img/ourProjectImages/hack.jpg")}
-                  alt="hack logo"
+                  className="d-inline me-3"
+                  width="40px"
                 />
+                <h2 className="text-start d-inline m-0">Hack Academy</h2>
               </div>
-            </Col>
-            <Col lg={6} className="d-flex justify-content-center align-items-center">
-              <div>
-                <h3 className="text-start">Hack Academy</h3>
-                <p className="text-start">
-                  Hack academy es una institución que se fundó en 2016 situada en Montevideo-Uruguay
-                  donde se brindan capacitaciones ideadas para la preparación e inserción de sus
-                  alumnos en el mundo del desarrollo.
-                </p>
-                <a
-                  href="https://ha.dev/"
-                  className="hackAcademyLnk flex-start d-flex text-decoration-none fs-6"
-                >
-                  ha.dev
-                </a>
-              </div>
-            </Col>
-          </Row>
+            </a>
+            <p className="text-start">
+              Hack academy es una institución que se fundó en 2016 situada en Montevideo-Uruguay
+              donde se brindan capacitaciones ideadas para la preparación e inserción de sus alumnos
+              en el mundo del desarrollo.
+            </p>
+          </div>
 
-          <Row className={`{style.divMer} mt-5 pt-2`}>
+          <Row className={`mt-5 pt-5`}>
             <Col lg={6} className="d-flex justify-content-center align-items-center">
               <div>
-                <h3 className="text-start">Entity-Relations Diagram</h3>
+                <h2 className="text-start">Entity-Relations Diagram</h2>
                 <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
                   facere debitis illum optio?
                 </p>
-                <h3 className="text-start">Planning and Strategy</h3>
+                <h2 className="text-start">Planning and Strategy</h2>
                 <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
@@ -141,13 +101,13 @@ export default function AboutOurProject() {
             </Col>
             <Col lg={6} className="d-flex justify-content-center align-items-center">
               <div>
-                <h3 className="text-start">Team Organization</h3>
+                <h2 className="text-start">Team Organization</h2>
                 <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
                   facere debitis illum optio?
                 </p>
-                <h3 className="text-start">????</h3>
+                <h2 className="text-start">????</h2>
                 <p className={style.paragraphMer}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
                   odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
@@ -156,37 +116,10 @@ export default function AboutOurProject() {
               </div>
             </Col>
           </Row>
-          {/* <Row className={`{style.divMer}`}>
-            <Col lg={12}>
-              <p className={style.titleSection}>Un toque de color...</p>
-              <div className="mt-2">
-                <Image
-                  className={style.pcColorful}
-                  fluid
-                  src={require("../assets/img/ourProjectImages/pcConTransparencia1.jpg")}
-                  alt="presentation image"
-                />
-              </div>
-            </Col>
-            <Col lg={6}>
-              <div>
-                <p className={style.paragraphColorSec}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque fuga ex tempore
-                  odio minus laboriosam optio. Tempora accusamus asperiores officia, molestiae
-                  facere debitis illum optio? Quisquam provident eius quam a similique ipsum cumque,
-                  ut explicabo optio exercitationem facere dolore velit? Ipsa doloribus quis
-                  necessitatibus! Ex nihil aliquid nostrum consequatur asperiores aspernatur a sed
-                  accusantium molestiae, laborum reprehenderit sit aperiam maxime! Doloremque, omnis
-                  similique dignissimos pariatur quasi sed harum ad mollitia blanditiis distinctio
-                  ut veritatis esse tempora nam impedit quis? Saepe?
-                </p>
-              </div>
-            </Col>
-          </Row> */}
           <div className="container">
             <Row className="mt-5">
               <div className="mb-5">
-                <h3 className="titles">Technologies</h3>
+                <h2>Technologies</h2>
               </div>
               <Col lg={3} md={6} xs={6}>
                 <div className={style.tecnologiesUp}>
@@ -231,7 +164,7 @@ export default function AboutOurProject() {
             </Row>
             <Row className="mt-5 d-flex justify-content-center">
               <div className="mb-5">
-                <h3>Tools</h3>
+                <h2>Tools</h2>
               </div>
               <Col lg={2} md={6} xs={6}>
                 <div className={style.tecnologiesUp}>
@@ -356,9 +289,9 @@ export default function AboutOurProject() {
               </Col>
             </Row>
           </div>
-        </div>
-      </div>
+        </Container>
+      </Container>
       <Footer />
-    </>
+    </div>
   );
 }
