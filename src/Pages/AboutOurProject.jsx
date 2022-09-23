@@ -130,7 +130,7 @@ export default function AboutOurProject() {
                     used Trello to outline, assign and track each other's tasks. Finally, Discord
                     was the platform we used for constant communication and pair programming.
                   </p>
-                  <h3 className="text-start">4 - Techonologies and Tools</h3>
+                  <h3 className="text-start">4 - Technologies and Tools</h3>
                   <p className={style.paragraphMer}>
                     As a database we chose Mysql, since we understood that it adapted to our
                     application web model and was chosen by 46% of the programmers according to
