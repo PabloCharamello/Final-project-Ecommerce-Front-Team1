@@ -8,12 +8,13 @@
 .footerContainer {
   background-color: #0c0c0c;
   padding-top: 50px;
-  margin-top: 50px;
+  
 }
 
 .hackDesignParagraph {
   /* margin-left: 25px; */
   text-align: start;
+  font-size: 0.8rem;
 }
 
 .footerLink {

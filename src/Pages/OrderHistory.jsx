@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { format, parseJSON } from "date-fns";
 import style from "../styles/OrderHistory.module.css";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",

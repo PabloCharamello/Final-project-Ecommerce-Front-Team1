@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/cart/cartSlice";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",

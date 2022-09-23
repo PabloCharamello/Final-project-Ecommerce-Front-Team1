@@ -14,7 +14,7 @@ import {
 } from "../redux/cart/cartSlice";
 import swal from "sweetalert";
 import { useState, useEffect } from "react";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);

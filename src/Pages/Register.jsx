@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 export default function Register() {
   const navigate = useNavigate();

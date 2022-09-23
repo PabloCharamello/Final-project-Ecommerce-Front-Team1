@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import OrderSummary from "../components/OrderSummary/OrderSummary";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AboutOurProject from "../components/AbaoutOurProject/AboutOurProject";
+import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
 export default function ShippingInfo() {
   const [addresses, setAddresses] = useState(null);
