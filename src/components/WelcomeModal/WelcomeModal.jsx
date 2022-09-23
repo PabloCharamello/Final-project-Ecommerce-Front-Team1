@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, Col, Modal, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import style from "./welcomeModal.module.css";
 
 export default function WelcomeModal() {
   const [show, setShow] = useState(true);
@@ -32,10 +33,10 @@ export default function WelcomeModal() {
   };
   return (
     <Modal size="lg" show={show} onHide={handleClose} backdrop="static" keyboard={false} centered>
-      <Modal.Header closeButton>
+      <Modal.Header closeButton id={style.modal}>
         <Modal.Title>Hack Design</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body id={style.modal}>
         <p>
           Welcome to our e-commerce website! Hack Design was created as the final project of Hack
           Academy's Coding Bootcamp. It was developed in 3 weeks by 3 students.
@@ -67,13 +68,13 @@ export default function WelcomeModal() {
           </p>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="danger" onClick={() => handleReset()}>
+      <Modal.Footer id={style.modal}>
+        <Button id={style.resetButtom} onClick={() => handleReset()}>
           {isReseting && <Spinner animation="border" size="sm" className="me-2" />}
           {isReseting ? "Resetting..." : "Reset Database"}
         </Button>
         <Link to="/about-our-project">
-          <Button variant="primary" onClick={handleClose}>
+          <Button id={style.AbtOurPrjctButtom} onClick={handleClose}>
             About our Project
           </Button>
         </Link>
