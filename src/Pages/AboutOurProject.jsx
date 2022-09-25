@@ -272,12 +272,17 @@ export default function AboutOurProject() {
                 <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
+                    target="_blank"
                     href="https://www.linkedin.com/in/sebastianguadalupe/"
                   >
                     <AiOutlineLinkedin className="me-1" size="1.47rem" />
                     LinkedIn
                   </a>
-                  <a href="https://github.com/SebastianGuadalupe" className={style.profilesLinks}>
+                  <a
+                    href="https://github.com/SebastianGuadalupe"
+                    target="_blank"
+                    className={style.profilesLinks}
+                  >
                     <ImGithub className="me-1" size="1.3rem" />
                     GitHub
                   </a>
@@ -301,6 +306,7 @@ export default function AboutOurProject() {
                 <div className={style.profileLinksDiv}>
                   <a
                     className={style.profilesLinks}
+                    target="_blank"
                     href="https://www.linkedin.com/in/pablocharamello"
                   >
                     <AiOutlineLinkedin className="me-1" size="1.47rem" />
@@ -308,7 +314,8 @@ export default function AboutOurProject() {
                   </a>
                   <a
                     className={style.profilesLinks}
-                    href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BjFsVoSGdT6C5yWXzUHNpuw%3D%3D"
+                    target="_blank"
+                    href="https://github.com/PabloCharamello"
                   >
                     <ImGithub className="me-1" size="1.3rem" />
                     GitHub
@@ -331,11 +338,19 @@ export default function AboutOurProject() {
                   </div>
                 </div>
                 <div className={style.profileLinksDiv}>
-                  <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
+                  <a
+                    className={style.profilesLinks}
+                    target="_blank"
+                    href="https://github.com/JuanZubillaga"
+                  >
                     <AiOutlineLinkedin size="1.47rem" className="me-1" />
                     LinkedIn
                   </a>
-                  <a className={style.profilesLinks} href="https://github.com/JuanZubillaga">
+                  <a
+                    className={style.profilesLinks}
+                    target="_blank"
+                    href="https://github.com/JuanZubillaga"
+                  >
                     <ImGithub className="me-1" size="1.3rem" />
                     GitHub
                   </a>
