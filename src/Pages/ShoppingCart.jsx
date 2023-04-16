@@ -16,6 +16,27 @@ import swal from "sweetalert";
 import { useState, useEffect } from "react";
 import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  duration: 400,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
 export default function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
@@ -92,7 +113,7 @@ export default function ShoppingCart() {
               <Col lg={8}>
                 {cart.productsList.map((product) => {
                   return (
-                    <div className="d-flex align-items-center w-100">
+                    <div className="d-flex align-items-center w-100" data-aos="fade-left">
                       <IoClose
                         role="button"
                         className={`cursor-pointer me-3`}

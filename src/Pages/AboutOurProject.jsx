@@ -153,16 +153,11 @@ export default function AboutOurProject() {
           </Container>
           <div className={`${style.backgroundImageTech} py-5 mt-5`}>
             <Container>
-              <Row
-                className="mb-3"
-                data-aos="fade-left"
-                data-aos-easing="ease-in-out"
-                data-aos-anchor-placement="top-center"
-              >
+              <Row className="mb-3">
                 <div className="mb-5">
                   <h1 className="fw-bold">TECHNOLOGIES</h1>
                 </div>
-                <Col lg={3} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={3} md={6} xs={6}>
                   <div className={style.tecnologiesUp}>
                     <SiMysql size="3rem" />
                     <p>MySQL</p>
@@ -172,7 +167,7 @@ export default function AboutOurProject() {
                     <p>NodeJS</p>
                   </div>
                 </Col>
-                <Col lg={3} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={3} md={6} xs={6}>
                   <div className={style.tecnologiesUp}>
                     <GrReactjs size="3rem" />
                     <p>React.js</p>
@@ -182,7 +177,7 @@ export default function AboutOurProject() {
                     <p>Express.js</p>
                   </div>
                 </Col>
-                <Col lg={3} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={3} md={6} xs={6}>
                   <div className={style.tecnologiesUp}>
                     <BiGitBranch size="3rem" />
                     <p>Git</p>
@@ -192,7 +187,7 @@ export default function AboutOurProject() {
                     <p>Redux + RTK</p>
                   </div>
                 </Col>
-                <Col lg={3} md={6} xs={6} className="p-0 m-0">
+                <Col data-aos="fade-left" lg={3} md={6} xs={6} className="p-0 m-0">
                   <div className={style.tecnologiesUp}>
                     <TbBrandJavascript size="3rem" />
                     <p>JavaScript</p>
@@ -207,37 +202,37 @@ export default function AboutOurProject() {
                 <div className="mb-5">
                   <h1 className="fw-bold">TOOLS</h1>
                 </div>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-right" lg={2} md={6} xs={6}>
                   <div className={style.tecnologiesUp}>
                     <FaFigma size="3rem" />
                     <p className="mb-0">Figma</p>
                   </div>
                 </Col>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-right" lg={2} md={6} xs={6}>
                   <div className={style.tecnologiesUp}>
                     <ImGithub size="3rem" />
                     <p className="mb-0">GitHub</p>
                   </div>
                 </Col>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-right" lg={2} md={6} xs={6}>
                   <div>
                     <FiTrello size="3rem" />
                     <p className="mb-0">Trello</p>
                   </div>
                 </Col>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={2} md={6} xs={6}>
                   <div>
                     <SiSupabase size="3rem" />
                     <p className="mb-0">Supabase</p>
                   </div>
                 </Col>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={2} md={6} xs={6}>
                   <div>
                     <TbBrandDiscord size="3rem" />
                     <p className="mb-0">Discord</p>
                   </div>
                 </Col>
-                <Col lg={2} md={6} xs={6}>
+                <Col data-aos="fade-left" lg={2} md={6} xs={6}>
                   <div>
                     <TbBrandVercel size="3rem" />
                     <p className="mb-0">Vercel</p>
@@ -253,7 +248,7 @@ export default function AboutOurProject() {
                   <h1 className={`${style.titles} fw-bold`}>DEVELOPMENT TEAM</h1>
                 </div>
               </Col>
-              <Col lg={3} md={6}>
+              <Col data-aos="fade-right" lg={3} md={6}>
                 <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
@@ -276,7 +271,6 @@ export default function AboutOurProject() {
                     href="https://www.linkedin.com/in/sebastianguadalupe/"
                   >
                     <AiOutlineLinkedin className="me-1" size="1.47rem" />
-                    LinkedIn
                   </a>
                   <a
                     href="https://github.com/SebastianGuadalupe"
@@ -284,11 +278,10 @@ export default function AboutOurProject() {
                     className={style.profilesLinks}
                   >
                     <ImGithub className="me-1" size="1.3rem" />
-                    GitHub
                   </a>
                 </div>
               </Col>
-              <Col lg={3} md={6}>
+              <Col data-aos="fade-up" lg={3} md={6}>
                 <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
@@ -310,7 +303,6 @@ export default function AboutOurProject() {
                     href="https://www.linkedin.com/in/pablocharamello"
                   >
                     <AiOutlineLinkedin className="me-1" size="1.47rem" />
-                    LinkedIn
                   </a>
                   <a
                     className={style.profilesLinks}
@@ -318,11 +310,10 @@ export default function AboutOurProject() {
                     href="https://github.com/PabloCharamello"
                   >
                     <ImGithub className="me-1" size="1.3rem" />
-                    GitHub
                   </a>
                 </div>
               </Col>
-              <Col lg={3} md={6}>
+              <Col data-aos="fade-left" lg={3} md={6}>
                 <div className={style.ourPhotosDiv}>
                   <img
                     className={style.ourPhotos}
@@ -344,7 +335,6 @@ export default function AboutOurProject() {
                     href="https://github.com/JuanZubillaga"
                   >
                     <AiOutlineLinkedin size="1.47rem" className="me-1" />
-                    LinkedIn
                   </a>
                   <a
                     className={style.profilesLinks}
@@ -352,7 +342,6 @@ export default function AboutOurProject() {
                     href="https://github.com/JuanZubillaga"
                   >
                     <ImGithub className="me-1" size="1.3rem" />
-                    GitHub
                   </a>
                 </div>
               </Col>

@@ -8,6 +8,27 @@ import { format, parseJSON } from "date-fns";
 import style from "../styles/OrderHistory.module.css";
 import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  duration: 400,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
   currency: "USD",
@@ -52,7 +73,7 @@ export default function OrderHistory() {
                 return (
                   <Accordion.Item key={order.id} eventKey={order.id}>
                     <Accordion.Header className={style.accordionHeader}>
-                      <div>
+                      <div data-aos="fade-right">
                         <p>
                           <strong className="mx-1">Date: </strong>
                           {format(parseJSON(order.createdAt), "MM/dd/yyyy - HH:m:s")}

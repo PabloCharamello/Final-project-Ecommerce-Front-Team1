@@ -18,6 +18,27 @@ import HdHero from "../assets/img/ourProjectImages/HdHeroHome.avif";
 import HdHeroWebP from "../assets/img/ourProjectImages/HdHeroHome.webp";
 import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  duration: 400,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -113,7 +134,7 @@ export default function Home() {
       </div>
       <div className="container-lg grandContainer m-auto my-5">
         <Row className={style.cardsContainer}>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-right" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/armchairs">
               <Image
                 className={style.categoryCardsImg}
@@ -122,7 +143,7 @@ export default function Home() {
             </Link>
             <p className={style.beds}>Armchairs</p>
           </Col>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-up" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/tables">
               <Image
                 className={style.categoryCardsImg}
@@ -131,7 +152,7 @@ export default function Home() {
             </Link>
             <p className={style.beds}>Tables</p>
           </Col>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-left" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/sofas">
               <Image
                 className={style.categoryCardsImg}
@@ -142,7 +163,7 @@ export default function Home() {
           </Col>
         </Row>
         <Row className={style.cardsContainer}>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-right" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/beds">
               <Image
                 className={style.categoryCardsImg}
@@ -151,7 +172,7 @@ export default function Home() {
             </Link>
             <p className={style.beds}>Beds</p>
           </Col>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-up" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/lighting">
               <Image
                 className={style.categoryCardsImg}
@@ -160,7 +181,7 @@ export default function Home() {
             </Link>
             <p className={style.beds}>Lighting</p>
           </Col>
-          <Col lg={4} className="p-2">
+          <Col data-aos="fade-left" lg={4} className="p-2">
             <Link className="text-decoration-none" to="/category/office">
               <Image
                 className={style.categoryCardsImg}
@@ -171,7 +192,7 @@ export default function Home() {
           </Col>
         </Row>
       </div>
-      <div className={style.divSeparatorCategories}>
+      <div data-aos="fade-in" className={style.divSeparatorCategories}>
         <div className={style.divTitleSeparatorCategory}>
           <h2 className={style.titleFirstSeparator}>Design-forward lifestyle</h2>
         </div>

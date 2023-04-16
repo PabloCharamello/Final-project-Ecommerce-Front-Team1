@@ -19,7 +19,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({ user: userReducer, cart: cartReducer });
-
+console.log(rootReducer);
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({

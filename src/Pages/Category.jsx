@@ -11,6 +11,27 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "../redux/cart/cartSlice";
 import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  duration: 400,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
 const priceFormatter = new Intl.NumberFormat("en", {
   style: "currency",
   currency: "USD",
@@ -57,6 +78,7 @@ export default function Category() {
           {category.products.map((product) => {
             return (
               <Col
+                data-aos="fade-left"
                 key={product.id}
                 lg={6}
                 className={`${style.product} d-flex flex-column justify-content-center align-items-center align-items-lg-center p-0 order-1`}

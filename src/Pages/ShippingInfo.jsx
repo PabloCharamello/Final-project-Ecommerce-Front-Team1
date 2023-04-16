@@ -9,6 +9,27 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import AboutOurProject from "../components/AboutOurProject/AboutOurProject";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({
+  disable: false,
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+
+  offset: 120,
+  duration: 400,
+  easing: "ease",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-bottom",
+});
+
 export default function ShippingInfo() {
   const [addresses, setAddresses] = useState(null);
   const [address, setAddress] = useState(-1);
@@ -84,7 +105,7 @@ export default function ShippingInfo() {
       <AboutOurProject />
       <div className="container">
         <Row className="m-0 g-0 p-0">
-          <Col lg={8} className={style.registerFormDiv}>
+          <Col lg={8} className={style.registerFormDiv} data-aos="fade-right">
             <div className="">
               <h4 className="">Shipping information</h4>
             </div>
@@ -231,7 +252,7 @@ export default function ShippingInfo() {
               </>
             )}
           </Col>
-          <Col lg={4}>
+          <Col lg={4} data-aos="fade-left">
             <OrderSummary addressId={address} />
           </Col>
         </Row>
